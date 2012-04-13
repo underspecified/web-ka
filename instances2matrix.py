@@ -7,7 +7,9 @@
 instances2matrix.py: creates a matrix of co-occurence counts between relation 
 pattern x arguments in mongodb from input instances
 
-## Instance Format
+### Instances
+
+#### Format
 
 Instances have the following tab-delimited format:
 
@@ -17,19 +19,34 @@ Instances have the following tab-delimited format:
 * argc: giving argument count
 * argv: tab-delimited list of arguments as strings
 
-Example:
+#### Example
 
-     1.0\treverb_clueweb_tuples-1.1.txt:30:10-11\tARG1 acquired ARG2\t2\Google\tYouTube
+    1.0\treverb_clueweb_tuples-1.1.txt:30:10-11\tARG1 acquired ARG2\t2\tGoogle\tYouTube
+     
+### Co-occurence Matrix
 
-## Matrix Database Format
-
-The co-occurence matrix has the following fields:
+#### Format
+   
+The co-occurence matrix collection has the following fields:
 
 * rel: relation pattern
 * arg1: first argument
 * ...
 * argn: nth argument
-* score: score representing weight * co-occurence count for (rel,args)
+* score: score for rel x args tuple
+
+#### Naming Scheme
+
+Instances of differing argument count are stored in separate mongodb collections
+with names formatted as `<collection>_<argc>`. E.g. if a collection `clueweb`
+has instances with argument counts of 1, 2, and 3, then the following collection
+would be created:
+ 
+* `clueweb_1`
+* `clueweb_2`
+* `clueweb_3`
+ 
+#### Indexing
 
 It is indexed for fast look up of rel, args, and (rel,args) tuples.
 '''
