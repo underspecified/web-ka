@@ -29,6 +29,7 @@ The co-occurence matrix has the following fields:
 * arg1: first argument
 * ...
 * argn: nth argument
+* score: score representing weight * co-occurence count for (rel,args)
 
 It is indexed for fast look up of rel, args, and (rel,args) tuples.
 '''
@@ -61,39 +62,49 @@ def instance2doc(i):
     doc['rel'] = i.rel
     return doc
 
-def ensure_indices(collection, argc):
+def collection2argc(c):
+    '''splits collection name into baseform and argc'''
+    return int(c.split('_')[-1])
+
+def ensure_indices(db, collection):
     '''ensures indices exist on collection for <REL,ARG1,...ARGN> and 
     <ARG1,...,ARGN>, <ARG2,...,ARGN>, ..., <ARGN>'''
-    # index for <REL,ARG1,...ARGN>
-    collection.ensure_index(
-        [('rel', pymongo.ASCENDING), ] + \
-            [('arg%d'%i, pymongo.ASCENDING)
-             for i in xrange(1, argc+1)]
-        )
-    for i in xrange(1, argc+1):
-        # index for <ARGJ,...,ARGN>
-        collection.ensure_index(
-            [('arg%d'%j, pymongo.ASCENDING)
-             for j in xrange(i, argc+1)]
+    for c,n in ((c, collection2argc(c)) 
+                for c in db.collection_names()
+                if c.startswith(collection)):
+        # index for <REL,ARG1,...ARGN>
+        db[c].ensure_index(
+            [('rel', pymongo.ASCENDING), ] + \
+                [('arg%d'%i, pymongo.ASCENDING)
+                 for i in xrange(1, n+1)]
             )
+        for i in xrange(1, n+1):
+            # index for <ARGJ,...,ARGN>
+            db[c].ensure_index(
+                [('arg%d'%j, pymongo.ASCENDING)
+                 for j in xrange(i, n+1)]
+                )
 
-def create_collection(collection, argc, data):
+def collection_argc(c, argc):
+    '''returns collection name appended with _argc'''
+    return '%s_%d' % (c, n)
+
+def create_collection(db, collection, data):
     '''creates collection containing instances from input files'''
-    # ensure indices exist
-    ensure_indices(collection, argc)
     for a in data:
         i = str2instance(a)
         print >>sys.stderr, i
         d = instance2doc(i)
-        collection.save(d)
+        c = collection_argc(collection, i.argc)
+        db[c].save(d)
+    # ensure indices exist
+    ensure_indices(db, collection)
 
 
 if __name__ == '__main__':
     from optparse import OptionParser
     usage = '''%prog [options] [<instance_file>]'''
     parser = OptionParser(usage=usage)
-    parser.add_option('-a', '--argc', dest='argc', type=int,
-                      help='''number of arguments per instance''')
     parser.add_option('-c', '--collection', dest='collection',
                       help='''collection name''')
     parser.add_option('-d', '--database', dest='db', help='''database name''')
@@ -102,10 +113,10 @@ if __name__ == '__main__':
     parser.add_option('-p', '--port', dest='port', type=int, default=1979,
                       help='''mongodb host machine port number. default: 1979''')
     options, args = parser.parse_args()
-    if options.db == None or options.collection == None or options.argc == None:
+    if options.db == None or options.collection == None:
         parser.print_help()
         exit(1)
     connection = pymongo.Connection(options.host, options.port)
-    collection = connection[options.db][options.collection]
+    db = connection[options.db]
     data = (i.strip() for i in fileinput.input(args))
-    create_collection(collection, options.argc, data)
+    create_collection(db, options.collection, data)
