@@ -54,6 +54,7 @@ It is indexed for fast look up of rel, args, and (rel,args) tuples.
 import fileinput
 import functools
 import pymongo
+import re
 import sys
 from collections import namedtuple
 
@@ -83,12 +84,16 @@ def collection2argc(c):
     '''splits collection name into baseform and argc'''
     return int(c.split('_')[-1])
 
+def is_matrix_collection(matrix, collection):
+    '''returns true if collection name has the form <matrix>_<digit>'''
+    return re.match('^%s_[0-9]+$' % matrix, collection)
+
 def ensure_indices(db, collection):
     '''ensures indices exist on collection for <REL,ARG1,...ARGN> and 
     <ARG1,...,ARGN>, <ARG2,...,ARGN>, ..., <ARGN>'''
     for c,n in ((c, collection2argc(c)) 
                 for c in db.collection_names()
-                if c.startswith(collection)):
+                if is_matrix_collection(collection, c)):
         # index for <REL,ARG1,...ARGN>
         db[c].ensure_index(
             [('rel', pymongo.ASCENDING), ] + \
@@ -104,7 +109,7 @@ def ensure_indices(db, collection):
 
 def collection_argc(c, argc):
     '''returns collection name appended with _argc'''
-    return '%s_%d' % (c, n)
+    return '%s_%d' % (c, argc)
 
 def create_collection(db, collection, data):
     '''creates collection containing instances from input files'''
