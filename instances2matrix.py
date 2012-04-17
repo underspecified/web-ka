@@ -91,6 +91,7 @@ def is_matrix_collection(matrix, collection):
 def ensure_indices(db, collection):
     '''ensures indices exist on collection for <REL,ARG1,...ARGN> and 
     <ARG1,...,ARGN>, <ARG2,...,ARGN>, ..., <ARGN>'''
+    print >>sys.stderr, 'ensuring indices for %s ...' % collection
     for c,n in ((c, collection2argc(c)) 
                 for c in db.collection_names()
                 if is_matrix_collection(collection, c)):
@@ -106,6 +107,7 @@ def ensure_indices(db, collection):
                 [('arg%d'%j, pymongo.ASCENDING)
                  for j in xrange(i, n+1)]
                 )
+    print >>sys.stderr, 'ensuring indices for %s: done.' % collection
 
 def collection_argc(c, argc):
     '''returns collection name appended with _argc'''
