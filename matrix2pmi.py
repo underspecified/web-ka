@@ -8,6 +8,7 @@ a co-occurence matrix
 
 Creates 4 mongodb collections:
 
+
 1. <matrix>_F_i: instance tuple frequencies
 2. <matrix>_F_p: relation pattern frequencies
 3. <matrix>_F_ip: instance*pattern co-occurence frequencies
@@ -25,6 +26,7 @@ from instances2matrix import ensure_indices
 
 class PMI:
     def __init__(self, db, matrix):
+        '''initializes class with information necessary for calculating PMI scores'''
         self.db = db
         self.matrix = matrix
         self.argv = self.get_args()
@@ -50,7 +52,7 @@ class PMI:
                     '  var d = {};'
                     '  for (i=1;i<=n;i++) {d["arg"+i] = this["arg"+i]}'
                     '  emit(d, {score:this.score});'
-                    '}', n=self.argc)
+                    '}', n=self.argc) # pass arg count as external argument
         reduce_ = Code('function (key, values) {'
                        '  var sum = 0;'
                        '  values.forEach('
@@ -93,7 +95,7 @@ class PMI:
                     '  d["rel"] = this.rel;'
                     '  for (i=1;i<=n;i++) {d["arg"+i] = this["arg"+i]}'
                     '  emit(d, {score:this.score});'
-                    '}', n=self.argc)
+                    '}', n=self.argc) # pass arg count as external argument
         reduce_ = Code('function (key, values) {'
                        '  var sum = 0;'
                        '  values.forEach('
@@ -190,7 +192,7 @@ class PMI:
 
     def _pmi(self, F_i, F_p, F_ip):
         '''pmi: pointwise mutual information between instance and pattern'''
-        return log( F_ip / (F_p*F_i) )
+        return log( F_ip / (F_i*F_p) )
 
     def max_pmi(self):
         '''max_pmi: maximum PMI between instance and pattern'''
@@ -237,7 +239,7 @@ class PMI:
         return dpmi, discount, pmi
 
 def validate_start(s):
-    '''maps starting collection name to order number returning 0 if invalid request'''
+    '''maps starting collection name to its order of collection returning 0 if invalid'''
     fs = ('F_i', 'F_p', 'F_pi', 'pmi_ip')
     ns = ('1', '2', '3', '4')
     d = {}
