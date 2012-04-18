@@ -251,8 +251,8 @@ def main():
     parser = OptionParser(usage=usage)
     parser.add_option('-o', '--host', dest='host', default='localhost',
                       help='''mongodb host machine name. default: localhost''')    
-    parser.add_option('-p', '--port', dest='port', type=int, default=1979,
-                      help='''mongodb host machine port number. default: 1979''')
+    parser.add_option('-p', '--port', dest='port', type=int, default=27017,
+                      help='''mongodb host machine port number. default: 27017''')
     parser.add_option('-s', '--start', dest='start', default='F_i',
                       help='''specify calculation to start with
                               1 or F_i: instance tuple frequencies

@@ -135,7 +135,7 @@ if __name__ == '__main__':
     parser.add_option('-o', '--host', dest='host', default='localhost',
                       help='''mongodb host machine name. default: localhost''')    
     parser.add_option('-p', '--port', dest='port', type=int, default=1979,
-                      help='''mongodb host machine port number. default: 1979''')
+                      help='''mongodb host machine port number. default: 27017''')
     options, args = parser.parse_args()
     if options.db == None or options.collection == None:
         parser.print_help()
