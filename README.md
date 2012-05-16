@@ -110,31 +110,21 @@ Pointwise Mutual Information is known to be biased toward infrequent events. Pan
 	(5) discount(i,p) = (F(i,p) / F(i,p)+1) * (min(F(i),F(p)) / min(F(i),F(p))+1)
 	(6) discountedPMI(i,p) = PMI(i,p) * discount(i,p)
 
-## TO-DO
-
-* implementation of bootstrappping loop using database
-* pattern/instance reliability scores from [1]
-* efficiency considerations
-	* takes ~10 hours to calculate and cache PMI for 14M instance collection
-	* \> 90% of processing time is mongodb-related
-	* should strings be binarized?
-	* look into key-value storage?
-
 ## espresso.py
 
 `espresso.py`: an implemenatation of the Espresso bootstrapping algorithm
 
 ### Usage
 
-        Usage: espresso.py [options] [database] [collection] [rel] [seeds]
+    Usage: espresso.py [options] [database] [collection] [rel] [seeds]
 
-        Options:
-          -h, --help            show this help message and exit
-          -o HOST, --host=HOST  mongodb host machine name. default: localhost
-          -p PORT, --port=PORT  mongodb host machine port number. default: 27017
-          -s START, --start=START
-                                iteration to start with. default: 1
-          -t STOP, --stop=STOP  iteration to stop at. default: 2
+    Options:
+      -h, --help            show this help message and exit
+      -o HOST, --host=HOST  mongodb host machine name. default: localhost
+      -p PORT, --port=PORT  mongodb host machine port number. default: 27017
+      -s START, --start=START
+                            iteration to start with. default: 1
+      -t STOP, --stop=STOP  iteration to stop at. default: 2
 
 ### Caches Created
 
@@ -160,14 +150,14 @@ Candidate patterns and instances are ranked by reliability score, which
 reflects the pointwise mutual information score between a promoted 
 pattern/instance and the set of instances/patterns that generated it.
 
-        (1) r_i(i,P) = sum( dpmi(i,p)*r_p(p) / max_pmi ) / len(P)
-                         for p in P
+    (1) r_i(i,P) = sum( dpmi(i,p)*r_p(p) / max_pmi ) / len(P)
+                   for p in P
 
-        (2) r_p(P,i) = sum( dpmi(i,p)*r_i(i) / max_pmi ) / len(I)
-                         for i in I
+    (2) r_p(P,i) = sum( dpmi(i,p)*r_i(i) / max_pmi ) / len(I)
+                   for i in I
 
 dpmi is the Discounted Pointwise Mutual Information measure described in [1].
-r_i and r_p are recursively defined with r_i=1.0 for the seed instances.
+`r_i` and `r_p` are recursively defined with `r_i=1.0` for the seed instances.
 
 ## References
 
