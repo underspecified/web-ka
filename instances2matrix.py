@@ -89,7 +89,7 @@ def instance2doc(i):
     '''converts Instance into mongodb document (i.e. dictionary), enumerating all 
     args in argv'''
     doc = {'arg%d'%n:v
-         for n,v in enumerate(i.argv, 1)}
+           for n,v in enumerate(i.argv, 1)}
     doc['score'] = i.score
     doc['rel'] = i.rel
     return doc
@@ -102,25 +102,32 @@ def is_matrix_collection(matrix, collection):
     '''returns true if collection name has the form <matrix>_<digit>'''
     return re.match('^%s_[0-9]+$' % matrix, collection)
 
-def ensure_indices(db, collection):
+def ensure_indices(db, coll):
+    x = db[coll].find_one()
+    n = len( [k 
+              for k in x.keys()
+              if k.startswith('arg')] )
+    # index for <REL,ARG1,...ARGN>
+    db[coll].ensure_index(
+        [('rel', pymongo.ASCENDING), ] + \
+            [('arg%d'%i, pymongo.ASCENDING)
+             for i in xrange(1, n+1)]
+        )
+    for i in xrange(1, n+1):
+        # index for <ARGJ,...,ARGN>
+        db[coll].ensure_index(
+            [('arg%d'%j, pymongo.ASCENDING)
+             for j in xrange(i, n+1)]
+            )
+
+def ensure_matrix_indices(db, matrix):
     '''ensures indices exist on collection for <REL,ARG1,...ARGN> and 
     <ARG1,...,ARGN>, <ARG2,...,ARGN>, ..., <ARGN>'''
-    print >>sys.stderr, 'ensuring indices for %s ...' % collection
-    for c,n in ((c, collection2argc(c)) 
-                for c in db.collection_names()
-                if is_matrix_collection(collection, c)):
-        # index for <REL,ARG1,...ARGN>
-        db[c].ensure_index(
-            [('rel', pymongo.ASCENDING), ] + \
-                [('arg%d'%i, pymongo.ASCENDING)
-                 for i in xrange(1, n+1)]
-            )
-        for i in xrange(1, n+1):
-            # index for <ARGJ,...,ARGN>
-            db[c].ensure_index(
-                [('arg%d'%j, pymongo.ASCENDING)
-                 for j in xrange(i, n+1)]
-                )
+    print >>sys.stderr, 'ensuring indices for %s ...' % matrix
+    for c in (c
+              for c in db.collection_names()
+              if is_matrix_collection(collection, c)):
+        ensure_indices(db, c)
     print >>sys.stderr, 'ensuring indices for %s: done.' % collection
 
 def collection_argc(c, argc):
