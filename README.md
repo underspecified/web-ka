@@ -120,6 +120,55 @@ Pointwise Mutual Information is known to be biased toward infrequent events. Pan
 	* should strings be binarized?
 	* look into key-value storage?
 
+## espresso.py
+
+`espresso.py`: an implemenatation of the Espresso bootstrapping algorithm
+
+### Usage
+
+        Usage: espresso.py [options] [database] [collection] [rel] [seeds]
+
+        Options:
+          -h, --help            show this help message and exit
+          -o HOST, --host=HOST  mongodb host machine name. default: localhost
+          -p PORT, --port=PORT  mongodb host machine port number. default: 27017
+          -s START, --start=START
+                                iteration to start with. default: 1
+          -t STOP, --stop=STOP  iteration to stop at. default: 2
+
+### Caches Created
+
+Creates 2 caches of bootstrapped instances and patterns for the target 
+relation:
+
+1. `<matrix>_<rel>_esp_i`: bootstrapped instances for <rel>
+2. `<matrix>_<rel>_esp_p`: bootstrapped patterns for <rel>
+
+### Bootstrapping
+
+Bootstrapping starts with seed instances and alternates between promoting new
+patterns and instances following the Espresso bootstrapping algorithm [2].
+
+1. retrieve promoted instances/patterns
+2. rank by reliability score
+3. keep top 10 promoted instances/patterns
+4. bootstrap patterns/instances using promoted instances/patterns
+
+### Reliability Score
+
+Candidate patterns and instances are ranked by reliability score, which 
+reflects the pointwise mutual information score between a promoted 
+pattern/instance and the set of instances/patterns that generated it.
+
+        (1) r_i(i,P) = sum( dpmi(i,p)*r_p(p) / max_pmi ) / len(P)
+                         for p in P
+
+        (2) r_p(P,i) = sum( dpmi(i,p)*r_i(i) / max_pmi ) / len(I)
+                         for i in I
+
+dpmi is the Discounted Pointwise Mutual Information measure described in [1].
+r_i and r_p are recursively defined with r_i=1.0 for the seed instances.
+
 ## References
 
 [1] Patrick Pantel and Deepak Ravichandran.
