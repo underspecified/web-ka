@@ -3,6 +3,61 @@
 # Author: Eric Nichols, <eric@ecei.tohoku.ac.jp>
 ################################################################################
 
+'''
+`espresso.py`: an implemenatation of the Espresso bootstrapping algorithm
+
+### Usage
+
+        Usage: espresso.py [options] [database] [collection] [rel] [seeds]
+
+        Options:
+          -h, --help            show this help message and exit
+          -o HOST, --host=HOST  mongodb host machine name. default: localhost
+          -p PORT, --port=PORT  mongodb host machine port number. default: 27017
+          -s START, --start=START
+                                iteration to start with. default: 1
+          -t STOP, --stop=STOP  iteration to stop at. default: 2
+
+### Caches Created
+
+Creates 2 caches of bootstrapped instances and patterns for the target 
+relation:
+
+1. `<matrix>_<rel>_esp_i`: bootstrapped instances for <rel>
+2. `<matrix>_<rel>_esp_p`: bootstrapped patterns for <rel>
+
+### Bootstrapping
+
+Bootstrapping starts with seed instances and alternates between promoting new
+patterns and instances following the Espresso bootstrapping algorithm [1].
+
+1. retrieve promoted instances/patterns
+2. rank by reliability score
+3. keep top 10 promoted instances/patterns
+4. bootstrap patterns/instances using promoted instances/patterns
+
+### Reliability Score
+
+Candidate patterns and instances are ranked by reliability score, which 
+reflects the pointwise mutual information score between a promoted 
+pattern/instance and the set of instances/patterns that generated it.
+
+        (1) r_i(i,P) = sum( dpmi(i,p)*r_p(p) / max_pmi ) / len(P)
+                         for p in P
+
+        (2) r_p(P,i) = sum( dpmi(i,p)*r_i(i) / max_pmi ) / len(I)
+                         for i in I
+
+where dpmi is Discounted Pointwise Mutual Information [2].
+r_i and r_p are recursively defined with r_i=1.0 for the seed instances.
+
+### References
+
+[1] Patrick Pantel and Marco Pennacchiotti.
+Espresso: Leveraging Generic Patterns for Automatically Harvesting Semantic Relations.
+ACL 2006.
+'''
+
 import fileinput
 import pymongo
 import sys
@@ -11,26 +66,20 @@ from bson.son import SON
 
 import mongodb
 
-'''
-`espresso.py`: an implemenatation of the Espresso bootstrapping algorithm [1]
-
-### Caches Created
-
-2. `<matrix>_esp_i`
-1. `<matrix>_esp_p`
-
-'''
 
 def has_run(db, coll, i=0):
+    '''determines if db.coll has iteration it'''
     if db[coll].find_one({'it':i}):
         return True
     else:
         return False
 
 def has_seeds(db, coll):
+    '''determines if db.coll has seed iteration'''
     return has_run(db, coll, 0)
 
 def add_seeds(db, coll, seeds):
+    '''adds seeds to db.coll with reliability score of 1.0'''
     for s in seeds:
         args = s.split('\t')
         doc = {'arg%d'%n:v
@@ -40,6 +89,7 @@ def add_seeds(db, coll, seeds):
         cache(db, coll, doc)
 
 def cache(db, coll, doc):
+    '''save doc to db.coll if it doesn't already exist'''
     if not db[coll].find_one(doc):
         db[coll].save(doc)
 
@@ -49,6 +99,8 @@ def i2query(i):
     return zip(['arg%d'%n for n in xrange(1,len(i)+1)], i)
 
 def make_query(i=None, p=None):
+    '''generates a mongodb query from i and p, placing p before i to match 
+    index order'''
     #q = SON()
     q = {}
     if p:
@@ -60,6 +112,7 @@ def make_query(i=None, p=None):
     return q
 
 def max_pmi(db, matrix):
+    '''finds maximum pmi value in matrix'''
     _pmi_ip = '%s_pmi_ip' % matrix
     print >>sys.stderr, 'calculating max PMI...'
     map_ = Code('function () {'
@@ -83,6 +136,7 @@ def max_pmi(db, matrix):
     return r['results'][0]['value']
 
 def pmi(db, matrix, i, p):
+    '''retrieves pmi value for (i,p) from matrix'''
     try:
         _pmi_ip = '%s_pmi_ip' % matrix
         #r = db[_pmi_ip].find_one(make_query(i,p), fields=['dpmi'])
@@ -95,6 +149,7 @@ def pmi(db, matrix, i, p):
         return 0.0
 
 def _r_i(db, matrix, i):
+    '''retrieves r_i for past iteration'''
     try:
         _esp_i = '%s_esp_i' % matrix
         r = db[_esp_i].find_one(make_query(i=i,p=None), fields=['r_i'])
@@ -102,9 +157,9 @@ def _r_i(db, matrix, i):
         return r['r_i']
     except Exception as e:
         return 0.0
-    
-    
+        
 def _r_p(db, matrix, p):
+    '''retrieves r_p for past iteration'''
     try:
         esp_p = '%s_esp_p' % matrix
         r = db[esp_p].find_one(make_query(i=None,p=p), fields=['r_p'])
@@ -142,6 +197,7 @@ def get_args(db, matrix):
                    if k.startswith('arg')])
 
 def get_I(db, matrix, it, query={}):
+    '''retrieves instances that match query from iteration it'''
     query['it'] = it
     esp_i = '%s_esp_i' % matrix
     args = get_args(db, matrix)
@@ -151,12 +207,15 @@ def get_I(db, matrix, it, query={}):
              for r in mongodb.fast_find(db, esp_i, query, fields=args) ]
 
 def get_P(db, matrix, it, query={}):
+    '''retrieves patterns that match query from iteration it'''
     query['it'] = it
     esp_p = '%s_esp_p' % matrix
     return [r['rel'] 
             for r in mongodb.fast_find(db, esp_p, query, fields=['rel']) ]
 
 def I2P(db, matrix, I):
+    '''retrieve patterns that match promoted instances in I and have not been
+    retrieved in past iteration'''
     esp_p = '%s_esp_p' % matrix
     P = [r['rel']
          for i in I
@@ -169,6 +228,8 @@ def I2P(db, matrix, I):
     return P_
 
 def P2I(db, matrix, P):
+    '''retrieve instances that match promoted patterns in P and have not been
+    retrieved in past iteration'''
     esp_i = '%s_esp_i' % matrix
     args = get_args(db, matrix)
     I = [tuple( [v
@@ -187,12 +248,14 @@ def P2I(db, matrix, P):
     return I_
 
 def rank_patterns(db, matrix, I, P, it, _max_pmi):
+    '''return a list of patterns ranked by reliability score'''
     rs = [{'rel':p, 'it':it, 'r_p':r_p(db,matrix,I,p,_max_pmi)} 
           for p in P]
     rs.sort(key=lambda r: r.get('r_p',0.0),reverse=True)
     return rs
 
 def rank_instances(db, matrix, I, P, it, _max_pmi):
+    '''return a list of instances ranked by reliability score'''
     rs = []
     for i in I:
         r = {'arg%d'%n:v
@@ -204,6 +267,8 @@ def rank_instances(db, matrix, I, P, it, _max_pmi):
     return rs
 
 def bootstrap_p(db, matrix, it, _max_pmi, n=10):
+    '''perform an iteration of bootstrapping saving n patterns with the 
+    highest reliability score'''
     # read promoted instances of last bootstrpping iteration
     print >>sys.stderr, 'getting promoted instances...'''
     I = get_I(db, matrix, it-1)
@@ -236,6 +301,8 @@ def bootstrap_p(db, matrix, it, _max_pmi, n=10):
     print >>sys.stderr, 'ensuring indices: done.'
 
 def bootstrap_i(db, matrix, it, _max_pmi, n=10):
+    '''perform an iteration of bootstrapping saving n instances with the 
+    highest reliability score'''
     # read promoted patterns of last bootstrpping iteration
     print >>sys.stderr, 'getting promoted patterns...'''
     P = get_P(db, matrix, it)
@@ -270,7 +337,9 @@ def bootstrap_i(db, matrix, it, _max_pmi, n=10):
     )
     print >>sys.stderr, 'ensuring indices: done.'
 
-def espresso(db, matrix, start, stop):
+def espresso(db, matrix, rel, start, stop):
+    '''apply espresso bootstrapping algorithm for rel from iteration start to
+    stop'''
     _max_pmi = max_pmi(db, matrix)
     for it in xrange(start, stop):
         print >>sys.stderr, 'pattern bootstrapping iter: %d' % it
@@ -291,11 +360,11 @@ def main():
     parser.add_option('-t', '--stop', dest='stop', type=int, default=2,
                       help='''iteration to stop at. default: 2''')
     options, args = parser.parse_args()
-    if len(args) != 2:
+    if len(args) != 3:
         parser.print_help()
         exit(1)
-    db, collection = args[:2]
-    files = args[3:]
+    db, collection, rel = args[:3]
+    files = args[4:]
     connection = pymongo.Connection(options.host, options.port)
     seeds = (i.strip() for i in fileinput.input(files))
     esp_i = '%s_esp_i' % collection
