@@ -266,7 +266,7 @@ def rank_instances(db, matrix, I, P, it, _max_pmi):
     rs.sort(key=lambda r: r.get('r_i',0.0),reverse=True)
     return rs
 
-def bootstrap_p(db, matrix, it, _max_pmi, n=10):
+def bootstrap_p(db, matrix, rel, it, _max_pmi, n=10):
     '''perform an iteration of bootstrapping saving n patterns with the 
     highest reliability score'''
     # read promoted instances of last bootstrpping iteration
@@ -287,7 +287,7 @@ def bootstrap_p(db, matrix, it, _max_pmi, n=10):
 
     # save top n to <matrix>_esp_p
     print >>sys.stderr, 'saving top %d patterns...' % n
-    esp_p = '%s_esp_p' % matrix
+    esp_p = '%s_%s_esp_p' % (matrix, rel)
     for r in rs[:n]:
         print >>sys.stderr, 'r:', r
         cache(db, esp_p, r)
@@ -300,7 +300,7 @@ def bootstrap_p(db, matrix, it, _max_pmi, n=10):
     db[esp_p].ensure_index( [('rel', pymongo.ASCENDING), ] )
     print >>sys.stderr, 'ensuring indices: done.'
 
-def bootstrap_i(db, matrix, it, _max_pmi, n=10):
+def bootstrap_i(db, matrix, rel, it, _max_pmi, n=10):
     '''perform an iteration of bootstrapping saving n instances with the 
     highest reliability score'''
     # read promoted patterns of last bootstrpping iteration
@@ -321,7 +321,7 @@ def bootstrap_i(db, matrix, it, _max_pmi, n=10):
 
     # save top n to <matrix>_esp_p
     print >>sys.stderr, 'saving top %d instances...' % n
-    esp_i = '%s_esp_i' % matrix
+    esp_i = '%s_%s_esp_i' % (matrix, rel)
     for r in rs[:n]:
         print >>sys.stderr, 'r:', r
         cache(db, esp_i, r)
@@ -343,9 +343,9 @@ def espresso(db, matrix, rel, start, stop):
     _max_pmi = max_pmi(db, matrix)
     for it in xrange(start, stop):
         print >>sys.stderr, 'pattern bootstrapping iter: %d' % it
-        bootstrap_p(db, matrix, it, _max_pmi)
+        bootstrap_p(db, matrix, rel, it, _max_pmi)
         print >>sys.stderr, 'instance bootstrapping iter: %d' % it
-        bootstrap_i(db, matrix, it, _max_pmi)
+        bootstrap_i(db, matrix, rel, it, _max_pmi)
 
 def main():
     from optparse import OptionParser
@@ -363,14 +363,15 @@ def main():
     if len(args) != 3:
         parser.print_help()
         exit(1)
-    db, collection, rel = args[:3]
+    db_, matrix, rel = args[:3]
     files = args[4:]
     connection = pymongo.Connection(options.host, options.port)
+    db = connection[db_]
     seeds = (i.strip() for i in fileinput.input(files))
-    esp_i = '%s_esp_i' % collection
-    if not has_seeds(connection[db], esp_i):
-        add_seeds(connection[db], esp_i, seeds)
-    espresso(connection[db], collection, options.start, options.stop)
+    esp_i = '%s_%s_esp_i' % (matrix, rel)
+    if not has_seeds(db, esp_i):
+        add_seeds(db, esp_i, seeds)
+    espresso(db, matrix, rel, options.start, options.stop)
 
 if __name__ == '__main__':
     main()
