@@ -115,7 +115,8 @@ def max_pmi(db, matrix):
     '''finds maximum pmi value in matrix'''
     max_pmi_ip = '%s_max_pmi_ip' % matrix
     r = db[max_pmi_ip].find_one()
-    return r['results'][0]['value']
+    print >>sys.stderr, 'max_pmi():', r
+    return r['value']
 
 def pmi(db, matrix, i, p):
     '''retrieves pmi value for (i,p) from matrix'''
