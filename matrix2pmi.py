@@ -28,14 +28,16 @@ mongodb
 
 ### Caches Created
 
-Creates 4 frequency/score caches in the form of mongodb collections:
+Creates 6 caches in the form of mongodb collections:
 
-1. `<matrix>_F_i`: instance tuple frequencies
-2. `<matrix>_F_p`: relation pattern frequencies
-3. `<matrix>_F_ip`: instance*pattern co-occurence frequencies
-4. `<matrix>_pmi_ip`: instance*pattern Pointwise Mutual Information
+1. `<matrix>_F_all`: matrix with sum of scores for all (rel,args) tuples
+2. `<matrix>_F_i`: argument instance frequencies
+3. `<matrix>_F_p`: relation pattern frequencies
+4. `<matrix>_F_ip`: instance*pattern co-occurence frequencies
+5. `<matrix>_pmi_ip`: instance*pattern Pointwise Mutual Information
    score discounted to account for bias toward infrequent events
    following [1]
+6. `<matrix>_max_pmi_ip`: caches the maximum dpmi value in <matrix>_pmi_ip
 
 ### Pointwise Mutual Information
 
@@ -93,19 +95,39 @@ class PMI:
         self.batch = batch
         self.argv = self.get_args()
         self.argc = len(self.argv)
+        self._F_all = '%s_F_all' % self.matrix
         self._F_i = '%s_F_i' % self.matrix
         self._F_p = '%s_F_p' % self.matrix
         self._F_ip = '%s_F_ip' % self.matrix
         self._pmi_ip = '%s_pmi_ip' % self.matrix
-        self._F_all = '%s_F_all' % self.matrix
-        self.F_all = self.make_F_all()
+        self._max_pmi_ip = '%s_max_pmi_ip' % self.matrix
 
     def get_args(self):
         '''returns a lists of argument names in <matrix>'''
         x = self.db[self.matrix].find_one()
-        return sorted([k 
+        return sorted([k
                        for k in x.keys()
                        if k.startswith('arg')])
+
+    def make_F_all(self):
+        '''creates a collection <matrix>_F_all containing total frequency of 
+        corpus and returns its name'''
+        print >>sys.stderr, 'making all counts...'
+        map_ = Code('function () {'
+                    '  emit("all", {score:this.score});'
+                    '}')
+        reduce_ = Code('function (key, values) {'
+                       '  var sum = 0;'
+                       '  values.forEach('
+                       '    function (doc) {sum += doc.score;}'
+                       '  );'
+                       '  return {score:sum};'
+                       '}')
+        r = self.db[self.matrix].map_reduce(
+            map_, reduce_, self._F_all, full_response=True
+            )
+        print >>sys.stderr, 'making all counts: done.'
+        self.F_all = self.get_F_all()
 
     def make_F_i(self):
         '''creates a collection <matrix>_F_i containing instance 
@@ -173,26 +195,6 @@ class PMI:
             )
         print >>sys.stderr, 'making instance*pattern counts: done.'
 
-    def make_F_all(self):
-        '''creates a collection <matrix>_F_all containing total frequency of 
-        corpus and returns its name'''
-        print >>sys.stderr, 'making all counts...'
-        map_ = Code('function () {'
-                    '  emit("all", {score:this.score});'
-                    '}')
-        reduce_ = Code('function (key, values) {'
-                       '  var sum = 0;'
-                       '  values.forEach('
-                       '    function (doc) {sum += doc.score;}'
-                       '  );'
-                       '  return {score:sum};'
-                       '}')
-        r = self.db[self.matrix].map_reduce(
-            map_, reduce_, {'inline':1},
-            )
-        print >>sys.stderr, 'making all counts: done.'
-        return r['results'][0]['value']['score']
-
     def make_pmi_ip(self):
         '''creates a collection <matrix>_pmi_ip containing instance*relation
         Pointwise Mutual Information scores and returns its name'''
@@ -205,19 +207,37 @@ class PMI:
             args = zip(self.argv, i)
             pmi = zip(('dpmi', 'discount', 'pmi'), self.discounted_pmi(i,p))
             y = SON(rel+args+pmi)
-            #print >>sys.stderr, y
-            #if not self.db[self._pmi_ip].find_one(query=y):
             self.db[self._pmi_ip].save(y)
             if n%10000 == 0:
                 print >>sys.stderr, '# %8d PMI scores calculated' % n
         print >>sys.stderr, 'calculating instance*pattern PMI: done.'
         ensure_indices(self.db, self._pmi_ip)
         self.db[self._pmi_ip].ensure_index(
-            [('dpmi', pymongo.DESCENDING),
-             #('pmi', pymongo.DESCENDING),
-             ]
+            [('dpmi', pymongo.DESCENDING), ]
             )
-        
+
+    def make_max_pmi_ip(self):
+        '''caches the maximum value for dpmi in <matrix>_pmi_ip to 
+        <matrix>_max_pmi_ip'''
+        print >>sys.stderr, 'calculating max PMI...'
+        map_ = Code('function () {'
+                    '  emit("max", {dpmi:this.dpmi});'
+                    '}')
+        reduce_ = Code('function (key, values) {'
+                       '  var max = 0.0;'
+                       '  values.forEach('
+                       '    function (doc) {'
+                       '      if ( doc.dpmi > max )'
+                       '        max = doc.dpmi;'
+                       '    }'
+                       '  );'
+                       '  return max;'
+                       '}')
+        r = self.db[self._pmi_ip].map_reduce(
+            map_, reduce_, self._max_pmi_ip, full_response=True,
+            )
+        print >>sys.stderr, 'calculating max PMI: done.'
+
     def i2query(self, i):
         '''returns a tuple of argument values labeled (arg1,<value>),
         (arg2,<value>), ..., (argn,<value>) '''
@@ -232,6 +252,11 @@ class PMI:
             for k,v in self.i2query(i):
                 q[k] = v
         return SON({'_id':q})
+
+    def get_F_all(self):
+        '''gets sum of scores for all (rel,args) tuples in <matrix>'''
+        r = self.db[self._F_all].find_one()
+        return r['results'][0]['value']['score']
 
     def F_i(self, i):
         '''calculate the frequency (i.e. the sum of scores) of an argument 
@@ -321,8 +346,10 @@ class PMI:
 def validate_start(s):
     '''maps starting collection name to its order of collection
     returning 0 if invalid'''
-    fs = list(enumerate(('F_i', 'F_p', 'F_pi', 'pmi_ip'), 1))
-    ns = list(enumerate(('1', '2', '3', '4'), 1))
+    fs = list(
+        enumerate(('F_all', 'F_i', 'F_p', 'F_pi', 'pmi_ip', 'max_pmi_ip'), 1)
+        )
+    ns = list(enumerate(('1', '2', '3', '4', '5', '6'), 1))
     d = defaultdict(int, {k:v for v,k in fs+ns})
     return d[s]
 
@@ -336,10 +363,12 @@ def main():
                       help='''mongodb host machine port number. default: 27017''')
     parser.add_option('-s', '--start', dest='start', default='F_i',
                       help='''specify calculation to start with
-                              1 or F_i: instance tuple frequencies
-                              2 or F_p: relation pattern frequencies
-                              3 or F_ip: instance*pattern co-occurence frequencies
-                              4 or pmi_ip: instance*pattern Pointwise Mutual Information score
+                              1 or F_all: sum of all scores for (rel,args) tuples
+                              2 or F_i: instance tuple frequencies
+                              3 or F_p: relation pattern frequencies
+                              4 or F_ip: instance*pattern co-occurence frequencies
+                              5 or pmi_ip: instance*pattern Pointwise Mutual Information score
+                              6 or max_pmi_ip: maximum Pointwise Mutual Information score
                               default: F_i''')
     options, args = parser.parse_args()
     if len(args) != 2:
@@ -354,14 +383,19 @@ def main():
     db, collection = args
     connection = pymongo.Connection(options.host, options.port)
     p = PMI(connection[db], collection)
+
     if start <= 1:
-        p.make_F_i()
+        p.make_F_all()
     if start <= 2:
-        p.make_F_p()
+        p.make_F_i()
     if start <= 3:
-        p.make_F_ip()
+        p.make_F_p()
     if start <= 4:
+        p.make_F_ip()
+    if start <= 5:
         p.make_pmi_ip()
+    if start <= 6:
+        p.make_max_pmi_ip()
 
 if __name__ == '__main__':
     main()

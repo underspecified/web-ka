@@ -113,26 +113,8 @@ def make_query(i=None, p=None):
 
 def max_pmi(db, matrix):
     '''finds maximum pmi value in matrix'''
-    _pmi_ip = '%s_pmi_ip' % matrix
-    print >>sys.stderr, 'calculating max PMI...'
-    map_ = Code('function () {'
-                '  emit("max", {dpmi:this.dpmi});'
-                '}')
-    reduce_ = Code('function (key, values) {'
-                   '  var max = 0.0;'
-                   '  values.forEach('
-                   '    function (doc) {'
-                   '      if ( doc.dpmi > max )'
-                   '        max = doc.dpmi;'
-                   '    }'
-                   '  );'
-                   '  return max;'
-                   '}')
-    r = db[_pmi_ip].map_reduce(
-        map_, reduce_, {'inline':1},
-        )
-    print >>sys.stderr, 'calculating max PMI: done.'
-    #print >>sys.stderr, r['results'][0]['value']
+    max_pmi_ip = '%s_max_pmi_ip' % matrix
+    r = db[max_pmi_ip].find_one()
     return r['results'][0]['value']
 
 def pmi(db, matrix, i, p):
