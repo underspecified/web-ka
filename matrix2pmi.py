@@ -255,15 +255,16 @@ class PMI:
 
     def get_F_all(self):
         '''gets sum of scores for all (rel,args) tuples in <matrix>'''
-        def get_F_all_helper():
-            r = self.db[self._F_all].find_one()
-            print >>sys.stderr, 'r:', r
-            return r['value']['score']
-        try:
-            return get_F_all_helper()
-        except Exception:
+        def r2score(r):
+            score = r['value']['score']
+            print >>sys.stderr, 'F_all:', score
+            assert float(score)
+            return score
+        r = self.db[self._F_all].find_one()
+        if not r:
             self.make_F_all()
-            return get_F_all_helper()
+            r = self.db[self._F_all].find_one()
+        return r2score(r)
 
     def F_i(self, i):
         '''calculate the frequency (i.e. the sum of scores) of an argument 
@@ -391,8 +392,8 @@ def main():
     connection = pymongo.Connection(options.host, options.port)
     p = PMI(connection[db], collection)
 
-    if start <= 1:
-        p.make_F_all()
+    #if start <= 1:
+    #    p.make_F_all()
     if start <= 2:
         p.make_F_i()
     if start <= 3:
