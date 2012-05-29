@@ -4,7 +4,7 @@
 ################################################################################
 
 '''
-esp2csv.py: extract Espresso knowledge acquisition results from a mongodb 
+esp_p2csv.py: extract Espresso knowledge acquisition results from a mongodb 
 collection to a comma-seperated value spreadsheet
 '''
 
@@ -31,7 +31,7 @@ def main():
     db = connection[db_]
     esp_i_writer = csv.DictWriter(
         sys.stdout, 
-        ('it', 'r_i', 'arg1', 'arg2', 'arg3'), 
+        ('it', 'r_p', 'rel'),
         extrasaction='ignore')
     for r in mongodb.fast_find(db, coll):
         esp_i_writer.writerow(r)
