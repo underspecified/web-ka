@@ -101,6 +101,7 @@ class PMI:
         self._F_ip = '%s_F_ip' % self.matrix
         self._pmi_ip = '%s_pmi_ip' % self.matrix
         self._max_pmi_ip = '%s_max_pmi_ip' % self.matrix
+        self.F_all = self.get_F_all()
 
     def get_args(self):
         '''returns a lists of argument names in <matrix>'''
@@ -127,7 +128,6 @@ class PMI:
             map_, reduce_, self._F_all, full_response=True
             )
         print >>sys.stderr, 'making all counts: done.'
-        self.F_all = self.get_F_all()
 
     def make_F_i(self):
         '''creates a collection <matrix>_F_i containing instance 
@@ -255,8 +255,15 @@ class PMI:
 
     def get_F_all(self):
         '''gets sum of scores for all (rel,args) tuples in <matrix>'''
-        r = self.db[self._F_all].find_one()
-        return r['results'][0]['value']['score']
+        def get_F_all_helper():
+            r = self.db[self._F_all].find_one()
+            print >>sys.stderr, 'r:', r
+            return r['value']['score']
+        try:
+            return get_F_all_helper()
+        except Exception:
+            self.make_F_all()
+            return get_F_all_helper()
 
     def F_i(self, i):
         '''calculate the frequency (i.e. the sum of scores) of an argument 
