@@ -1,0 +1,910 @@
+1,0.118797620692,prevent the formation of
+1,0.0851381534175,block the production of
+1,0.0691388000342,inhibit the production of
+1,0.0676126014388,reduce the formation of
+1,0.0534317105405,is prescribed to reduce
+1,0.0525670137248,help to balance
+1,0.0525670137248,is an inhibitor to
+1,0.0518605049834,inhibit the absorption of
+1,0.0517861127564,inhibit the formation of
+1,0.0514127700139,may help protect against
+2,0.000730478786576,help rid the body of
+2,0.000640498623843,bind to
+2,0.00059867717127,neutralize the effects of
+2,0.000531810692063,counter the effects of
+2,0.000454048362965,counteract the effect of
+2,0.000423539087062,protect against
+2,0.000378350055704,block the formation of
+2,0.000377877872497,help protect the body from
+2,0.000377730523482,can stabilize
+2,0.000377730523482,reduce the level of
+3,5.40692211012e-06,help fight
+3,3.03260578583e-06,protect from
+3,2.73972252248e-06,can minimize
+3,2.69688019266e-06,can help prevent
+3,2.56671895256e-06,alone cannot make
+3,2.48940043599e-06,defend the body against
+3,2.26452587817e-06,are more complex than
+3,2.24539282822e-06,offer protection from
+3,2.24468365667e-06,can break the cycle of
+3,2.24325438735e-06,help stop
+4,2.00661632044e-08,help protect people from
+4,1.76529869358e-08,protect the body from
+4,1.55528383257e-08,only work on
+4,1.45284153828e-08,only treat
+4,1.44504617784e-08,are only effective against
+4,1.43631987003e-08,will be prescribed for
+4,1.43501394078e-08,should only be prescribed for
+4,1.25608241374e-08,are used only for
+4,1.22149817955e-08,are prescribed for
+4,1.1345175943e-08,do n't stop
+5,2.30857299552e-10,work only on
+5,1.88656292637e-10,are effective against
+5,1.40384377103e-10,only kill
+5,1.40142717614e-10,are designed to kill
+5,1.39462607299e-10,can kill
+5,1.37789626469e-10,are used to kill
+5,1.3731018608e-10,are effective only against
+5,1.3731018608e-10,are used to treat infections caused by
+5,1.36709490664e-10,wipe out
+5,1.36355056746e-10,inhibit the growth of
+6,7.36686392338e-13,kill more than
+6,6.8725320368e-13,are often used to control
+6,6.2895413275e-13,are intended to control
+6,5.98190456221e-13,are used to control
+6,5.12608219233e-13,do n't kill
+6,5.02717666375e-13,will increase their understanding of
+6,4.94542541099e-13,are used for eliminating
+6,4.94542541099e-13,reduced the abundance of
+6,4.76178669037e-13,are a standard component of
+6,4.04922905012e-13,used to destroy
+7,1.04117720743e-14,dont kill
+7,4.3473059178e-15,do n't shoot
+7,3.65625967142e-15,do n't save
+7,3.50693419461e-15,may be used to treat
+7,3.44681999494e-15,may be prescribed to prevent
+7,3.29087675439e-15,may also be used to prevent
+7,2.89061811847e-15,do n't murder
+7,2.77434574367e-15,are killing
+7,2.54035327211e-15,were just
+7,2.4860435909e-15,were designed to kill
+8,4.20514350312e-17,are like
+8,3.65510651367e-17,are much like
+8,3.38136166548e-17,employ large numbers of
+8,3.34795335922e-17,are just like
+8,3.25956220818e-17,are made up of
+8,2.70590750621e-17,write for
+8,2.63935979484e-17,are groups of
+8,2.49218153036e-17,predicted the demise of
+8,2.47788945039e-17,come from
+8,2.46022065863e-17,are there to help
+9,7.45054712976e-19,are a lot like
+9,5.50606183379e-19,are comprised of
+9,4.52788549544e-19,are composed of
+9,4.29757724623e-19,are made of
+9,4.22853846186e-19,are just collections of
+9,3.7639899327e-19,are fundamentally composed of
+9,3.71999918966e-19,are as individual as
+9,3.52111074622e-19,do n't hire
+9,3.36721726679e-19,bring out the best in
+9,3.36648846259e-19,are about
+10,8.92209998264e-21,are sequences of
+10,8.48407580349e-21,are strings of
+10,8.23788834974e-21,are made from
+10,8.07385610094e-21,are chains of
+10,8.05420163702e-21,are combinations of
+10,7.59421416333e-21,are made out of
+10,7.21935670955e-21,consist of
+10,5.63198179006e-21,are segments of
+10,5.36870576627e-21,are polymers of
+10,4.96827241295e-21,are pieces of
+11,9.53027536992e-23,are short chains of
+11,4.96862984945e-23,are kinds of
+11,4.90851782114e-23,are a sequence of
+11,4.90436476177e-23,are degraded into
+11,4.82170330464e-23,are molecules composed of
+11,4.72730972995e-23,are compounds of
+11,4.62985294292e-23,are made with
+11,4.25975757441e-23,may have an arbitrary number of
+11,4.25677308229e-23,are lists of
+11,4.24135857606e-23,are extracted from
+12,2.94884573306e-25,are just arrays of
+12,2.9419084921e-25,are arrays of
+12,2.50357376335e-25,are just lists of
+12,2.32825960885e-25,are the life force of
+12,2.16625933405e-25,are synthesized from
+12,2.15006579351e-25,are any sequence of
+12,1.79570297214e-25,represent an array of
+12,1.77495238196e-25,are simply collections of
+12,1.74267161544e-25,always contain
+12,1.73461547587e-25,are ordered sequences of
+13,8.54803705886e-28,are naturally present in
+13,8.30843834884e-28,are the pure essence of
+13,6.70729804276e-28,are compared as
+13,6.70729804276e-28,are sorted as
+13,6.47521678635e-28,are normally present in
+13,6.45395919719e-28,are not a series of
+13,6.44327448929e-28,are currently limited to
+13,6.3647943208e-28,are returned as
+13,6.30562731893e-28,were more important than
+13,6.19384116965e-28,will always trump
+14,3.37591666629e-30,begged for
+14,3.09632123413e-30,still outnumber
+14,2.61670998587e-30,persist in
+14,2.47432986112e-30,are found in
+14,2.20075173679e-30,generally form in
+14,2.19383647591e-30,wait patiently for
+14,2.18763546152e-30,can persist in
+14,2.10865979168e-30,always have
+14,2.05302662113e-30,far outnumber
+14,1.62984350796e-30,do not persist in
+15,1.4211594855e-32,are mainly found in
+15,1.21901988233e-32,are still fighting
+15,1.21901988233e-32,has been attacking
+15,1.20226314247e-32,can learn something from
+15,1.1823931164e-32,must be sensitive to
+15,1.16107125433e-32,are more positive than
+15,1.16107125433e-32,have been friends of
+15,1.11441852772e-32,ought to know
+15,1.08505226343e-32,do not recognize
+15,1.07035871726e-32,live longer than
+16,8.59939014659e-35,are happier than
+16,8.46917964355e-35,were subordinate to
+16,7.87163872349e-35,are different from
+16,7.69206197551e-35,are not equal to
+16,7.61051910501e-35,were superior to
+16,7.52571205488e-35,earn less than
+16,7.47227137764e-35,are mostly found in
+16,6.97336899477e-35,are more sensitive than
+16,6.74299148429e-35,talk more than
+16,6.19147923552e-35,have more options than
+17,1.41985629052e-36,are just as bad as
+17,1.39173840977e-36,are more susceptible than
+17,1.32203115427e-36,are no different from
+17,1.2636578465e-36,do not think like
+17,1.25588695228e-36,are not superior to
+17,1.17268890119e-36,are no better than
+17,1.03586893797e-36,were not allowed to talk to
+17,1.00162150657e-36,are physically stronger than
+17,9.81379230672e-37,are not different from
+17,9.68429998949e-37,scored higher than
+18,2.19283222584e-38,are more affected than
+18,1.33841163714e-38,are the equals of
+18,1.32739557713e-38,are inferior to
+18,1.31119539318e-38,are considered inferior to
+18,1.30122774452e-38,are no different than
+18,1.27353515826e-38,are affected more often than
+18,1.2521548311e-38,are affected more than
+18,1.23981605252e-38,are subservient to
+18,1.19559601754e-38,learn differently than
+18,1.10077551577e-38,are different than
+19,2.1870279941e-40,are better than
+19,2.14800914005e-40,are more commonly affected than
+19,2.02427693335e-40,mature earlier than
+19,1.8101598053e-40,matured faster than
+19,1.61583761503e-40,are definitely smarter than
+19,1.52127329169e-40,are equal to
+19,1.47458157678e-40,are less active than
+19,1.46362754535e-40,are affected more frequently than
+19,1.3249518287e-40,are affected twice as often as
+19,1.3119383881e-40,are affected slightly more often than
+20,2.70964592353e-42,were more affected than
+20,2.29366967995e-42,are more active than
+20,1.98654012167e-42,play more than
+20,1.97346871916e-42,fare worse than
+20,1.95159411586e-42,were affected more than
+20,1.91223770809e-42,are just different than
+20,1.91223770809e-42,try to impress
+20,1.89280942805e-42,fell for
+20,1.82937600432e-42,are more intelligent than
+20,1.80317910754e-42,are so much better than
+21,2.21547474897e-44,drink more than
+21,1.94177630631e-44,are the maintainers of
+21,1.90252250127e-44,are taller than
+21,1.80646909139e-44,are superior to
+21,1.78576435096e-44,were considered superior to
+21,1.75260154446e-44,are stronger than
+21,1.66999425437e-44,are the protectors of
+21,1.56844054538e-44,earned more than
+21,1.41592936971e-44,are bigger than
+21,1.38651459001e-44,sing to
+22,1.73296267411e-46,speak louder than
+22,1.72085010918e-46,always speak louder than
+22,1.24360618729e-46,are far more important than
+22,1.19408739467e-46,are not like
+22,1.0983937263e-46,speak a lot louder than
+22,1.09387575124e-46,really do speak louder than
+22,1.0821595796e-46,are more powerful than
+22,1.00647452665e-46,show more than
+22,9.90055984544e-47,always trump
+22,9.78409064636e-47,are clearly superior to
+23,3.53039245082e-48,say more than
+23,2.54767527331e-48,speak more than
+23,2.23564334118e-48,often speak louder than
+23,2.16391903017e-48,tell more than
+23,1.76720275223e-48,speak better than
+23,1.69425612071e-48,are often more powerful than
+23,1.64297862154e-48,can speak louder than
+23,1.50419718291e-48,do speak louder than
+23,1.38334354127e-48,speak much louder than
+23,1.34056868619e-48,are louder than
+24,5.81567702125e-50,are worth more than
+24,4.39673491376e-50,really do speak
+24,2.94637819399e-50,can paint
+24,2.88071444454e-50,often say more than
+24,2.81619792858e-50,really do say
+24,2.71257579394e-50,say thousands of
+24,2.45671566688e-50,do paint
+24,2.33106484235e-50,are easier to remember than
+24,2.18870233096e-50,can say more than
+24,2.13236078641e-50,can speak
+25,2.89464184964e-52,are so much more important than
+25,2.31863460739e-52,say all kinds of
+25,2.28737916633e-52,say a lot of
+25,2.27017644215e-52,are more important than
+25,2.24814168255e-52,collect all sorts of
+25,2.23900354888e-52,are a lot more important than
+25,2.12557844691e-52,says more than
+25,2.01877435703e-52,say lots of
+25,2.0101637891e-52,can say
+25,1.95783540686e-52,is worth of
+26,1.92669071946e-54,is worth more than
+26,1.67830079512e-54,tells more than
+26,1.66261190926e-54,know a lot of
+26,1.59883612869e-54,speaks more than
+26,1.44653484406e-54,try to fix
+26,1.41171778064e-54,can say a lot of
+26,1.39358370917e-54,will say a lot of
+26,1.32542514085e-54,promise lots of
+26,1.21199589481e-54,have overcome
+26,1.19200595028e-54,are not necessarily based on
+27,1.15970801987e-56,literally is
+27,8.81605524261e-57,really is
+27,8.13885300011e-57,is more precious than
+27,8.09847016197e-57,know lots of
+27,7.89649673525e-57,truly is
+27,7.40767112516e-57,often costs
+27,7.23779314216e-57,is literally
+27,6.76470852483e-57,equates to
+27,6.42624972351e-57,is equivalent to
+27,6.41650191557e-57,speaks louder than
+28,2.11060711826e-58,is indeed
+28,1.41206725567e-58,is definitely
+28,1.40113810446e-58,is truly
+28,1.11327302545e-58,is always
+28,9.32688411245e-59,can be
+28,9.1516060921e-59,is not
+28,8.99283997827e-59,alone is not
+28,8.52143110348e-59,is truely
+28,7.5573942653e-59,is purchasing
+28,7.43162351208e-59,is certainly
+29,2.97264487098e-60,will be
+29,1.65939457141e-60,is really
+29,1.54079657871e-60,continues to be
+29,1.30302383092e-60,better be
+29,1.30302383092e-60,has ceased to be
+29,1.28710595035e-60,will still be
+29,1.27913408073e-60,ceased to be
+29,1.2759102332e-60,will prove
+29,1.25408843945e-60,is still
+29,1.25304608506e-60,has always been
+30,1.79452166762e-62,must be allowed to be
+30,1.68782793161e-62,will also be
+30,1.68573244697e-62,is eternally
+30,1.65786299095e-62,play with
+30,1.61578366142e-62,talk to
+30,1.58403521145e-62,are kissing
+30,1.46088883421e-62,would cease to be
+30,1.45264130774e-62,are just
+30,1.4228954367e-62,does not pray to
+30,1.38406647278e-62,need time to be
+31,9.69342865093e-65,act like
+31,9.03034595052e-65,give birth to
+31,8.68632877876e-65,should n't be having
+31,8.51638177287e-65,is the eternal Son of
+31,7.98329840976e-65,is the Living Word of
+31,7.98216681289e-65,is the only begotten Son of
+31,7.75516910687e-65,is the only Son of
+31,7.6934197509e-65,should not have
+31,6.80295310744e-65,is the Lamb of
+31,6.74287118194e-65,is the Capitol of
+32,3.41029413816e-66,is the only way to
+32,2.95521485483e-66,is the living Word of
+32,2.33877514448e-66,is the Son of
+32,2.32945927478e-66,was not the Son of
+32,2.32880815969e-66,is the Word of
+32,2.21161693323e-66,claimed to be
+32,2.18466097363e-66,is fully
+32,2.06253608172e-66,was begotten of
+32,2.01179128607e-66,is the image of
+32,1.99487113278e-66,is the perfect image of
+33,7.45365129503e-68,is the way to
+33,4.96643726529e-68,is the bread of
+33,4.96523062862e-68,was one with
+33,4.39417088107e-68,was subordinate to
+33,3.94602355502e-68,is the express image of
+33,3.94472333889e-68,is obedient to
+33,3.92372145124e-68,is the revealer of
+33,3.86183103265e-68,came to reveal
+33,3.74164642712e-68,lived by
+33,3.43012506938e-68,has the words of
+34,4.04743452185e-70,is the Only Way to
+34,3.20576447979e-70,is the doorway to
+34,2.88116498596e-70,is the Door to
+34,2.57777278744e-70,is the key to
+34,2.45454386422e-70,was translated to
+34,2.43935536304e-70,is the means to
+34,2.34418779801e-70,may be the way to
+34,2.28095084309e-70,was carried up to
+34,2.09748261338e-70,is the ONLY DOOR to
+34,2.08596478012e-70,is the aroma of
+35,2.50989132206e-72,is key to
+35,1.44269472847e-72,is the precursor to
+35,1.05981401448e-72,has opened the gates to
+35,9.63467794798e-73,speaks often of
+35,9.01143755902e-73,is the pathway to
+35,8.79039263435e-73,is also closely allied with
+35,8.78737691171e-73,may be interfering with
+35,8.5062970246e-73,is crucial to
+35,8.32300714641e-73,is a major component to
+35,7.91167155411e-73,is critical to
+36,3.72479897982e-74,is a key to
+36,1.78363844623e-74,is the key for
+36,1.76594158118e-74,is essential to
+36,1.64928216101e-74,leads to
+36,1.59441713059e-74,is a key factor for
+36,1.58802601235e-74,is essential for
+36,1.52790108495e-74,is a key component to
+36,1.44851951781e-74,is critical for
+36,1.26892815041e-74,is often the key to
+36,1.26453523624e-74,will be the key to
+37,6.36239806381e-76,is vital to
+37,2.82657939003e-76,is also critical to
+37,2.79317096948e-76,is also key to
+37,2.77336605371e-76,is the foundation to
+37,2.69642457845e-76,is absolutely essential for
+37,2.68136790458e-76,is absolutely vital to
+37,2.64990295873e-76,can be the key to
+37,2.55423823787e-76,is very important to
+37,2.52131468364e-76,is the path to
+37,2.45397419466e-76,is key for
+38,7.17742524e-78,is vital for
+38,6.65484929035e-78,is fundamental to
+38,6.33724036047e-78,is necessary for
+38,5.88856440834e-78,is the foundation of
+38,4.85277412293e-78,is important for
+38,4.72525007711e-78,is the foundation for
+38,4.72339487152e-78,was the key to
+38,4.61487877083e-78,is the cornerstone of
+38,4.56151463916e-78,is a vital nutrient for
+38,4.37989513032e-78,is a necessity of
+39,8.83501917854e-80,is a basic necessity of
+39,8.73251184557e-80,is needed for
+39,8.50861421374e-80,is an important part of
+39,7.90957561591e-80,is not only necessary for
+39,7.8664220411e-80,is necessary to build
+39,7.86117339069e-80,is a basic necessity for
+39,7.8518604517e-80,helps build
+39,7.81335472449e-80,is n't everything in
+39,7.74377887008e-80,is the very stuff of
+39,7.68244154918e-80,is the basis of
+40,1.55702337127e-81,is an essential part of
+40,1.07347352149e-81,is a necessary part of
+40,7.13803226288e-82,does more than build
+40,6.94114495899e-82,is the elixir of
+40,6.55398106501e-82,is the primary mineral responsible for
+40,6.53624688926e-82,Needed for
+40,6.5003901138e-82,is a necessity for
+40,5.69752092546e-82,is only a small part of
+40,5.48870715829e-82,is important for building
+40,5.4290488623e-82,alone does not build
+41,1.62366196597e-83,is an integral part of
+41,1.56253523302e-83,is the spice of
+41,1.54878175368e-83,is an inevitable part of
+41,1.41158273739e-83,is part of
+41,1.36726355492e-83,is the law of
+41,1.34674000584e-83,is an unavoidable part of
+41,1.32047778659e-83,is a part of
+41,1.28753676976e-83,is inevitable in
+41,1.19318387325e-83,is a daily part of
+41,1.15389360621e-83,is an essential component of
+42,1.36029670299e-84,is a fact of
+42,6.88662095986e-85,is a normal part of
+42,5.6449250726e-85,is an unavoidable aspect of
+42,4.59027800482e-85,is a reality of
+42,4.57562064161e-85,becomes a way of
+42,4.40895595228e-85,is just a part of
+42,4.21629485044e-85,may be a part of
+42,3.85976847158e-85,is an inescapable part of
+42,3.59424548489e-85,is an indispensable part of
+42,3.58284487956e-85,is a natural part of
+43,1.89467986197e-86,has become a fact of
+43,1.41866178459e-86,is a big part of
+43,1.41611992353e-86,is just a fact of
+43,1.34242870863e-86,is an inevitable fact of
+43,1.306112431e-86,is the essence of
+43,1.29494689455e-86,is an unfortunate fact of
+43,1.25969865685e-86,is an unavoidable fact of
+43,1.22189279202e-86,is a constant in
+43,1.16259012608e-86,is simply a fact of
+43,1.15960689197e-86,is a natural stage of
+44,1.85703302256e-88,is a way of
+44,1.70442523495e-88,is an American way of
+44,1.50210968859e-88,is just part of
+44,1.21131796076e-88,is the dress of
+44,1.12843742071e-88,is a natural process of
+44,1.0958537101e-88,is so much a part of
+44,9.59856100908e-89,is apart of
+44,9.22484767043e-89,is the other side of
+44,8.87199806447e-89,is just another part of
+44,8.18056440063e-89,is the bringer of
+45,2.08962398852e-90,is the way of
+45,2.08742417747e-90,is our way of
+45,1.94632833627e-90,is a complete way of
+45,1.87597134932e-90,is my way of
+45,1.72869082529e-90,is a philosophy of
+45,1.65677777057e-90,is a total way of
+45,1.27062900085e-90,is a metaphor for
+45,1.25710302307e-90,does not imitate
+45,1.2216217895e-90,is not separated from
+45,1.17508987777e-90,has become a way of
+46,1.89402693764e-92,permeates all aspects of
+46,1.42350408633e-92,means knowledge of
+46,1.26178799431e-92,pervades all aspects of
+46,1.25988310392e-92,influences every aspect of
+46,1.25971699367e-92,is the inversion of
+46,1.25532090775e-92,is an indispensable element of
+46,1.2496565316e-92,should take on
+46,1.24653849912e-92,is a whole way of
+46,1.23151321726e-92,is only a reflection of
+46,1.23073449874e-92,brings joy to
+47,7.90094686227e-95,was a reflection of
+47,6.02312608151e-95,was a way of
+47,4.80535558404e-95,brings meaning to
+47,4.57469762255e-95,brings your message to
+47,4.44038167617e-95,is my passion in
+47,4.30042326573e-95,enhances the quality of
+47,4.15905243194e-95,improves the quality of
+47,4.02047934956e-95,brings ideas to
+47,3.93839869981e-95,has always been a pioneer in
+47,3.93839869981e-95,is a necessary ingredient in
+48,3.02396969353e-97,is a teacher of
+48,2.72921943677e-97,is a routine part of
+48,2.72795850851e-97,was the rule of
+48,2.69111885989e-97,is a daily fact of
+48,2.6570499443e-97,was just a way of
+48,2.53549686395e-97,is simply a way of
+48,2.53426450844e-97,is my biggest passion in
+48,2.46563309307e-97,can be a way of
+48,2.41848015254e-97,is away of
+48,2.40302756171e-97,is the purpose of
+49,1.29575727646e-99,is the ultimate goal in
+49,1.29328500335e-99,was not the goal of
+49,1.29185796604e-99,does not explain the origin of
+49,1.20311617301e-99,became a way of
+49,1.17552747545e-99,is the aim of
+49,1.14829239243e-99,is a practical guide to
+49,1.13361557254e-99,is a practical way of
+49,1.11963966003e-99,is indeed a way of
+49,1.11963966003e-99,offers a way of
+49,1.09543136665e-99,forbids the taking of
+50,6.49206372887e-102,had become a way of
+50,5.86050781158e-102,is not the end product of
+50,5.31693229127e-102,is not a product of
+50,4.85366824429e-102,is a child of
+50,4.5657970859e-102,came about through
+50,4.5657970859e-102,is specially made for
+50,4.55196414564e-102,is simply a product of
+50,4.53245858209e-102,is the mid-point of
+50,4.34174882076e-102,is not the pinnacle of
+50,4.16571108711e-102,is the peninsula of
+51,3.83819455492e-104,cannot become
+51,3.40279062615e-104,was reconciled to
+51,2.81333569545e-104,has sinned against
+51,2.70624164913e-104,is the temple of
+51,2.67377940224e-104,does not seek
+51,2.583029148e-104,is the glory of
+51,2.55697611759e-104,may deny the existence of
+51,2.54502176762e-104,is the true image of
+51,2.520585649e-104,is a special creation of
+51,2.51965571752e-104,is the child of
+52,1.94325206623e-106,is one nation under
+52,1.76866485281e-106,has turned its back on
+52,1.74862929254e-106,has forgotten
+52,1.5443899339e-106,is not the kingdom of
+52,1.51585863892e-106,was blessed by
+52,1.4579518855e-106,is the enemy of
+52,1.43145089194e-106,must be born of
+52,1.41695463163e-106,was a nation under
+52,1.3771702752e-106,said yes to
+52,1.37306429615e-106,has rejected
+53,1.03524889924e-108,was not the Mother of
+53,1.03406186461e-108,is often the enemy of
+53,9.82615759499e-109,is the Mother of
+53,9.30218764607e-109,was Mother of
+53,9.01985117231e-109,became the Mother of
+53,8.6228607923e-109,is called the mother of
+53,8.10032695561e-109,is truly the Mother of
+53,7.62296723494e-109,is the worst enemy of
+53,7.26392497878e-109,did n't give birth to
+53,6.22420380413e-109,is a Creation of
+54,6.57329541772e-111,united to
+54,5.89098451347e-111,is also Mother of
+54,5.128600949e-111,gave birth to
+54,4.58143177535e-111,is the figure of
+54,4.27893285588e-111,bore
+54,4.06950283881e-111,is the Mom of
+54,3.93961205948e-111,Is the Image of
+54,3.68348121693e-111,is mother of
+54,3.52757952687e-111,is not the child of
+54,3.44507790728e-111,is not equal to
+55,4.65898878796e-113,was the mother of
+55,2.59870280286e-113,finally gives birth to
+55,2.56048023112e-113,will give birth to
+55,2.22855647442e-113,had given birth to
+55,1.86429028866e-113,soon gave birth to
+55,1.83599607482e-113,then gives birth to
+55,1.77069626163e-113,finally gave birth to
+55,1.69563345272e-113,had just lost
+55,1.69491188176e-113,did not give birth to
+55,1.68513333238e-113,also bore
+56,7.78401268458e-115,became the mother of
+56,3.22341709869e-115,was also the mother of
+56,2.80947430203e-115,receives the body of
+56,2.74414577485e-115,does n't recognize
+56,2.48128961045e-115,was the first disciple of
+56,2.46129625264e-115,gives birth to
+56,2.45485784009e-115,was the virgin mother of
+56,1.98492804162e-115,was very close to
+56,1.74701362289e-115,is feeding on
+56,1.74422480813e-115,is not only the mother of
+57,1.10007360288e-116,is the mother of
+57,5.29862536892e-117,becomes pregnant with
+57,3.95668376949e-117,will be the mother of
+57,3.68456557683e-117,has been the mother of
+57,3.60234014686e-117,was definitely the mother of
+57,3.19908695052e-117,became mother of
+57,3.1496367048e-117,would give birth to
+57,3.13570533769e-117,may have given birth to
+57,2.94368076051e-117,gave birth of
+57,1.91549969324e-117,became the father of
+58,6.54393690298e-119,is indeed the mother of
+58,5.42736175889e-119,is often the mother of
+58,5.35980486816e-119,is the master of
+58,5.21936125932e-119,really is the mother of
+58,4.26763982922e-119,is the parent of
+58,3.99307959265e-119,is truly the mother of
+58,3.98769049608e-119,is the labor of
+58,3.30610717899e-119,is often an important component of
+58,3.23806403835e-119,is his key to
+58,3.23806403835e-119,promotes the retention of
+59,2.14244336132e-120,may be the mother of
+59,1.67746644772e-120,is not the mother of
+59,1.47022102842e-120,can be the mother of
+59,8.21255892998e-121,has been called the mother of
+59,8.21193334312e-121,becomes the key to
+59,7.60078294471e-121,does not drive
+59,7.04843679891e-121,became the parent of
+59,7.04843679891e-121,must be the mother of
+59,6.93562137166e-121,brings forth
+59,6.31340685447e-121,is the seed of
+60,6.74543774381e-123,is the ally of
+60,5.65568758212e-123,is the daughter of
+60,4.89958467628e-123,is a testimony of
+60,4.81745866471e-123,becomes the measure of
+60,4.79915493648e-123,is only one dimension of
+60,4.59241832137e-123,is the herald of
+60,4.23699026298e-123,is father of
+60,4.14497818607e-123,is the father of
+60,3.94868770065e-123,is not mother of
+60,3.8456720582e-123,is the baby of
+61,3.05770753037e-125,was a daughter of
+61,2.537395992e-125,was born of
+61,2.51917758408e-125,was daughter of
+61,2.42915669074e-125,stands the test of
+61,2.30258127768e-125,will stand the tests of
+61,2.09465384455e-125,chronicles the story of
+61,1.94830420057e-125,was the beloved daughter of
+61,1.89696404906e-125,is daughter of
+61,1.77471771941e-125,does not change over
+61,1.77337051503e-125,will always stand the test of
+62,3.68321312098e-127,was born to
+62,3.04312894544e-127,was the daughter of
+62,2.9543881336e-127,would be born of
+62,2.86368701759e-127,was not born of
+62,2.42318167564e-127,was conceived of
+62,1.18239293843e-127,appear first to
+62,1.06104866842e-127,is the second daughter of
+62,9.99362228518e-128,was the seed of
+62,9.97860930528e-128,eventually met
+62,9.97043869842e-128,had sexual relations with
+63,1.63980921751e-129,was the only child born to
+63,1.60733301698e-129,will be born of
+63,1.52096495908e-129,is the first daughter of
+63,1.38276969871e-129,was the son of
+63,1.13093824691e-129,was the first born of
+63,1.11563160339e-129,was daughter to
+63,1.09699844472e-129,was the only daughter of
+63,1.08705344316e-129,would be born to
+63,1.07999998796e-129,was conceived through
+63,1.07515682086e-129,was also the daughter of
+64,1.18106367094e-131,is son of
+64,1.01327059663e-131,was son of
+64,8.56361440728e-132,was a son of
+64,6.53485274445e-132,was another son of
+64,4.65589492392e-132,is a messenger from
+64,4.62245966137e-132,is said to be the son of
+64,4.60669872146e-132,was also a descendant of
+64,4.46656978702e-132,is indeed the son of
+64,4.46656978702e-132,is still angry at
+64,4.34612372707e-132,took the baby to
+65,6.12004093894e-134,was the eldest son of
+65,4.09377532965e-134,did lie to
+65,3.66822778998e-134,was the son-in-law of
+65,3.61949701095e-134,held his own against
+65,3.61275295786e-134,was the youngest son of
+65,3.53227470674e-134,was the first son of
+65,2.96853577638e-134,adopted the name of
+65,2.74182903342e-134,was called the son of
+65,2.63922274642e-134,is not the son of
+65,2.19614119338e-134,says to
+66,3.45125427959e-136,was the Son of
+66,2.92024388267e-136,was a descendant of
+66,2.76775811327e-136,was very dear to
+66,2.76438468827e-136,was the firstborn son of
+66,2.71261273786e-136,was a real son of
+66,2.6310602245e-136,attended the funeral of
+66,2.60629067364e-136,was a Son of
+66,2.59204006371e-136,was the illegitimate son of
+66,2.54608674662e-136,is called son of
+66,2.51482669876e-136,is the firstborn son of
+67,2.45415394526e-138,is born to
+67,2.35101755356e-138,is often called the Son of
+67,2.27594883697e-138,was not the son of
+67,2.25465994178e-138,has the key of
+67,2.09759304921e-138,appears first to
+67,2.01673611808e-138,is also the son of
+67,2.00420680014e-138,is the offspring of
+67,1.88855410188e-138,is called the son of
+67,1.79372008821e-138,appeared to
+67,1.64341295042e-138,looked like
+68,1.81976785522e-140,first appeared to
+68,1.68158938162e-140,is the third son of
+68,1.53732760317e-140,declares to
+68,1.48944208689e-140,was the only son of
+68,1.41694330855e-140,has been born to
+68,1.38437366218e-140,appears to
+68,1.2355638854e-140,was married to
+68,1.15604805304e-140,was the third child of
+68,8.30515649508e-141,was also born to
+68,8.29503689254e-141,had an intimate relationship with
+69,1.62122283666e-142,was saying to
+69,1.60020314966e-142,said to
+69,1.4482337263e-142,had said to
+69,1.23612102675e-142,was the image of
+69,1.09870742964e-142,changed his name to
+69,1.07390136914e-142,commanded
+69,1.01245900017e-142,is still the God of
+69,9.33910589519e-143,does not say to
+69,9.32778533575e-143,had a purpose for
+69,9.27609296804e-143,keeps His promises to
+70,5.96258065705e-144,spoke to
+70,4.43093098945e-144,made a covenant with
+70,4.25670646371e-144,declared to
+70,3.44530314962e-144,spoke directly to
+70,3.41311745291e-144,said unto
+70,3.05781874015e-144,was testing
+70,2.85087472738e-144,changes his name to
+70,2.82820765601e-144,made a promise to
+70,2.76245288289e-144,also said to
+70,2.69278107146e-144,promised to
+71,6.71029831075e-146,again appears to
+71,5.55304584809e-146,appeared unto
+71,5.47022681654e-146,did appear to
+71,5.23891075606e-146,replied to
+71,4.91882375502e-146,makes a promise to
+71,4.91663520779e-146,again speaks to
+71,4.88400034168e-146,then speaks to
+71,4.79223062487e-146,spoke again to
+71,4.6939932662e-146,had spoken to
+71,4.62834198728e-146,was faithful to
+72,2.70294441618e-148,was seen of
+72,2.68963258689e-148,appears again to
+72,2.52087949168e-148,was purchased of
+72,2.22869226316e-148,was tamed by
+72,2.09163552614e-148,was captured by
+72,1.99505243818e-148,spoke with
+72,1.99401810526e-148,had a plan for
+72,1.88027088178e-148,had revealed to
+72,1.87548682608e-148,was with
+72,1.86879489176e-148,sent an angel to
+73,2.5284772839e-150,worked through
+73,2.05283950426e-150,is the God of
+73,2.01906847022e-150,gave this to
+73,2.0177234776e-150,speaks to
+73,1.77102469709e-150,then speaks directly to
+73,1.64373787466e-150,loved
+73,1.4709000592e-150,was good of
+73,1.46946711637e-150,had mercy on
+73,1.46688862421e-150,was watching over
+73,1.46688862421e-150,will have mercy on
+74,1.35999871781e-152,is a God of
+74,1.12210197901e-152,was the fulfillment of
+74,9.56678690834e-153,fulfills
+74,9.45534074818e-153,falls for
+74,8.97730531508e-153,always works through
+74,8.38528264623e-153,is also the God of
+74,8.35190550698e-153,has devised
+74,8.17091012204e-153,is the Father of
+74,8.15209126077e-153,usually works through
+74,8.04095488804e-153,can think only of
+75,1.69409380862e-154,is perfect in
+75,1.53015345049e-154,is the source of
+75,1.37803657655e-154,is also a God of
+75,1.33805070917e-154,is still a God of
+75,1.31627577931e-154,is the embodiment of
+75,1.22009701374e-154,IS about
+75,1.15463814251e-154,is the Author of
+75,1.11624081112e-154,is the Only Source of
+75,9.73837626207e-155,is calling his people to
+75,9.6046669006e-155,will give
+76,1.49856100355e-156,is the Giver of
+76,1.47318424253e-156,is the tree of
+76,1.43694814334e-156,is poor in
+76,1.31193056579e-156,is an ocean of
+76,1.22820714001e-156,is the subject of
+76,1.22700479561e-156,is the fountain of
+76,1.14383986161e-156,did n't write
+76,1.14317572954e-156,is infinite in
+76,1.04303836569e-156,is the author of
+76,1.04112520576e-156,is the true author of
+77,1.69889848733e-158,is not only a God of
+77,1.39960280992e-158,is the ultimate source of
+77,1.26873478518e-158,is called the God of
+77,1.22441323513e-158,is the fullness of
+77,1.17385929431e-158,alone is
+77,1.04980461977e-158,is the owner of
+77,1.02629259202e-158,is the Source of
+77,1.01883373792e-158,is the Principle of
+77,1.01238217134e-158,alone is the Lord of
+77,1.01238217134e-158,is my fountain of
+78,6.73811730198e-161,is called the body of
+78,5.80370864978e-161,wants everyone to go to
+78,5.71845405819e-161,is the fundamental source of
+78,5.63115613879e-161,is the addition of
+78,5.62964249525e-161,is the original source of
+78,5.47763411634e-161,is now the primary source of
+78,5.30848855924e-161,looked down from
+78,5.09671841907e-161,is not only in
+78,4.87603579736e-161,is the kingdom of
+78,4.69731948909e-161,dwells in
+79,2.23251927508e-163,is kingdom of
+79,2.13358315032e-163,lives in
+79,2.02545637352e-163,does n't stop with
+79,1.95975143498e-163,is enough for
+79,1.89184259845e-163,was crucified in
+79,1.78142696625e-163,will outlive
+79,1.77236383982e-163,lives inside
+79,1.77236383982e-163,will rule for
+79,1.76836423434e-163,did from
+79,1.76836423434e-163,is dealing in
+80,1.23948734315e-165,wept over
+80,1.16142699194e-165,met the women of
+80,1.09332964785e-165,went up to
+80,1.01652715666e-165,stayed behind in
+80,1.00485562271e-165,went to
+80,9.32491018822e-166,was the first bishop of
+80,9.16132375187e-166,cried over
+80,8.81659072476e-166,entered the city of
+80,8.29826486686e-166,sets out for
+80,7.88728498269e-166,was the Bishop of
+81,1.04164448577e-167,comes to
+81,7.0071279801e-168,was crucified at
+81,6.98682170765e-168,said this of
+81,6.8204633467e-168,will have returned to
+81,6.70211335372e-168,prophesied in
+81,6.66878080179e-168,loved all of
+81,6.39181619685e-168,then went into
+81,6.33352222709e-168,was in
+81,6.32736272993e-168,came back to
+81,6.25397562012e-168,witnessed the fall of
+82,4.87741226524e-170,would come to
+82,4.3357535528e-170,was brought to
+82,4.15851918196e-170,will come to
+82,3.63539861766e-170,was pretty much at
+82,3.48183339805e-170,has come to
+82,3.35108896443e-170,Comes Back to
+82,3.05536971108e-170,will never come to
+82,3.04374087413e-170,was grinding to
+82,3.04100481779e-170,is going to come to
+82,3.01396589122e-170,was often at
+83,8.66257985205e-172,is coming to
+83,6.20317936628e-172,came to
+83,6.12295933327e-172,is drawing to
+83,5.26098574719e-172,has now come to
+83,4.87147593019e-172,draws to
+83,4.84962726874e-172,is rapidly coming to
+83,4.60749083183e-172,is quickly coming to
+83,4.51608643512e-172,may come to
+83,4.4912870985e-172,is possible in
+83,4.13780983127e-172,has drawn to
+84,3.32650775355e-173,may be coming to
+84,3.1916887336e-173,is quickly drawing to
+84,2.51988964734e-173,has finally come to
+84,2.08738852751e-173,is almost at
+84,2.05642759914e-173,is soon coming to
+84,2.05375340571e-173,is fast coming to
+84,2.03592131678e-173,is finally coming to
+84,2.01234929544e-173,might be coming to
+84,1.98017052512e-173,is slowly coming to
+84,1.86571425784e-173,is winding to
+85,3.2864221346e-175,just came to
+85,2.38582759962e-175,is about to come to
+85,2.38582759962e-175,is rapidly drawing to
+85,1.9263741759e-175,may have come to
+85,1.65422378877e-175,is finally drawing to
+85,1.62101722805e-175,will soon be coming to
+85,1.61345506011e-175,is gradually coming to
+85,1.61200917585e-175,will soon come to
+85,1.57939716736e-175,has indeed come to
+85,1.49806233709e-175,really is coming to
+86,2.2441463054e-177,was coming to
+86,1.39974882452e-177,were coming to
+86,1.3453099867e-177,soon came to
+86,1.2700566192e-177,really came to
+86,1.14521004928e-177,are starting to come to
+86,1.10875616759e-177,screeched to
+86,1.01966436134e-177,are quickly coming to
+86,9.88432884494e-178,is grinding to
+86,9.82920025493e-178,grinds to
+86,8.92712097359e-178,eventually come to
+87,1.284568739e-179,had finally come to
+87,1.262219853e-179,is comming to
+87,1.14236783057e-179,has truly come to
+87,9.07828191145e-180,is still coming to
+87,8.86210204089e-180,is heading out of
+87,8.70679946419e-180,soon come to
+87,8.16459010612e-180,did come to
+87,7.38540158299e-180,is almost coming to
+87,7.25749423145e-180,will be coming to
+87,6.68502199405e-180,is already coming to
+88,8.96122890404e-182,is Comin' to
+88,8.17192204361e-182,was nearing
+88,7.04365423814e-182,is Comin to
+88,6.65696427461e-182,is Back in
+88,4.81998557462e-182,Came to
+88,4.13349208466e-182,was just coming to
+88,4.05846066363e-182,does n't last long in
+88,3.90024770274e-182,had come to
+88,3.72874176291e-182,was drawing to
+88,3.65619928787e-182,came for
+89,5.05784566433e-184,Is Back In
+89,2.46050192618e-184,is descending into
+89,1.73877886289e-184,pulls back from
+89,1.70957390094e-184,is sliding into
+89,1.6928842952e-184,is falling into
+89,1.68878733046e-184,is heading toward
+89,1.65942263164e-184,has been plunged into
+89,1.63418666726e-184,is already in
+89,1.62338691536e-184,slides into
+89,1.61038138015e-184,descends into
+90,1.63233995622e-186,is still a country in
+90,1.13176557989e-186,had turned to
+90,1.03259027158e-186,is a country in
+90,9.70868575908e-187,Is Coming to
+90,9.69758378999e-187,had faded to
+90,9.66148108489e-187,often performed in
+90,9.46350574733e-187,bled into
+90,9.32405324906e-187,was turning into
+90,9.25452487127e-187,is soon followed by
+90,9.25452487127e-187,was quickly turning into
+91,8.69645952943e-189,is a country located in
+91,8.19862000536e-189,is in
+91,7.82419205893e-189,is situated in
+91,5.71742397684e-189,is a landlocked country in
+91,5.06184283715e-189,is located in
+91,3.47992003172e-189,is the leading state in
+91,3.44243556256e-189,is a large country in
+91,3.43348634602e-189,is a land-locked country located in
+91,3.3438054512e-189,is a land in
+91,3.3383337649e-189,is a republic in
