@@ -131,45 +131,45 @@ def pmi(db, matrix, i, p):
     except Exception as e:
         return 0.0
 
-def _r_i(db, matrix, i):
+def _r_i(db, matrix, rel, i):
     '''retrieves r_i for past iteration'''
     try:
-        _esp_i = '%s_esp_i' % matrix
+        _esp_i = '%s_%s_esp_i' % (matrix, rel)
         r = db[_esp_i].find_one(make_query(i=i,p=None), fields=['r_i'])
         #print >>sys.stderr, 'r_i:', r
         return r['r_i']
     except Exception as e:
         return 0.0
         
-def _r_p(db, matrix, p):
+def _r_p(db, matrix, rel, p):
     '''retrieves r_p for past iteration'''
     try:
-        esp_p = '%s_esp_p' % matrix
+        esp_p = '%s_%s_esp_p' % (matrix, rel)
         r = db[esp_p].find_one(make_query(i=None,p=p), fields=['r_p'])
         #print >>sys.stderr, 'r_p:', r
         return r.get('r_p',0.0)
     except Exception as e:
         return 0.0
     
-def r_p(db, matrix, I, p, _max_pmi):
+def r_p(db, matrix, rel, I, p, _max_pmi):
     '''r_p: reliability of pattern p'''
     print >>sys.stderr, 'r_p(%s, %s, %s):' % (p, I, _max_pmi) 
-    r = sum( [pmi(db,matrix,i,p)*_r_i(db,matrix,i)/_max_pmi
+    r = sum( [pmi(db,matrix,i,p)*_r_i(db,matrix,rel,i)/_max_pmi
               for i in I] ) / len(I)
     print >>sys.stderr, 'r_p:', p, r
     return r
 
-def r_i(db, matrix, i, P, _max_pmi):
+def r_i(db, matrix, rel, i, P, _max_pmi):
     '''r_i: reliability of instance i'''
-    r = sum( [pmi(db,matrix,i,p)*_r_p(db,matrix,p)/_max_pmi
+    r = sum( [pmi(db,matrix,i,p)*_r_p(db,matrix,rel,p)/_max_pmi
               for p in P] ) / len(P)
     print >>sys.stderr, 'r_i:', i, r
     return r
 
-def S(i, P):
+def S(db, matrix, rel, i, P):
     '''confidence in an instance'''
     T = sum ( [ _r_p(db,matrix,p) for p in P ] )
-    sum ( [ pmi(db,matrix,i,p) * _r_p(db,matrix,p) / T
+    sum ( [ pmi(db,matrix,i,p) * _r_p(db,matrix,rel,p) / T
             for p in P ] )
 
 def get_args(db, matrix):
@@ -179,27 +179,27 @@ def get_args(db, matrix):
                    for k in x.keys()
                    if k.startswith('arg')])
 
-def get_I(db, matrix, it, query={}):
+def get_I(db, matrix, rel, it, query={}):
     '''retrieves instances that match query from iteration it'''
     query['it'] = it
-    esp_i = '%s_esp_i' % matrix
+    esp_i = '%s_%s_esp_i' % (matrix, rel)
     args = get_args(db, matrix)
     return [[v
              for k,v in sorted(r.items()) 
              if k.startswith('arg')]
              for r in mongodb.fast_find(db, esp_i, query, fields=args) ]
 
-def get_P(db, matrix, it, query={}):
+def get_P(db, matrix, rel, it, query={}):
     '''retrieves patterns that match query from iteration it'''
     query['it'] = it
-    esp_p = '%s_esp_p' % matrix
+    esp_p = '%s_%s_esp_p' % (matrix, rel)
     return [r['rel'] 
             for r in mongodb.fast_find(db, esp_p, query, fields=['rel']) ]
 
-def I2P(db, matrix, I):
+def I2P(db, matrix, rel, I):
     '''retrieve patterns that match promoted instances in I and have not been
     retrieved in past iteration'''
-    esp_p = '%s_esp_p' % matrix
+    esp_p = '%s_%s_esp_p' % (matrix, rel)
     P = [r['rel']
          for i in I
          for r in mongodb.fast_find(
@@ -210,10 +210,10 @@ def I2P(db, matrix, I):
     print >>sys.stderr, 'P: %d => %d' % (len(P), len(P_))
     return P_
 
-def P2I(db, matrix, P):
+def P2I(db, matrix, rel, P):
     '''retrieve instances that match promoted patterns in P and have not been
     retrieved in past iteration'''
-    esp_i = '%s_esp_i' % matrix
+    esp_i = '%s_%s_esp_i' % (matrix, rel)
     args = get_args(db, matrix)
     I = [tuple( [v
                  for k,v in sorted(r.items())
@@ -230,21 +230,21 @@ def P2I(db, matrix, P):
     print >>sys.stderr, 'I: %d => %d' % (len(I), len(I_))
     return I_
 
-def rank_patterns(db, matrix, I, P, it, _max_pmi):
+def rank_patterns(db, matrix, rel, I, P, it, _max_pmi):
     '''return a list of patterns ranked by reliability score'''
-    rs = [{'rel':p, 'it':it, 'r_p':r_p(db,matrix,I,p,_max_pmi)} 
+    rs = [{'rel':p, 'it':it, 'r_p':r_p(db,matrix,rel,I,p,_max_pmi)} 
           for p in P]
     rs.sort(key=lambda r: r.get('r_p',0.0),reverse=True)
     return rs
 
-def rank_instances(db, matrix, I, P, it, _max_pmi):
+def rank_instances(db, matrix, rel, I, P, it, _max_pmi):
     '''return a list of instances ranked by reliability score'''
     rs = []
     for i in I:
         r = {'arg%d'%n:v
              for n,v in enumerate(i, 1)}
         r['it'] = it
-        r['r_i'] = r_i(db,matrix,i,P,_max_pmi)
+        r['r_i'] = r_i(db,matrix,rel,i,P,_max_pmi)
         rs.append(r)
     rs.sort(key=lambda r: r.get('r_i',0.0),reverse=True)
     return rs
@@ -254,18 +254,18 @@ def bootstrap_p(db, matrix, rel, it, _max_pmi, n=10):
     highest reliability score'''
     # read promoted instances of last bootstrpping iteration
     print >>sys.stderr, 'getting promoted instances...'''
-    I = get_I(db, matrix, it-1)
+    I = get_I(db, matrix, rel, it-1)
     print >>sys.stderr, 'I:', len(I)
     print >>sys.stderr, 'getting promoted instances: done.'''
 
     # find matching patterns
     print >>sys.stderr, 'getting matching patterns...'
-    P = I2P(db, matrix, I)
+    P = I2P(db, matrix, rel, I)
     print >>sys.stderr, 'getting matching patterns: done.'
 
     # rank patterns by reliability score
     print >>sys.stderr, 'ranking patterns by reliability score...'
-    rs = rank_patterns(db, matrix, I, P, it, _max_pmi)
+    rs = rank_patterns(db, matrix, rel, I, P, it, _max_pmi)
     print >>sys.stderr, 'ranking patterns by reliability score: done.'
 
     # save top n to <matrix>_esp_p
@@ -288,18 +288,18 @@ def bootstrap_i(db, matrix, rel, it, _max_pmi, n=10):
     highest reliability score'''
     # read promoted patterns of last bootstrpping iteration
     print >>sys.stderr, 'getting promoted patterns...'''
-    P = get_P(db, matrix, it)
+    P = get_P(db, matrix, rel, it)
     print >>sys.stderr, 'P:', len(P)
     print >>sys.stderr, 'getting promoted patterns: done.'''
 
     # find matching instances
     print >>sys.stderr, 'getting matching instances...'
-    I = P2I(db, matrix, P)
+    I = P2I(db, matrix, rel, P)
     print >>sys.stderr, 'getting matching instances: done.'
 
     # rank instances by reliability score
     print >>sys.stderr, 'ranking instances by reliability score...'
-    rs = rank_instances(db, matrix, I, P, it, _max_pmi)
+    rs = rank_instances(db, matrix, rel, I, P, it, _max_pmi)
     print >>sys.stderr, 'ranking instances by reliability score: done.'
 
     # save top n to <matrix>_esp_p
