@@ -61,11 +61,9 @@ ACL 2006.
 import fileinput
 import pymongo
 import sys
-from bson.code import Code
-from bson.son import SON
 
 import mongodb
-
+from matrix2pmi import PMI
 
 def has_run(db, coll, i=0):
     '''determines if db.coll has iteration it'''
@@ -86,91 +84,7 @@ def add_seeds(db, coll, seeds):
                for n,v in enumerate(args, 1)}
         doc['it'] = 0
         doc['r_i'] = 1.0
-        cache(db, coll, doc)
-
-def cache(db, coll, doc):
-    '''save doc to db.coll if it doesn't already exist'''
-    if not db[coll].find_one(doc):
-        db[coll].save(doc)
-
-def i2query(i):
-    '''returns a tuple of argument values labeled (arg1,<value>),
-    (arg2,<value>), ..., (argn,<value>) '''
-    return zip(['arg%d'%n for n in xrange(1,len(i)+1)], i)
-
-def make_query(i=None, p=None):
-    '''generates a mongodb query from i and p, placing p before i to match 
-    index order'''
-    #q = SON()
-    q = {}
-    if p:
-        q['rel'] = p
-    if i:
-        for k,v in i2query(i):
-            q[k] = v
-    #print >>sys.stderr, 'make_query:', i, p, q
-    return q
-
-def max_pmi(db, matrix):
-    '''finds maximum pmi value in matrix'''
-    max_pmi_ip = '%s_max_pmi_ip' % matrix
-    r = db[max_pmi_ip].find_one()
-    print >>sys.stderr, 'max_pmi():', r
-    return r['value']
-
-def pmi(db, matrix, i, p):
-    '''retrieves pmi value for (i,p) from matrix'''
-    try:
-        _pmi_ip = '%s_pmi_ip' % matrix
-        #r = db[_pmi_ip].find_one(make_query(i,p), fields=['dpmi'])
-        q = make_query(i,p)
-        #print >>sys.stderr, 'q:', q
-        r = db[_pmi_ip].find_one(q)
-        #print >>sys.stderr, 'pmi:', q, r
-        return r['dpmi']
-    except Exception as e:
-        return 0.0
-
-def _r_i(db, matrix, rel, i):
-    '''retrieves r_i for past iteration'''
-    try:
-        _esp_i = '%s_%s_esp_i' % (matrix, rel)
-        r = db[_esp_i].find_one(make_query(i=i,p=None), fields=['r_i'])
-        #print >>sys.stderr, 'r_i:', r
-        return r['r_i']
-    except Exception as e:
-        return 0.0
-        
-def _r_p(db, matrix, rel, p):
-    '''retrieves r_p for past iteration'''
-    try:
-        esp_p = '%s_%s_esp_p' % (matrix, rel)
-        r = db[esp_p].find_one(make_query(i=None,p=p), fields=['r_p'])
-        #print >>sys.stderr, 'r_p:', r
-        return r.get('r_p',0.0)
-    except Exception as e:
-        return 0.0
-    
-def r_p(db, matrix, rel, I, p, _max_pmi):
-    '''r_p: reliability of pattern p'''
-    print >>sys.stderr, 'r_p(%s, %s, %s):' % (p, I, _max_pmi) 
-    r = sum( [pmi(db,matrix,i,p)*_r_i(db,matrix,rel,i)/_max_pmi
-              for i in I] ) / len(I)
-    print >>sys.stderr, 'r_p:', p, r
-    return r
-
-def r_i(db, matrix, rel, i, P, _max_pmi):
-    '''r_i: reliability of instance i'''
-    r = sum( [pmi(db,matrix,i,p)*_r_p(db,matrix,rel,p)/_max_pmi
-              for p in P] ) / len(P)
-    print >>sys.stderr, 'r_i:', i, r
-    return r
-
-def S(db, matrix, rel, i, P):
-    '''confidence in an instance'''
-    T = sum ( [ _r_p(db,matrix,p) for p in P ] )
-    sum ( [ pmi(db,matrix,i,p) * _r_p(db,matrix,rel,p) / T
-            for p in P ] )
+        mongodb.cache(db, coll, doc)
 
 def get_args(db, matrix):
     '''returns a lists of argument names in <matrix>'''
@@ -179,156 +93,205 @@ def get_args(db, matrix):
                    for k in x.keys()
                    if k.startswith('arg')])
 
-def get_I(db, matrix, rel, it, query={}):
-    '''retrieves instances that match query from iteration it'''
-    query['it'] = it
-    esp_i = '%s_%s_esp_i' % (matrix, rel)
-    args = get_args(db, matrix)
-    return [[v
-             for k,v in sorted(r.items()) 
-             if k.startswith('arg')]
-             for r in mongodb.fast_find(db, esp_i, query, fields=args) ]
 
-def get_P(db, matrix, rel, it, query={}):
-    '''retrieves patterns that match query from iteration it'''
-    query['it'] = it
-    esp_p = '%s_%s_esp_p' % (matrix, rel)
-    return [r['rel'] 
-            for r in mongodb.fast_find(db, esp_p, query, fields=['rel']) ]
+class Espresso:
+    def __init__(self, db, matrix, rel, n):
+        self.db = db
+        self.matrix = matrix
+        self.rel = rel
+        self.n = n
+        self.args = get_args(self.db, self.matrix)
+        self.pmi = PMI(self.db, self.matrix)
+        self.max_pmi = self.pmi.max_pmi()
+        self.esp_i = '%s_%s_esp_i' % (self.matrix, self.rel)
+        self.esp_p = '%s_%s_esp_p' % (self.matrix, self.rel)
 
-def I2P(db, matrix, rel, I):
-    '''retrieve patterns that match promoted instances in I and have not been
-    retrieved in past iteration'''
-    esp_p = '%s_%s_esp_p' % (matrix, rel)
-    P = [r['rel']
-         for i in I
-         for r in mongodb.fast_find(
-            db, matrix, make_query(i=i,p=None), fields=['rel']
-            )
-         if not db[esp_p].find_one({'rel':r['rel']}) ]
-    P_ = sorted(set(P))
-    print >>sys.stderr, 'P: %d => %d' % (len(P), len(P_))
-    return P_
+    def get_I(self, it, query={}):
+        '''retrieves instances that match query from iteration it'''
+        query['it'] = it
+        return [[v
+                 for k,v in sorted(r.items()) 
+                 if k.startswith('arg')]
+                for r in mongodb.fast_find(
+                self.db, self.esp_i, query, fields=self.args
+                ) ]
 
-def P2I(db, matrix, rel, P):
-    '''retrieve instances that match promoted patterns in P and have not been
-    retrieved in past iteration'''
-    esp_i = '%s_%s_esp_i' % (matrix, rel)
-    args = get_args(db, matrix)
-    I = [tuple( [v
+    def get_P(self, it, query={}):
+        '''retrieves patterns that match query from iteration it'''
+        query['it'] = it
+        return [r['rel'] 
+                for r in mongodb.fast_find(
+                self.db, self.esp_p, query, fields=['rel']
+                ) ]
+
+    def I2P(self, I):
+        '''retrieve patterns that match promoted instances in I and have not been
+        retrieved in past iteration'''
+        P = [r['rel']
+             for i in I
+             for r in mongodb.fast_find(
+                self.db, self.matrix, mongodb.make_query(i=i,p=None), fields=['rel']
+                )
+             if not self.db[self.esp_p].find_one({'rel':r['rel']}) ]
+        P_ = sorted(set(P))
+        print >>sys.stderr, 'P: %d => %d' % (len(P), len(P_))
+        return P_
+
+    def P2I(self, P):
+        '''retrieve instances that match promoted patterns in P and have not been
+        retrieved in past iteration'''
+        I = [tuple( [v
+                     for k,v in sorted(r.items())
+                     if k.startswith('arg')] )
+             for p in P
+             for r in mongodb.fast_find(
+                self.db, self.matrix, mongodb.make_query(i=None,p=p), fields=self.args
+                )
+             if not self.db[self.esp_i].find_one(
+                {k:v 
                  for k,v in sorted(r.items())
-                 if k.startswith('arg')] )
-         for p in P
-         for r in mongodb.fast_find(
-            db, matrix, make_query(i=None,p=p), fields=args
+                 if k.startswith('arg')} ) ]
+        I_ = sorted(set(I))
+        print >>sys.stderr, 'I: %d => %d' % (len(I), len(I_))
+        return I_
+
+    def bootstrap_p(self, it):
+        '''perform an iteration of bootstrapping saving n patterns with the 
+        highest reliability score'''
+        # read promoted instances of last bootstrpping iteration
+        print >>sys.stderr, 'getting promoted instances...'''
+        I = self.get_I(it-1)
+        print >>sys.stderr, 'I:', len(I)
+        print >>sys.stderr, 'getting promoted instances: done.'''
+
+        # find matching patterns
+        print >>sys.stderr, 'getting matching patterns...'
+        P = self.I2P(I)
+        print >>sys.stderr, 'getting matching patterns: done.'
+
+        # rank patterns by reliability score
+        print >>sys.stderr, 'ranking patterns by reliability score...'
+        rs = self.rank_patterns(I, P, it)
+        print >>sys.stderr, 'ranking patterns by reliability score: done.'
+
+        # save top n to <matrix>_esp_p
+        print >>sys.stderr, 'saving top %d patterns...' % self.n
+        for r in rs[:self.n]:
+            print >>sys.stderr, 'r:', r
+            mongodb.cache(self.db, self.esp_p, r)
+        print >>sys.stderr, 'saving top %d patterns: done.' % self.n
+
+        print >>sys.stderr, 'ensuring indices ...'
+        # index for iteration number
+        self.db[self.esp_p].ensure_index( [('it', pymongo.DESCENDING), ] )
+        # index for <REL>
+        self.db[self.esp_p].ensure_index( [('rel', pymongo.ASCENDING), ] )
+        print >>sys.stderr, 'ensuring indices: done.'
+
+    def bootstrap_i(self, it):
+        '''perform an iteration of bootstrapping saving n instances with the 
+        highest reliability score'''
+        # read promoted patterns of last bootstrpping iteration
+        print >>sys.stderr, 'getting promoted patterns...'''
+        P = self.get_P(it)
+        print >>sys.stderr, 'P:', len(P)
+        print >>sys.stderr, 'getting promoted patterns: done.'''
+
+        # find matching instances
+        print >>sys.stderr, 'getting matching instances...'
+        I = self.P2I(P)
+        print >>sys.stderr, 'getting matching instances: done.'
+
+        # rank instances by reliability score
+        print >>sys.stderr, 'ranking instances by reliability score...'
+        rs = self.rank_instances(I, P, it)
+        print >>sys.stderr, 'ranking instances by reliability score: done.'
+
+        # save top n to <matrix>_esp_p
+        print >>sys.stderr, 'saving top %d instances...' % self.n
+        for r in rs[:self.n]:
+            print >>sys.stderr, 'r:', r
+            mongodb.cache(self.db, self.esp_i, r)
+        print >>sys.stderr, 'saving top %d instances: done.' % self.n
+
+        print >>sys.stderr, 'ensuring indices ...'
+        # index for iteration number
+        self.db[self.esp_i].ensure_index( [('it', pymongo.DESCENDING), ] )
+        # index for <ARGJ,...,ARGN>
+        self.db[self.esp_i].ensure_index(
+            [(arg, pymongo.ASCENDING)
+             for arg in self.args]
             )
-         if not db[esp_i].find_one(
-            {k:v 
-             for k,v in sorted(r.items())
-             if k.startswith('arg')} ) ]
-    I_ = sorted(set(I))
-    print >>sys.stderr, 'I: %d => %d' % (len(I), len(I_))
-    return I_
+        print >>sys.stderr, 'ensuring indices: done.'
 
-def rank_patterns(db, matrix, rel, I, P, it, _max_pmi):
-    '''return a list of patterns ranked by reliability score'''
-    rs = [{'rel':p, 'it':it, 'r_p':r_p(db,matrix,rel,I,p,_max_pmi)} 
-          for p in P]
-    rs.sort(key=lambda r: r.get('r_p',0.0),reverse=True)
-    return rs
+    def espresso(self, start, stop):
+        '''apply espresso bootstrapping algorithm for rel from iteration start to
+        stop'''
+        for it in xrange(start, stop):
+            print >>sys.stderr, 'pattern bootstrapping iter: %d' % it
+            self.bootstrap_p(it)
+            print >>sys.stderr, 'instance bootstrapping iter: %d' % it
+            self.bootstrap_i(it)
 
-def rank_instances(db, matrix, rel, I, P, it, _max_pmi):
-    '''return a list of instances ranked by reliability score'''
-    rs = []
-    for i in I:
-        r = {'arg%d'%n:v
-             for n,v in enumerate(i, 1)}
-        r['it'] = it
-        r['r_i'] = r_i(db,matrix,rel,i,P,_max_pmi)
-        rs.append(r)
-    rs.sort(key=lambda r: r.get('r_i',0.0),reverse=True)
-    return rs
+    def _r_i(self, i):
+        '''retrieves r_i for past iteration'''
+        try:
+            query = mongodb.make_query(i=i,p=None)
+            r = self.db[self.esp_i].find_one(query, fields=['r_i'])
+            #print >>sys.stderr, 'r_i:', r
+            return r.get('r_i',0.0)
+        except Exception as e:
+            return 0.0
+        
+    def _r_p(self, p):
+        '''retrieves r_p for past iteration'''
+        try:
+            query = mongodb.make_query(i=None,p=p)
+            r = self.db[self.esp_p].find_one(query, fields=['r_p'])
+                #print >>sys.stderr, 'r_p:', r
+            return r.get('r_p',0.0)
+        except Exception as e:
+            return 0.0
 
-def bootstrap_p(db, matrix, rel, it, _max_pmi, n=10):
-    '''perform an iteration of bootstrapping saving n patterns with the 
-    highest reliability score'''
-    # read promoted instances of last bootstrpping iteration
-    print >>sys.stderr, 'getting promoted instances...'''
-    I = get_I(db, matrix, rel, it-1)
-    print >>sys.stderr, 'I:', len(I)
-    print >>sys.stderr, 'getting promoted instances: done.'''
+    def r_i(self, i, P):
+        '''r_i: reliability of instance i'''
+        r = sum( [self.pmi.pmi(i,p)*self._r_p(p) / self.max_pmi 
+                  for p in P] ) / len(P)
+        print >>sys.stderr, 'r_i:', i, r
+        return r
 
-    # find matching patterns
-    print >>sys.stderr, 'getting matching patterns...'
-    P = I2P(db, matrix, rel, I)
-    print >>sys.stderr, 'getting matching patterns: done.'
+    def r_p(self, I, p):
+        '''r_p: reliability of pattern p'''
+        r = sum( [self.pmi.pmi(i,p)*self._r_i(i) / self.max_pmi 
+                  for i in I] ) / len(I)
+        print >>sys.stderr, 'r_p:', p, r
+        return r
 
-    # rank patterns by reliability score
-    print >>sys.stderr, 'ranking patterns by reliability score...'
-    rs = rank_patterns(db, matrix, rel, I, P, it, _max_pmi)
-    print >>sys.stderr, 'ranking patterns by reliability score: done.'
+    def S(self, i, P):
+        '''confidence in an instance'''
+        T = sum ( [ self._r_p(p) for p in P ] )
+        sum ( [ pmi(i,p)*self._r_p(p)/T for p in P ] )
 
-    # save top n to <matrix>_esp_p
-    print >>sys.stderr, 'saving top %d patterns...' % n
-    esp_p = '%s_%s_esp_p' % (matrix, rel)
-    for r in rs[:n]:
-        print >>sys.stderr, 'r:', r
-        cache(db, esp_p, r)
-    print >>sys.stderr, 'saving top %d patterns: done.' % n
+    def rank_patterns(self, I, P, it):
+        '''return a list of patterns ranked by reliability score'''
+        rs = [{'rel':p, 'it':it, 'r_p':self.r_p(I,p)} 
+              for p in P]
+        rs.sort(key=lambda r: r.get('r_p',0.0),reverse=True)
+        return rs
 
-    print >>sys.stderr, 'ensuring indices ...'
-    # index for iteration number
-    db[esp_p].ensure_index( [('it', pymongo.DESCENDING), ] )
-    # index for <REL>
-    db[esp_p].ensure_index( [('rel', pymongo.ASCENDING), ] )
-    print >>sys.stderr, 'ensuring indices: done.'
+    def rank_instances(self, I, P, it):
+        '''return a list of instances ranked by reliability score'''
+        rs = []
+        for i in I:
+            r = {'arg%d'%n:v
+                 for n,v in enumerate(i, 1)}
+            r['it'] = it
+            r['r_i'] = self.r_i(i,P)
+            rs.append(r)
+        rs.sort(key=lambda r: r.get('r_i',0.0),reverse=True)
+        return rs
 
-def bootstrap_i(db, matrix, rel, it, _max_pmi, n=10):
-    '''perform an iteration of bootstrapping saving n instances with the 
-    highest reliability score'''
-    # read promoted patterns of last bootstrpping iteration
-    print >>sys.stderr, 'getting promoted patterns...'''
-    P = get_P(db, matrix, rel, it)
-    print >>sys.stderr, 'P:', len(P)
-    print >>sys.stderr, 'getting promoted patterns: done.'''
 
-    # find matching instances
-    print >>sys.stderr, 'getting matching instances...'
-    I = P2I(db, matrix, rel, P)
-    print >>sys.stderr, 'getting matching instances: done.'
-
-    # rank instances by reliability score
-    print >>sys.stderr, 'ranking instances by reliability score...'
-    rs = rank_instances(db, matrix, rel, I, P, it, _max_pmi)
-    print >>sys.stderr, 'ranking instances by reliability score: done.'
-
-    # save top n to <matrix>_esp_p
-    print >>sys.stderr, 'saving top %d instances...' % n
-    esp_i = '%s_%s_esp_i' % (matrix, rel)
-    for r in rs[:n]:
-        print >>sys.stderr, 'r:', r
-        cache(db, esp_i, r)
-    print >>sys.stderr, 'saving top %d instances: done.' % n
-
-    print >>sys.stderr, 'ensuring indices ...'
-    # index for iteration number
-    db[esp_i].ensure_index( [('it', pymongo.DESCENDING), ] )
-    # index for <ARGJ,...,ARGN>
-    db[esp_i].ensure_index(
-        [(arg, pymongo.ASCENDING)
-        for arg in get_args(db, esp_i)]
-    )
-    print >>sys.stderr, 'ensuring indices: done.'
-
-def espresso(db, matrix, rel, start, stop):
-    '''apply espresso bootstrapping algorithm for rel from iteration start to
-    stop'''
-    _max_pmi = max_pmi(db, matrix)
-    for it in xrange(start, stop):
-        print >>sys.stderr, 'pattern bootstrapping iter: %d' % it
-        bootstrap_p(db, matrix, rel, it, _max_pmi)
-        print >>sys.stderr, 'instance bootstrapping iter: %d' % it
-        bootstrap_i(db, matrix, rel, it, _max_pmi)
 
 def main():
     from optparse import OptionParser
@@ -354,7 +317,8 @@ def main():
     esp_i = '%s_%s_esp_i' % (matrix, rel)
     if not has_seeds(db, esp_i):
         add_seeds(db, esp_i, seeds)
-    espresso(db, matrix, rel, options.start, options.stop)
+    e = Espresso(db, matrix, rel, 10)
+    e.espresso(options.start, options.stop)
 
 if __name__ == '__main__':
     main()

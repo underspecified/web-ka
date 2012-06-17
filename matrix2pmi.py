@@ -216,6 +216,17 @@ class PMI:
             [('dpmi', pymongo.DESCENDING), ]
             )
 
+    def pmi(self, i, p):
+        '''retrieves pmi value for (i,p) from matrix'''
+        try:
+            q = mongodb.make_query(i,p)
+            #print >>sys.stderr, 'q:', q
+            r = self.db[self._pmi_ip].find_one(q)
+            #print >>sys.stderr, 'pmi:', q, r
+            return r['dpmi']
+        except Exception as e:
+            return 0.0
+
     def make_max_pmi_ip(self):
         '''caches the maximum value for dpmi in <matrix>_pmi_ip to 
         <matrix>_max_pmi_ip'''
@@ -238,20 +249,11 @@ class PMI:
             )
         print >>sys.stderr, 'calculating max PMI: done.'
 
-    def i2query(self, i):
-        '''returns a tuple of argument values labeled (arg1,<value>),
-        (arg2,<value>), ..., (argn,<value>) '''
-        return zip(self.argv, i)
-
-    def make_query(self, i=None, p=None):
-        #print >>sys.stderr, 'make_query:', i, p
-        q = SON()
-        if p:
-            q['rel'] = p
-        if i:
-            for k,v in self.i2query(i):
-                q[k] = v
-        return SON({'_id':q})
+    def max_pmi(self):
+        '''finds maximum pmi value in matrix'''
+        r = self.db[self._max_pmi_ip].find_one()
+        print >>sys.stderr, 'max_pmi():', r
+        return r['value']
 
     def get_F_all(self):
         '''gets sum of scores for all (rel,args) tuples in <matrix>'''
@@ -270,7 +272,7 @@ class PMI:
         '''calculate the frequency (i.e. the sum of scores) of an argument 
         instance'''
         try:
-            query = self.make_query(i)
+            query = mongodb.make_query(i)
             #print >>sys.stderr, 'query:', query
             #print >>sys.stderr, self.db[self._F_i].find(query).explain()
             v = self.db[self._F_i].find_one(query, fields=['value'])
@@ -284,7 +286,7 @@ class PMI:
         '''calculate the frequency (i.e. the sum of scores) of a relation 
         pattern'''
         try:
-            query = self.make_query(p=p)
+            query = mongodb.make_query(i=None,p=p)
             #print >>sys.stderr, 'query:', query
             #print >>sys.stderr, self.db[self._F_p].find(query).explain()
             v = self.db[self._F_p].find_one(query, fields=['value'])
@@ -298,7 +300,7 @@ class PMI:
         '''calculate the co-occurence frequency (i.e. the sum of scores) of 
         instance*pattern'''        
         try:
-            query = self.make_query(i, p)
+            query = mongodb.make_query(i,p=None)
             #print >>sys.stderr, 'query:', query
             #print >>sys.stderr, self.db[self._F_ip].find(query).explain()
             v = self.db[self._F_ip].find_one(query, fields=['value'])
@@ -308,11 +310,11 @@ class PMI:
             print >>sys.stderr, e, i, p
             raise e
 
-    def pmi(self, i, p):
+    def calc_pmi(self, i, p):
         '''pmi: pointwise mutual information between instance and pattern'''
         return self._pmi(self.F_all, self.F_i(i), self.F_p(p), self.F_ip(i,p))
 
-    def _pmi(self, F_all, F_i, F_p, F_ip):
+    def _calc_pmi(self, F_all, F_i, F_p, F_ip):
         '''pmi: pointwise mutual information between instance and pattern'''
         P_i = F_i / F_all
         P_p = F_p / F_all
@@ -346,7 +348,7 @@ class PMI:
         F_i = self.F_i(i)
         F_p = self.F_p(p)
         F_ip = self.F_ip(i,p) 
-        pmi = self._pmi(self.F_all, F_i, F_p, F_ip)
+        pmi = self._calc_pmi(self.F_all, F_i, F_p, F_ip)
         discount = self._discount(c_ef=F_ip, c_ei=F_i, c_jf=F_p)
         dpmi = pmi*discount
         return dpmi, discount, pmi

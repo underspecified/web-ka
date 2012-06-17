@@ -6,8 +6,34 @@ import functools
 import math
 import pymongo
 import sys
+from bson.son import SON
 from itertools import islice
 from os.path import basename
+
+def cache(db, coll, doc):
+    '''save doc to db.coll if it doesn't exist, update if it does'''
+    if not db[coll].find_one(doc):
+        if '_id' in doc:
+            doc.pop('_id')
+    db[coll].save(doc)
+
+def i2query(i):
+    '''returns a tuple of argument values labeled (arg1,<value>),
+    (arg2,<value>), ..., (argn,<value>) '''
+    return zip(['arg%d'%n for n in xrange(1,len(i)+1)], i)
+
+def make_query(i=None, p=None):
+    '''generates a mongodb query from i and p, placing p before i to match 
+    index order'''
+    q = SON()
+    #q = {}
+    if p:
+        q['rel'] = p
+    if i:
+        for k,v in i2query(i):
+            q[k] = v
+    #print >>sys.stderr, 'make_query:', i, p, q
+    return q
 
 def memoize(db, collection):
     connection = pymongo.Connection('localhost', 1979)
