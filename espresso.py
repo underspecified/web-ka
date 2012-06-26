@@ -66,41 +66,27 @@ import mongodb
 from bootstrapper import Bootstrapper
 from matrix2pmi import PMI
 
-def has_run(db, coll, i=0):
-    '''determines if db.coll has iteration it'''
-    if db[coll].find_one({'it':i}):
-        return True
-    else:
-        return False
-
-def has_seeds(db, coll):
-    '''determines if db.coll has seed iteration'''
-    return has_run(db, coll, 0)
-
-def add_seeds(db, coll, seeds):
-    '''adds seeds to db.coll with reliability score of 1.0'''
-    for s in seeds:
-        args = s.split('\t')
-        doc = {'arg%d'%n:v
-               for n,v in enumerate(args, 1)}
-        doc['it'] = 0
-        doc['r_i'] = 1.0
-        mongodb.cache(db, coll, doc)
-
 
 class Espresso(Bootstrapper):
-    def __init__(self, db, matrix, rel, n):
-        Bootstrapper.__init__(self, db, matrix, rel, n)
-        self.pmi = PMI(self.db, self.matrix)
+    def __init__(self, db, matrix, rel, seeds, n, keep, reset):
+        self.db = db
+        self.matrix = matrix
+        self.rel = rel
+        self.n = n
+        self.keep = keep
+        self.boot_i = '%s_%s_esp_i' % (matrix, rel)
+        self.boot_p = '%s_%s_esp_p' % (matrix, rel)
+        if reset: self.reset()
+        self.add_seeds(seeds)
+        self.args = self.get_args()
+        self.pmi = PMI(db, matrix)
         self.max_pmi = self.pmi.max_pmi()
-        self.esp_i = '%s_%s_esp_i' % (self.matrix, self.rel)
-        self.esp_p = '%s_%s_esp_p' % (self.matrix, self.rel)
 
     def _r_i(self, i):
         '''retrieves r_i for past iteration'''
         try:
             query = mongodb.make_query(i=i,p=None)
-            r = self.db[self.esp_i].find_one(query, fields=['r_i'])
+            r = self.db[self.boot_i].find_one(query, fields=['r_i'])
             #print >>sys.stderr, 'r_i:', r
             return r.get('r_i',0.0)
         except Exception as e:
@@ -110,7 +96,7 @@ class Espresso(Bootstrapper):
         '''retrieves r_p for past iteration'''
         try:
             query = mongodb.make_query(i=None,p=p)
-            r = self.db[self.esp_p].find_one(query, fields=['r_p'])
+            r = self.db[self.boot_p].find_one(query, fields=['r_p'])
                 #print >>sys.stderr, 'r_p:', r
             return r.get('r_p',0.0)
         except Exception as e:
@@ -154,20 +140,26 @@ class Espresso(Bootstrapper):
         rs.sort(key=lambda r: r.get('r_i',0.0),reverse=True)
         return rs
 
-
-
 def main():
     from optparse import OptionParser
-    usage = '''%prog [options] [database] [collection]'''
+    usage = '''%prog [options] [database] [collection] [seeds]'''
     parser = OptionParser(usage=usage)
+    parser.add_option('-k', '--keep-seeds',
+                      action='store_true', dest='keep', default=False,
+                      help='''mongodb host machine name. default: localhost''')        
+    parser.add_option('-n', '--n-best', dest='n', type=int, default=10,
+                      help='''mongodb host machine name. default: localhost''')    
     parser.add_option('-o', '--host', dest='host', default='localhost',
                       help='''mongodb host machine name. default: localhost''')    
     parser.add_option('-p', '--port', dest='port', type=int, default=27017,
                       help='''mongodb host machine port number. default: 27017''')
+    parser.add_option('-r', '--reset',
+                      action='store_true', dest='reset', default=False,
+                      help='''mongodb host machine name. default: localhost''')
     parser.add_option('-s', '--start', dest='start', type=int, default=1,
                       help='''iteration to start with. default: 1''')
-    parser.add_option('-t', '--stop', dest='stop', type=int, default=2,
-                      help='''iteration to stop at. default: 2''')
+    parser.add_option('-t', '--stop', dest='stop', type=int, default=10,
+                      help='''iteration to stop at. default: 10''')
     options, args = parser.parse_args()
     if len(args) != 3:
         parser.print_help()
@@ -177,10 +169,7 @@ def main():
     connection = pymongo.Connection(options.host, options.port)
     db = connection[db_]
     seeds = (i.strip() for i in fileinput.input(files))
-    esp_i = '%s_%s_esp_i' % (matrix, rel)
-    if not has_seeds(db, esp_i):
-        add_seeds(db, esp_i, seeds)
-    e = Espresso(db, matrix, rel, 10)
+    e = Espresso(db, matrix, rel, seeds, options.n, options.keep, options.reset)
     e.bootstrap(options.start, options.stop)
 
 if __name__ == '__main__':
