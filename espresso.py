@@ -86,9 +86,9 @@ class Espresso(Bootstrapper):
         '''retrieves r_i for past iteration'''
         try:
             query = mongodb.make_query(i=i,p=None)
-            r = self.db[self.boot_i].find_one(query, fields=['r_i'])
+            r = self.db[self.boot_i].find_one(query, fields=['score'])
             #print >>sys.stderr, 'r_i:', r
-            return r.get('r_i',0.0)
+            return r.get('score',0.0)
         except Exception as e:
             return 0.0
         
@@ -96,22 +96,22 @@ class Espresso(Bootstrapper):
         '''retrieves r_p for past iteration'''
         try:
             query = mongodb.make_query(i=None,p=p)
-            r = self.db[self.boot_p].find_one(query, fields=['r_p'])
+            r = self.db[self.boot_p].find_one(query, fields=['score'])
                 #print >>sys.stderr, 'r_p:', r
-            return r.get('r_p',0.0)
+            return r.get('score',0.0)
         except Exception as e:
             return 0.0
 
     def r_i(self, i, P):
         '''r_i: reliability of instance i'''
-        r = sum( [self.pmi.pmi(i,p)*self._r_p(p) / self.max_pmi 
+        r = sum( [self.pmi.dpmi(i,p)*self._r_p(p) / self.max_pmi 
                   for p in P] ) / len(P)
         print >>sys.stderr, 'r_i:', i, r
         return r
 
     def r_p(self, I, p):
         '''r_p: reliability of pattern p'''
-        r = sum( [self.pmi.pmi(i,p)*self._r_i(i) / self.max_pmi 
+        r = sum( [self.pmi.dpmi(i,p)*self._r_i(i) / self.max_pmi 
                   for i in I] ) / len(I)
         print >>sys.stderr, 'r_p:', p, r
         return r
@@ -119,13 +119,13 @@ class Espresso(Bootstrapper):
     def S(self, i, P):
         '''confidence in an instance'''
         T = sum ( [ self._r_p(p) for p in P ] )
-        sum ( [ pmi(i,p)*self._r_p(p)/T for p in P ] )
+        return sum ( [ self.pmi.dpmi(i,p)*self._r_p(p)/T for p in P ] )
 
     def rank_patterns(self, I, P, it):
         '''return a list of patterns ranked by reliability score'''
-        rs = [{'rel':p, 'it':it, 'r_p':self.r_p(I,p)} 
+        rs = [{'rel':p, 'it':it, 'score':self.r_p(I,p)} 
               for p in P]
-        rs.sort(key=lambda r: r.get('r_p',0.0),reverse=True)
+        rs.sort(key=lambda r: r.get('score',0.0),reverse=True)
         return rs
 
     def rank_instances(self, I, P, it):
@@ -135,9 +135,9 @@ class Espresso(Bootstrapper):
             r = {'arg%d'%n:v
                  for n,v in enumerate(i, 1)}
             r['it'] = it
-            r['r_i'] = self.r_i(i,P)
+            r['score'] = self.r_i(i,P)
             rs.append(r)
-        rs.sort(key=lambda r: r.get('r_i',0.0),reverse=True)
+        rs.sort(key=lambda r: r.get('score',0.0),reverse=True)
         return rs
 
 def main():
@@ -146,16 +146,16 @@ def main():
     parser = OptionParser(usage=usage)
     parser.add_option('-k', '--keep-seeds',
                       action='store_true', dest='keep', default=False,
-                      help='''mongodb host machine name. default: localhost''')        
+                      help='''keep seeds and acquired items and use for candidate selection. default: False''')        
     parser.add_option('-n', '--n-best', dest='n', type=int, default=10,
-                      help='''mongodb host machine name. default: localhost''')    
+                      help='''number of candidates to keep per iteration. default: 10''')    
     parser.add_option('-o', '--host', dest='host', default='localhost',
                       help='''mongodb host machine name. default: localhost''')    
     parser.add_option('-p', '--port', dest='port', type=int, default=27017,
                       help='''mongodb host machine port number. default: 27017''')
     parser.add_option('-r', '--reset',
                       action='store_true', dest='reset', default=False,
-                      help='''mongodb host machine name. default: localhost''')
+                      help='''reset bootstrapping results. default: False''')
     parser.add_option('-s', '--start', dest='start', type=int, default=1,
                       help='''iteration to start with. default: 1''')
     parser.add_option('-t', '--stop', dest='stop', type=int, default=10,
