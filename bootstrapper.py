@@ -9,6 +9,7 @@ import sys
 import mongodb
 from matrix2pmi import PMI
 
+
 class Bootstrapper:
     def get_args(self):
         '''returns a lists of argument names in <matrix>'''
@@ -30,14 +31,13 @@ class Bootstrapper:
 
     def add_seeds(self, seeds):
         '''adds seeds to db.coll with reliability score of 1.0'''
-        print >>sys.stderr, 'add_seeds:', seeds
         for s in seeds:
-            print >>sys.stderr, 's:', s
+            #print >>sys.stderr, 's:', s
             args = s.split('\t')
             doc = {'arg%d'%n:v
                    for n,v in enumerate(args, 1)}
             doc['it'] = 0
-            doc['r_i'] = 1.0
+            doc['score'] = 1.0
             mongodb.cache(self.db, self.boot_i, doc)
 
     def get_I(self, it, query={}):
@@ -65,12 +65,13 @@ class Bootstrapper:
                 ) ]
 
     def I2P(self, I):
-        '''retrieve patterns that match promoted instances in I and have not been
-        retrieved in past iteration'''
+        '''retrieve patterns that match promoted instances in I and
+        have not been retrieved in past iteration'''
         P = [r['rel']
              for i in I
              for r in mongodb.fast_find(
-                self.db, self.matrix, mongodb.make_query(i=i,p=None), fields=['rel']
+                self.db, self.matrix, 
+                mongodb.make_query(i=i,p=None), fields=['rel']
                 )
              if not self.db[self.boot_p].find_one({'rel':r['rel']}) ]
         P_ = sorted(set(P))
@@ -78,14 +79,15 @@ class Bootstrapper:
         return P_
 
     def P2I(self, P):
-        '''retrieve instances that match promoted patterns in P and have not been
-        retrieved in past iteration'''
+        '''retrieve instances that match promoted patterns in P and
+        have not been retrieved in past iteration'''
         I = [tuple( [v
                      for k,v in sorted(r.items())
                      if k.startswith('arg')] )
              for p in P
              for r in mongodb.fast_find(
-                self.db, self.matrix, mongodb.make_query(i=None,p=p), fields=self.args
+                self.db, self.matrix, 
+                mongodb.make_query(i=None,p=p), fields=self.args
                 )
              if not self.db[self.boot_i].find_one(
                 {k:v 
@@ -110,9 +112,9 @@ class Bootstrapper:
         print >>sys.stderr, 'getting matching patterns: done.'
 
         # rank patterns by reliability score
-        print >>sys.stderr, 'ranking patterns by reliability score...'
+        print >>sys.stderr, 'ranking patterns ...'
         rs = self.rank_patterns(I, P, it)
-        print >>sys.stderr, 'ranking patterns by reliability score: done.'
+        print >>sys.stderr, 'ranking patterns: done.'
 
         # save top n to <matrix>_boot_p
         print >>sys.stderr, 'saving top %d patterns...' % self.n
@@ -143,9 +145,9 @@ class Bootstrapper:
         print >>sys.stderr, 'getting matching instances: done.'
 
         # rank instances by reliability score
-        print >>sys.stderr, 'ranking instances by reliability score...'
+        print >>sys.stderr, 'ranking instances ...'
         rs = self.rank_instances(I, P, it)
-        print >>sys.stderr, 'ranking instances by reliability score: done.'
+        print >>sys.stderr, 'ranking instances: done.'
 
         # save top n to <matrix>_boot_p
         print >>sys.stderr, 'saving top %d instances...' % self.n
@@ -165,8 +167,8 @@ class Bootstrapper:
         print >>sys.stderr, 'ensuring indices: done.'
 
     def bootstrap(self, start, stop):
-        '''apply espresso bootstrapping algorithm for rel from iteration start to
-        stop'''
+        '''apply espresso bootstrapping algorithm for rel from
+        iteration start to stop'''
         for it in xrange(start, stop+1):
             print >>sys.stderr, 'pattern bootstrapping iter: %d' % it
             self.bootstrap_p(it)
@@ -174,6 +176,7 @@ class Bootstrapper:
             self.bootstrap_i(it)
 
     def reset(self):
-        '''reset bootstrapping by deleting collections of bootstraped args and rels'''
+        '''reset bootstrapping by deleting collections of bootstraped
+        args and rels'''
         self.db.drop_collection(self.boot_i)
         self.db.drop_collection(self.boot_p)
