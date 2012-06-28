@@ -214,13 +214,13 @@ class PMI:
         ensure_indices(self.db, self._pmi_ip)
         self.db[self._pmi_ip].ensure_index(
             [('dpmi', pymongo.DESCENDING), ]
+            [('pmi', pymongo.DESCENDING), ]
             )
 
     def pmi(self, i, p):
         '''retrieves pmi value for (i,p) from matrix'''
         try:
-            q = {'_id': mongodb.make_query(i,p)}
-            #print >>sys.stderr, 'q:', q
+            q = mongodb.make_query(i,p)
             r = self.db[self._pmi_ip].find_one(q)
             #print >>sys.stderr, 'pmi:', q, r
             return r['pmi']
@@ -230,8 +230,7 @@ class PMI:
     def dpmi(self, i, p):
         '''retrieves dpmi value for (i,p) from matrix'''
         try:
-            q = {'_id': mongodb.make_query(i,p)}
-            #print >>sys.stderr, 'q:', q
+            q = mongodb.make_query(i,p)
             r = self.db[self._pmi_ip].find_one(q)
             #print >>sys.stderr, 'dpmi:', q, r
             return r['dpmi']
