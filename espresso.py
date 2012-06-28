@@ -59,90 +59,28 @@ ACL 2006.
 '''
 
 import fileinput
-import pymongo
+import inspect
 import sys
 
-import mongodb
 from bootstrapper import Bootstrapper
-from matrix2pmi import PMI
+import scorers
 
 
 class Espresso(Bootstrapper):
-    def __init__(self, db, matrix, rel, seeds, n, keep, reset):
-        self.db = db
-        self.matrix = matrix
-        self.rel = rel
-        self.n = n
-        self.keep = keep
+    def __init__(self, host, port, db, matrix, rel, seeds, n, keep, reset,
+                 scorer, it=0):
         self.boot_i = '%s_%s_esp_i' % (matrix, rel)
         self.boot_p = '%s_%s_esp_p' % (matrix, rel)
-        if reset: self.reset()
-        self.add_seeds(seeds)
-        self.args = self.get_args()
-        self.pmi = PMI(db, matrix)
-        self.max_pmi = self.pmi.max_pmi()
+        Bootstrapper.__init__(
+            self, host, port, db, matrix, rel, 
+            seeds, n, keep, reset, scorer, it
+            )
 
-    def _r_i(self, i):
-        '''retrieves r_i for past iteration'''
-        try:
-            query = mongodb.make_query(i=i,p=None)
-            r = self.db[self.boot_i].find_one(query, fields=['score'])
-            #print >>sys.stderr, 'r_i:', r
-            return r.get('score',0.0)
-        except Exception as e:
-            return 0.0
-        
-    def _r_p(self, p):
-        '''retrieves r_p for past iteration'''
-        try:
-            query = mongodb.make_query(i=None,p=p)
-            r = self.db[self.boot_p].find_one(query, fields=['score'])
-                #print >>sys.stderr, 'r_p:', r
-            return r.get('score',0.0)
-        except Exception as e:
-            return 0.0
-
-    def r_i(self, i, P):
-        '''r_i: reliability of instance i'''
-        r = sum( [self.pmi.dpmi(i,p)*self._r_p(p) / self.max_pmi 
-                  for p in P] ) / len(P)
-        print >>sys.stderr, 'r_i:', i, r
-        return r
-
-    def r_p(self, I, p):
-        '''r_p: reliability of pattern p'''
-        r = sum( [self.pmi.dpmi(i,p)*self._r_i(i) / self.max_pmi 
-                  for i in I] ) / len(I)
-        print >>sys.stderr, 'r_p:', p, r
-        return r
-
-    def S(self, i, P):
-        '''confidence in an instance'''
-        T = sum ( [ self._r_p(p) for p in P ] )
-        return sum ( [ self.pmi.dpmi(i,p)*self._r_p(p)/T for p in P ] )
-
-    def rank_patterns(self, I, P, it):
-        '''return a list of patterns ranked by reliability score'''
-        rs = [{'rel':p, 'it':it, 'score':self.r_p(I,p)} 
-              for p in P]
-        rs.sort(key=lambda r: r.get('score',0.0),reverse=True)
-        return rs
-
-    def rank_instances(self, I, P, it):
-        '''return a list of instances ranked by reliability score'''
-        rs = []
-        for i in I:
-            r = {'arg%d'%n:v
-                 for n,v in enumerate(i, 1)}
-            r['it'] = it
-            r['score'] = self.r_i(i,P)
-            rs.append(r)
-        rs.sort(key=lambda r: r.get('score',0.0),reverse=True)
-        return rs
 
 def main():
+    scorers_ = dict(inspect.getmembers(scorers, inspect.isclass))
     from optparse import OptionParser
-    usage = '''%prog [options] [database] [collection] [seeds]'''
+    usage = '''%prog [options] [database] [collection] [rel] [seeds]'''
     parser = OptionParser(usage=usage)
     parser.add_option('-k', '--keep-seeds',
                       action='store_true', dest='keep', default=False,
@@ -156,20 +94,24 @@ def main():
     parser.add_option('-r', '--reset',
                       action='store_true', dest='reset', default=False,
                       help='''reset bootstrapping results. default: False''')
+    parser.add_option('--scorer', dest='scorer',
+                      choices=scorers_.keys(), default='ReliabilityScore',
+                      help='''scoring method to use''')
     parser.add_option('-s', '--start', dest='start', type=int, default=1,
                       help='''iteration to start with. default: 1''')
     parser.add_option('-t', '--stop', dest='stop', type=int, default=10,
                       help='''iteration to stop at. default: 10''')
     options, args = parser.parse_args()
-    if len(args) != 3:
+    if len(args) < 3:
         parser.print_help()
         exit(1)
-    db_, matrix, rel = args[:3]
-    files = args[4:]
-    connection = pymongo.Connection(options.host, options.port)
-    db = connection[db_]
+    db, matrix, rel = args[:3]
+    files = args[3:]
     seeds = (i.strip() for i in fileinput.input(files))
-    e = Espresso(db, matrix, rel, seeds, options.n, options.keep, options.reset)
+    scorer = scorers_[options.scorer]
+    e = Espresso(options.host, options.port, db, matrix, rel, seeds, 
+                 options.n, options.keep, options.reset, scorer, 
+                 options.start)
     e.bootstrap(options.start, options.stop)
 
 if __name__ == '__main__':

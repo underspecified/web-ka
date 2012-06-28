@@ -11,6 +11,20 @@ from matrix2pmi import PMI
 
 
 class Bootstrapper:
+    def __init__(self, host, port, db, matrix, rel,
+                 seeds, n, keep, reset, scorer, it=1):
+        self.connection = pymongo.Connection(host, port)
+        self.db = self.connection[db]
+        self.matrix = matrix
+        self.rel = rel
+        self.n = n
+        self.keep = keep
+        if reset: self.reset()
+        self.add_seeds(seeds)
+        self.args = self.get_args()
+        self.scorer = scorer(self.db, self.matrix, self.boot_i, self.boot_p)
+        self.it = it
+
     def get_args(self):
         '''returns a lists of argument names in <matrix>'''
         x = self.db[self.matrix].find_one()
@@ -97,12 +111,14 @@ class Bootstrapper:
         print >>sys.stderr, 'I: %d => %d' % (len(I), len(I_))
         return I_
 
-    def bootstrap_p(self, it):
+    def iterate_p(self):
         '''perform an iteration of bootstrapping saving n patterns with the 
         highest reliability score'''
+        print >>sys.stderr, 'pattern bootstrapping iter: %d' % self.it
+
         # read promoted instances of last bootstrpping iteration
         print >>sys.stderr, 'getting promoted instances...'''
-        I = self.get_I(it-1)
+        I = self.get_I(self.it-1)
         print >>sys.stderr, 'I:', len(I)
         print >>sys.stderr, 'getting promoted instances: done.'''
 
@@ -113,7 +129,7 @@ class Bootstrapper:
 
         # rank patterns by reliability score
         print >>sys.stderr, 'ranking patterns ...'
-        rs = self.rank_patterns(I, P, it)
+        rs = self.scorer.rank_patterns(I, P, self.it)
         print >>sys.stderr, 'ranking patterns: done.'
 
         # save top n to <matrix>_boot_p
@@ -130,12 +146,14 @@ class Bootstrapper:
         self.db[self.boot_p].ensure_index( [('rel', pymongo.ASCENDING), ] )
         print >>sys.stderr, 'ensuring indices: done.'
 
-    def bootstrap_i(self, it):
+    def iterate_i(self):
         '''perform an iteration of bootstrapping saving n instances with the 
         highest reliability score'''
+        print >>sys.stderr, 'instance bootstrapping iter: %d' % self.it
+
         # read promoted patterns of last bootstrpping iteration
         print >>sys.stderr, 'getting promoted patterns...'''
-        P = self.get_P(it)
+        P = self.get_P(self.it)
         print >>sys.stderr, 'P:', len(P)
         print >>sys.stderr, 'getting promoted patterns: done.'''
 
@@ -146,7 +164,7 @@ class Bootstrapper:
 
         # rank instances by reliability score
         print >>sys.stderr, 'ranking instances ...'
-        rs = self.rank_instances(I, P, it)
+        rs = self.scorer.rank_instances(I, P, self.it)
         print >>sys.stderr, 'ranking instances: done.'
 
         # save top n to <matrix>_boot_p
@@ -166,14 +184,16 @@ class Bootstrapper:
             )
         print >>sys.stderr, 'ensuring indices: done.'
 
+    def iterate(self):
+        self.iterate_p()
+        self.iterate_i()
+
     def bootstrap(self, start, stop):
         '''apply espresso bootstrapping algorithm for rel from
         iteration start to stop'''
         for it in xrange(start, stop+1):
-            print >>sys.stderr, 'pattern bootstrapping iter: %d' % it
-            self.bootstrap_p(it)
-            print >>sys.stderr, 'instance bootstrapping iter: %d' % it
-            self.bootstrap_i(it)
+            self.iterate_p()
+            self.iterate_i()
 
     def reset(self):
         '''reset bootstrapping by deleting collections of bootstraped
