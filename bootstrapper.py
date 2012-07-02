@@ -13,17 +13,47 @@ from matrix2pmi import PMI
 class Bootstrapper:
     def __init__(self, host, port, db, matrix, rel,
                  seeds, n, keep, reset, scorer, it=1):
-        self.connection = pymongo.Connection(host, port)
-        self.db = self.connection[db]
+        self.host = host
+        self.port = port
+        self.db = db
         self.matrix = matrix
         self.rel = rel
+        self.seeds = seeds
         self.n = n
         self.keep = keep
-        if reset: self.reset()
-        self.add_seeds(seeds)
-        self.args = self.get_args()
-        self.scorer = scorer(self.db, self.matrix, self.boot_i, self.boot_p)
+        self.reset = reset
+        self.scorer_class = scorer
         self.it = it
+        self.set_collection_names()
+        self.init_connection()
+
+    def set_collection_names(self):
+        boot_i_args = [self.matrix, self.rel, self.__short__, 'i',
+                       self.scorer_class.__short__]
+        boot_p_args = [self.matrix, self.rel, self.__short__, 'p',
+                       self.scorer_class.__short__]
+        if self.keep:
+            boot_i_args.append('keep')
+            boot_p_args.append('keep')
+        else:
+            boot_i_args.append('nokeep')
+            boot_p_args.append('nokeep')
+        self.boot_i = '_'.join(boot_i_args)
+        self.logger.info('boot_i: %s' % self.boot_i)
+        self.boot_p = '_'.join(boot_p_args)
+        self.logger.info('boot_p: %s' % self.boot_p)
+
+    def init_connection(self):
+        self.logger.info('initializing mongodb connection ...')
+        self.connection = pymongo.Connection(self.host, self.port)
+        self.db = self.connection[self.db]
+        self.logger.info('initializing mongodb connection: done')
+        self.args = self.get_args()
+        self.scorer = self.scorer_class(
+            self.db, self.matrix, self.boot_i, self.boot_p, self.logger
+            )
+        if self.reset: self.do_reset()
+        if not self.has_seeds(): self.add_seeds()
 
     def get_args(self):
         '''returns a lists of argument names in <matrix>'''
@@ -41,12 +71,14 @@ class Bootstrapper:
 
     def has_seeds(self):
         '''determines if db.coll has seed iteration'''
-        return has_run(self.db, self.boot_i, 0)
+        return self.has_run(self.db, self.boot_i, 0)
 
-    def add_seeds(self, seeds):
+    def add_seeds(self):
         '''adds seeds to db.coll with reliability score of 1.0'''
-        for s in seeds:
-            #print >>sys.stderr, 's:', s
+        self.logger.debug('add_seeds: %d %s' % 
+                          (len(self.seeds), self.seeds))
+        for s in self.seeds:
+            self.logger.debug('seed: %s' % s)
             args = s.split('\t')
             doc = {'arg%d'%n:v
                    for n,v in enumerate(args, 1)}
@@ -60,9 +92,9 @@ class Bootstrapper:
             query['it'] = {'$lte':it}
         else:
             query['it'] = it
-        return [[v
-                 for k,v in sorted(r.items()) 
-                 if k.startswith('arg')]
+        return [tuple( [v
+                       for k,v in sorted(r.items()) 
+                       if k.startswith('arg')] )
                 for r in mongodb.fast_find(
                 self.db, self.boot_i, query, fields=self.args
                 ) ]
@@ -88,8 +120,8 @@ class Bootstrapper:
                 mongodb.make_query(i=i,p=None), fields=['rel']
                 )
              if not self.db[self.boot_p].find_one({'rel':r['rel']}) ]
-        P_ = sorted(set(P))
-        print >>sys.stderr, 'P: %d => %d' % (len(P), len(P_))
+        P_ = tuple(sorted(set(P)))
+        self.logger.info('P: %d => %d' % (len(P), len(P_)))
         return P_
 
     def P2I(self, P):
@@ -107,74 +139,82 @@ class Bootstrapper:
                 {k:v 
                  for k,v in sorted(r.items())
                  if k.startswith('arg')} ) ]
-        I_ = sorted(set(I))
-        print >>sys.stderr, 'I: %d => %d' % (len(I), len(I_))
+        I_ = tuple(sorted(set(I)))
+        self.logger.info('I: %d => %d' % (len(I), len(I_)))
         return I_
 
     def iterate_p(self):
         '''perform an iteration of bootstrapping saving n patterns with the 
         highest reliability score'''
-        print >>sys.stderr, 'pattern bootstrapping iter: %d' % self.it
+        if not getattr(self, 'connection', None):
+            self.init_connection()
+
+        self.logger.info('### BOOTSTRAPPING PATTERN ITERATION: %d ###' %
+                         self.it)
 
         # read promoted instances of last bootstrpping iteration
-        print >>sys.stderr, 'getting promoted instances...'''
+        self.logger.info('getting promoted instances...''')
         I = self.get_I(self.it-1)
-        print >>sys.stderr, 'I:', len(I)
-        print >>sys.stderr, 'getting promoted instances: done.'''
+        self.logger.info('I: %d' % len(I))
+        self.logger.info('getting promoted instances: done.''')
 
         # find matching patterns
-        print >>sys.stderr, 'getting matching patterns...'
+        self.logger.info('getting matching patterns...')
         P = self.I2P(I)
-        print >>sys.stderr, 'getting matching patterns: done.'
+        self.logger.info('getting matching patterns: done.')
 
         # rank patterns by reliability score
-        print >>sys.stderr, 'ranking patterns ...'
+        self.logger.info('ranking patterns ...')
         rs = self.scorer.rank_patterns(I, P, self.it)
-        print >>sys.stderr, 'ranking patterns: done.'
+        self.logger.info('ranking patterns: done.')
 
         # save top n to <matrix>_boot_p
-        print >>sys.stderr, 'saving top %d patterns...' % self.n
+        self.logger.info('saving top %d patterns...' % self.n)
         for r in rs[:self.n]:
-            print >>sys.stderr, 'r:', r
+            self.logger.info('r: %s' % r)
             mongodb.cache(self.db, self.boot_p, r)
-        print >>sys.stderr, 'saving top %d patterns: done.' % self.n
+        self.logger.info('saving top %d patterns: done.' % self.n)
 
-        print >>sys.stderr, 'ensuring indices ...'
+        self.logger.info('ensuring indices ...')
         # index for iteration number
         self.db[self.boot_p].ensure_index( [('it', pymongo.DESCENDING), ] )
         # index for <REL>
         self.db[self.boot_p].ensure_index( [('rel', pymongo.ASCENDING), ] )
-        print >>sys.stderr, 'ensuring indices: done.'
+        self.logger.info('ensuring indices: done.')
 
     def iterate_i(self):
         '''perform an iteration of bootstrapping saving n instances with the 
         highest reliability score'''
-        print >>sys.stderr, 'instance bootstrapping iter: %d' % self.it
+        if not getattr(self, 'connection', None):
+            self.init_connection()
+
+        self.logger.info('### BOOTSTRAPPING INSTANCE ITERATION: %d ###' % 
+                         self.it)
 
         # read promoted patterns of last bootstrpping iteration
-        print >>sys.stderr, 'getting promoted patterns...'''
+        self.logger.info('getting promoted patterns...''')
         P = self.get_P(self.it)
-        print >>sys.stderr, 'P:', len(P)
-        print >>sys.stderr, 'getting promoted patterns: done.'''
+        self.logger.info('P: %d' % len(P))
+        self.logger.info('getting promoted patterns: done.''')
 
         # find matching instances
-        print >>sys.stderr, 'getting matching instances...'
+        self.logger.info('getting matching instances...')
         I = self.P2I(P)
-        print >>sys.stderr, 'getting matching instances: done.'
+        self.logger.info('getting matching instances: done.')
 
         # rank instances by reliability score
-        print >>sys.stderr, 'ranking instances ...'
+        self.logger.info('ranking instances ...')
         rs = self.scorer.rank_instances(I, P, self.it)
-        print >>sys.stderr, 'ranking instances: done.'
+        self.logger.info('ranking instances: done.')
 
         # save top n to <matrix>_boot_p
-        print >>sys.stderr, 'saving top %d instances...' % self.n
+        self.logger.info('saving top %d instances...' % self.n)
         for r in rs[:self.n]:
-            print >>sys.stderr, 'r:', r
+            self.logger.info('r:', r)
             mongodb.cache(self.db, self.boot_i, r)
-        print >>sys.stderr, 'saving top %d instances: done.' % self.n
+        self.logger.info('saving top %d instances: done.' % self.n)
 
-        print >>sys.stderr, 'ensuring indices ...'
+        self.logger.info('ensuring indices ...')
         # index for iteration number
         self.db[self.boot_i].ensure_index( [('it', pymongo.DESCENDING), ] )
         # index for <ARGJ,...,ARGN>
@@ -182,21 +222,27 @@ class Bootstrapper:
             [(arg, pymongo.ASCENDING)
              for arg in self.args]
             )
-        print >>sys.stderr, 'ensuring indices: done.'
+        self.logger.info('ensuring indices: done.')
 
     def iterate(self):
         self.iterate_p()
         self.iterate_i()
+        self.it += 1
 
     def bootstrap(self, start, stop):
         '''apply espresso bootstrapping algorithm for rel from
         iteration start to stop'''
         for it in xrange(start, stop+1):
-            self.iterate_p()
-            self.iterate_i()
+            self.iterate()
 
-    def reset(self):
+    def do_reset(self):
         '''reset bootstrapping by deleting collections of bootstraped
         args and rels'''
-        self.db.drop_collection(self.boot_i)
-        self.db.drop_collection(self.boot_p)
+        
+        if self.it <= 1:
+            self.logger.info('resetting %s and %s ...' % 
+                             (self.boot_i, self.boot_p))
+            self.db.drop_collection(self.boot_i)
+            self.db.drop_collection(self.boot_p)
+            self.logger.info('resetting %s and %s: done.' % 
+                             (self.boot_i, self.boot_p))
