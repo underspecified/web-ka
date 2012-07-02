@@ -3,6 +3,7 @@
 ################################################################################
 
 import functools
+import logging
 import math
 import pymongo
 import sys
@@ -10,12 +11,16 @@ from bson.son import SON
 from itertools import islice
 from os.path import basename
 
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
 def cache(db, coll, doc):
     '''save doc to db.coll if it doesn't exist, update if it does'''
+    #doc.pop('_id', None)
+    logger.debug('mongodb.cache: %s.%s, %s' % (db, coll, doc))
     if not db[coll].find_one(doc):
-        if '_id' in doc:
-            doc.pop('_id')
-    db[coll].save(doc)
+        logger.info('mongodb.cache: CACHED! %s.%s, %s' % (db, coll, doc))
+        db[coll].insert(doc)
 
 def i2query(i):
     '''returns a tuple of argument values labeled (arg1,<value>),
