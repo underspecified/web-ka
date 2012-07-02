@@ -13,20 +13,22 @@ import matrix2pmi
 import mongodb
 
 class PrecisionCountScorer:
-    def __init__(self, db, matrix, boot_i, boot_p):
+    __short__ = 'pc'
+    def __init__(self, db, matrix, boot_i, boot_p, logger):
         self.db = db
         self.matrix = matrix
         self.boot_i = boot_i
         self.boot_p = boot_p
         self.pmi = matrix2pmi.PMI(db, matrix)
         self.max_pmi = self.pmi.max_pmi()
+        self.logger = logger
 
     def precision_p(self, I, p):
         '''precision is the sum of the number of instances promoted by
         a pattern divided by the count of the pattern'''
         try:
             prec = sum( [self.pmi.F_ip(i,p) for i in I] ) / self.pmi.F_p(p)
-            print >>sys.stderr, 'precision_p:', p, prec
+            self.logger.info('precision_p: %s %f' % (p, prec))
             return prec
         except Exception as e:
             return 0.0
@@ -37,7 +39,7 @@ class PrecisionCountScorer:
             # pcount = len( filter(lambda x: x>0.0,
             #                      [self.pmi.F_ip(i,p) for p in P]) )
             pcount = sum( [self.pmi.F_ip(i,p) for p in P] )
-            print >>sys.stderr, 'pattern_count:', i, pcount
+            self.logger.info('pattern_count: %s %f' % (i, pcount))
             return pcount
         except Exception as e:
             return 0.0        
@@ -78,20 +80,22 @@ class ReliabilityScorer:
     where dpmi is Discounted Pointwise Mutual Information [2].  r_i
     and r_p are recursively defined with r_i=1.0 for the seed instances.
     '''
-    def __init__(self, db, matrix, boot_i, boot_p):
+    __short__ = 'rel'
+    def __init__(self, db, matrix, boot_i, boot_p, logger):
         self.db = db
         self.matrix = matrix
         self.boot_i = boot_i
         self.boot_p = boot_p
         self.pmi = matrix2pmi.PMI(db, matrix)
         self.max_pmi = self.pmi.max_pmi()
+        self.logger = logger
 
     def _r_i(self, i):
         '''retrieves r_i for past iteration'''
         try:
             query = mongodb.make_query(i=i,p=None)
             r = self.db[self.boot_i].find_one(query, fields=['score'])
-            #print >>sys.stderr, 'r_i:', r
+            self.logger.debug('_r_i: %f' % r)
             return r.get('score',0.0)
         except Exception as e:
             return 0.0
@@ -101,7 +105,7 @@ class ReliabilityScorer:
         try:
             query = mongodb.make_query(i=None,p=p)
             r = self.db[self.boot_p].find_one(query, fields=['score'])
-            #print >>sys.stderr, 'r_p:', r
+            self.logger.debug('_r_p: %f' % r)
             return r.get('score',0.0)
         except Exception as e:
             return 0.0
@@ -110,14 +114,14 @@ class ReliabilityScorer:
         '''r_i: reliability of instance i'''
         r = sum( [self.pmi.dpmi(i,p)*self._r_p(p) / self.max_pmi 
                   for p in P] ) / len(P)
-        print >>sys.stderr, 'r_i:', i, r
+        self.logger.info('r_i: %s %f' % (i, r))
         return r
 
     def r_p(self, I, p):
         '''r_p: reliability of pattern p'''
         r = sum( [self.pmi.dpmi(i,p)*self._r_i(i) / self.max_pmi 
                   for i in I] ) / len(I)
-        print >>sys.stderr, 'r_p:', p, r
+        self.logger.info('r_p: %s %f' % (p, r))
         return r
 
     def S(self, i, P):
