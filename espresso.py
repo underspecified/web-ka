@@ -60,6 +60,7 @@ ACL 2006.
 
 import fileinput
 import inspect
+import logging
 import sys
 
 from bootstrapper import Bootstrapper
@@ -67,15 +68,24 @@ import scorers
 
 
 class Espresso(Bootstrapper):
+    __short__ = 'esp'
     def __init__(self, host, port, db, matrix, rel, seeds, n, keep, reset,
-                 scorer, it=0):
-        self.boot_i = '%s_%s_esp_i' % (matrix, rel)
-        self.boot_p = '%s_%s_esp_p' % (matrix, rel)
+                 scorer, it=1):
+        #logging.basicConfig()
+        self.logger = logging.getLogger('Espresso')
+        self.logger.setLevel(logging.INFO)
+        #self.logger.setLevel(logging.WARNING)
+        if len(self.logger.handlers) == 0:
+            handler = logging.StreamHandler()
+            handler.setLevel(logging.INFO)
+            fmt = '%(asctime)s [%(levelname)s/Espresso:' + rel + '] %(message)s'
+            formatter = logging.Formatter(fmt)
+            handler.setFormatter(formatter)
+            self.logger.addHandler(handler)
         Bootstrapper.__init__(
             self, host, port, db, matrix, rel, 
             seeds, n, keep, reset, scorer, it
             )
-
 
 def main():
     scorers_ = dict(inspect.getmembers(scorers, inspect.isclass))
