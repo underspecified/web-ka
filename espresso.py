@@ -107,7 +107,7 @@ def main():
         exit(1)
     db, matrix, rel = args[:3]
     files = args[3:]
-    seeds = (i.strip() for i in fileinput.input(files))
+    seeds = [i.strip() for i in fileinput.input(files)]
     scorer = scorers_[options.scorer]
     e = Espresso(options.host, options.port, db, matrix, rel, seeds, 
                  options.n, options.keep, options.reset, scorer, 
