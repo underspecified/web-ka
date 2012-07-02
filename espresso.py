@@ -95,7 +95,7 @@ def main():
                       action='store_true', dest='reset', default=False,
                       help='''reset bootstrapping results. default: False''')
     parser.add_option('--scorer', dest='scorer',
-                      choices=scorers_.keys(), default='ReliabilityScore',
+                      choices=scorers_.keys(), default='ReliabilityScorer',
                       help='''scoring method to use''')
     parser.add_option('-s', '--start', dest='start', type=int, default=1,
                       help='''iteration to start with. default: 1''')
