@@ -1,6 +1,8 @@
-# Knowledge Acquisition for Next Generation Statement Map
+# Web-scale Knowledge Acquisition
 
 Author: Eric Nichols, <eric@ecei.tohoku.ac.jp>
+
+Web-KA: A collection of tools for acquiring and databasing semantic relation patterns and instances from Web texts. Contains Python implementations of the Espresso[1,2] and Coupled Pattern Learner [3] bootstrapping algorithms and tools for managing patterns and instances in MongoDB.
 
 ## instances2matrix.py
 
@@ -168,3 +170,7 @@ HLT-NAACL 2004.
 [2] Patrick Pantel and Marco Pennacchiotti.
 Espresso: Leveraging Generic Patterns for Automatically Harvesting Semantic Relations.
 ACL 2006.
+
+[3] Andrew Carlson, Justin Betteridge, Richard C. Wang, Estevam R. Hruschka Jr., and Tom M. Mitchell.
+Coupled Semi-supervised Learning for Information Extraction.
+WDSM 2010.
