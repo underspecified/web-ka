@@ -1,6 +1,6 @@
 # Web-scale Knowledge Acquisition
 
-Author: Eric Nichols, <eric@ecei.tohoku.ac.jp>
+Author: Eric Nichols, <ericnichols79@gmail.com>
 
 Web-KA: A collection of tools for acquiring and databasing semantic relation patterns and instances from Web texts. Contains Python implementations of the Espresso[1,2] and Coupled Pattern Learner [3] bootstrapping algorithms and tools for managing patterns and instances in MongoDB.
 
