@@ -1,0 +1,1000 @@
+1.0	reverb_wikipedia_tuples-1.1.txt	was deducted for	2	$ 10	board
+1.0	reverb_wikipedia_tuples-1.1.txt	came from	2	$ 10,000	J.J.
+1.0	reverb_wikipedia_tuples-1.1.txt	had been raised for	2	$ 13.8 million	construction of the memorial
+1.0	reverb_wikipedia_tuples-1.1.txt	was paid to	2	$ 15.3 million	Japan
+1.0	reverb_wikipedia_tuples-1.1.txt	was needed just for	2	$ 16,896	dredging
+1.0	reverb_wikipedia_tuples-1.1.txt	was spent on	2	$ 23.5 billion	sports marketing
+1.0	reverb_wikipedia_tuples-1.1.txt	was spent on	2	$ 3 million	pilot projects
+1.0	reverb_wikipedia_tuples-1.1.txt	has been raised to	2	$ 350,000	date
+1.0	reverb_wikipedia_tuples-1.1.txt	were intended for	2	$ 500 million dollars	reconstruction
+1.0	reverb_wikipedia_tuples-1.1.txt	was being allocated to	2	$ 500,000	Sharon Springs
+1.0	reverb_wikipedia_tuples-1.1.txt	went to	2	$ 6.4 billion	the Camorra
+1.0	reverb_wikipedia_tuples-1.1.txt	was spent for	2	$ 80,000	music rights
+1.0	reverb_wikipedia_tuples-1.1.txt	goes to	2	$ 9,255	classroom instruction
+1.0	reverb_wikipedia_tuples-1.1.txt	is not equal to	2	0	1
+1.0	reverb_wikipedia_tuples-1.1.txt	are given	2	0	constants
+1.0	reverb_wikipedia_tuples-1.1.txt	is for	2	0	control options
+1.0	reverb_wikipedia_tuples-1.1.txt	is reserved for	2	0	the Operating System
+1.0	reverb_wikipedia_tuples-1.1.txt	win at	2	0	White Hart Lane
+1.0	reverb_wikipedia_tuples-1.1.txt	are automatically	2	0	zero
+1.0	reverb_wikipedia_tuples-1.1.txt	is exactly	2	0	1
+1.0	reverb_wikipedia_tuples-1.1.txt	is bounded in	2	0	Lp
+1.0	reverb_wikipedia_tuples-1.1.txt	is not	2	0	a root
+1.0	reverb_wikipedia_tuples-1.1.txt	pertenece	2	0	a S.
+1.0	reverb_wikipedia_tuples-1.1.txt	took about	2	0 to 100 km/h	12 seconds
+1.0	reverb_wikipedia_tuples-1.1.txt	are limits of	2	0,	limits
+1.0	reverb_wikipedia_tuples-1.1.txt	is in	2	0,	W.
+1.0	reverb_wikipedia_tuples-1.1.txt	takes around	2	0-60 mph	12-13 seconds
+1.0	reverb_wikipedia_tuples-1.1.txt	were between	2	0-60 times	6.5 and 6.7 seconds
+1.0	reverb_wikipedia_tuples-1.1.txt	are reserved for	2	0-63	interrupts
+1.0	reverb_wikipedia_tuples-1.1.txt	have less of	2	0.0	a chance
+1.0	reverb_wikipedia_tuples-1.1.txt	s at	2	0.03	30 A.
+1.0	reverb_wikipedia_tuples-1.1.txt	can be represented as	2	0.2	210-1
+1.0	reverb_wikipedia_tuples-1.1.txt	were born in	2	0.2 % of residents	a foreign country
+1.0	reverb_wikipedia_tuples-1.1.txt	is not	2	0.25-0.5 km	the SI unit
+1.0	reverb_wikipedia_tuples-1.1.txt	were made up of	2	0.4 % of all households	individuals
+1.0	reverb_wikipedia_tuples-1.1.txt	was released on	2	0.4.,	July 23 , 2006
+1.0	reverb_wikipedia_tuples-1.1.txt	would be	2	0.5 % of 5.5 million	27,500
+1.0	reverb_wikipedia_tuples-1.1.txt	is about	2	0.5 arcseconds	14 arcminutes
+1.0	reverb_wikipedia_tuples-1.1.txt	is n't a fork of	2	0.7	WP
+1.0	reverb_wikipedia_tuples-1.1.txt	were made up of	2	0.7 % of all households	individuals
+1.0	reverb_wikipedia_tuples-1.1.txt	are of	2	0.7 % of student	limited English proficiency
+1.0	reverb_wikipedia_tuples-1.1.txt	live in	2	0.7 % of the total population of Estonia	Hiiu County
+1.0	reverb_wikipedia_tuples-1.1.txt	was a disused station in	2	0.702733	Kent
+1.0	reverb_wikipedia_tuples-1.1.txt	gave a single response of	2	0.8 %	English
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	0.8 % of the students	Asian descent
+1.0	reverb_wikipedia_tuples-1.1.txt	must equal	2	0.999	1
+1.0	reverb_wikipedia_tuples-1.1.txt	would evaluate to	2	0/6	an empty vector
+1.0	reverb_wikipedia_tuples-1.1.txt	is given to	2	00	absentees
+1.0	reverb_wikipedia_tuples-1.1.txt	is a district in	2	000	Oruzgan Province
+1.0	reverb_wikipedia_tuples-1.1.txt	is a parody of	2	000	007
+1.0	reverb_wikipedia_tuples-1.1.txt	be handed over for	2	000 Jews	deportation
+1.0	reverb_wikipedia_tuples-1.1.txt	is immediately captured by	2	002	the SAS
+1.0	reverb_wikipedia_tuples-1.1.txt	appears in	2	005	Thunderball
+1.0	reverb_wikipedia_tuples-1.1.txt	offered to	2	007 role	Ewan
+1.0	reverb_wikipedia_tuples-1.1.txt	is due to be published in	2	01	January 2008
+1.0	reverb_wikipedia_tuples-1.1.txt	was withdrawn in	2	01 001	1979
+1.0	reverb_wikipedia_tuples-1.1.txt	was in	2	01-222 1234	Westminster
+1.0	reverb_wikipedia_tuples-1.1.txt	is the debut album from	2	010	ulysses
+1.0	reverb_wikipedia_tuples-1.1.txt	is made available for	2	015x	assignment
+1.0	reverb_wikipedia_tuples-1.1.txt	retrieved on	2	02 March 2007	2 September 2007
+1.0	reverb_wikipedia_tuples-1.1.txt	published its last issue in	2	02138	the Spring of 2008
+1.0	reverb_wikipedia_tuples-1.1.txt	sings of	2	02714	England
+1.0	reverb_wikipedia_tuples-1.1.txt	Went to	2	02:00	bed
+1.0	reverb_wikipedia_tuples-1.1.txt	is a village in	2	04.9196 Rock	Cornwall
+1.0	reverb_wikipedia_tuples-1.1.txt	are also owned by	2	042 and 045 0	TeliaSonera
+1.0	reverb_wikipedia_tuples-1.1.txt	had been retired due to	2	0514	fire
+1.0	reverb_wikipedia_tuples-1.1.txt	also ends in	2	056	a 6
+1.0	reverb_wikipedia_tuples-1.1.txt	was granted on	2	0579655	March 5 , 1997
+1.0	reverb_wikipedia_tuples-1.1.txt	Added tag to	2	07 :08 , 14 February 2009	article
+1.0	reverb_wikipedia_tuples-1.1.txt	was exported to	2	07009	Italy
+1.0	reverb_wikipedia_tuples-1.1.txt	is a live album by	2	070796 Live	Earth
+1.0	reverb_wikipedia_tuples-1.1.txt	is a Zip code for	2	07732	Highlands
+1.0	reverb_wikipedia_tuples-1.1.txt	made landfall in	2	07B	Bangladesh
+1.0	reverb_wikipedia_tuples-1.1.txt	was produced in	2	08	China
+1.0	reverb_wikipedia_tuples-1.1.txt	therefore became	2	0846	01846
+1.0	reverb_wikipedia_tuples-1.1.txt	was the ruler of	2	08@	Bulgaria 831836
+1.0	reverb_wikipedia_tuples-1.1.txt	formed on	2	08W	August 15
+1.0	reverb_wikipedia_tuples-1.1.txt	is the central bank of	2	0@CAL	Belarus
+1.0	reverb_wikipedia_tuples-1.1.txt	exploit in	2	0day	2 hours
+1.0	reverb_wikipedia_tuples-1.1.txt	is also sometimes called	2	0n30	0n2
+1.0	reverb_wikipedia_tuples-1.1.txt	Please do n't use	2	1	capitals
+1.0	reverb_wikipedia_tuples-1.1.txt	is divisible by	2	1	d
+1.0	reverb_wikipedia_tuples-1.1.txt	End of	2	1	the World
+1.0	reverb_wikipedia_tuples-1.1.txt	is not an element of	2	1	the Mandelbrot set
+1.0	reverb_wikipedia_tuples-1.1.txt	Has a bachelors degree in	2	1	Chemistry
+1.0	reverb_wikipedia_tuples-1.1.txt	is for	2	1	an eye
+1.0	reverb_wikipedia_tuples-1.1.txt	's in	2	1	charge
+1.0	reverb_wikipedia_tuples-1.1.txt	calls at	2	1	Pulborough
+1.0	reverb_wikipedia_tuples-1.1.txt	are called	2	1	ridges
+1.0	reverb_wikipedia_tuples-1.1.txt	was released on	2	1	CD.
+1.0	reverb_wikipedia_tuples-1.1.txt	calls at	2	1	Sawbridgeworth
+1.0	reverb_wikipedia_tuples-1.1.txt	calls at	2	1	Ashford
+1.0	reverb_wikipedia_tuples-1.1.txt	is a compilation album by	2	1	The Beatles
+1.0	reverb_wikipedia_tuples-1.1.txt	returned to	2	1	Korat
+1.0	reverb_wikipedia_tuples-1.1.txt	is a bill in	2	1	the United States Congress
+1.0	reverb_wikipedia_tuples-1.1.txt	is an example of	2	1	an open set
+1.0	reverb_wikipedia_tuples-1.1.txt	must be	2	1	an integer
+1.0	reverb_wikipedia_tuples-1.1.txt	is scheduled to start in	2	1	March 2009
+1.0	reverb_wikipedia_tuples-1.1.txt	struck	2	1	Tampico
+1.0	reverb_wikipedia_tuples-1.1.txt	win in	2	1	2008
+1.0	reverb_wikipedia_tuples-1.1.txt	calls at	2	1	Roydon
+1.0	reverb_wikipedia_tuples-1.1.txt	is the first release of	2	1	the Dave Matthews Band 's Live Trax series
+1.0	reverb_wikipedia_tuples-1.1.txt	began in	2	1	1965
+1.0	reverb_wikipedia_tuples-1.1.txt	was released on	2	1	March 21 , 2006
+1.0	reverb_wikipedia_tuples-1.1.txt	Did not stand in	2	1	Burgenland
+1.0	reverb_wikipedia_tuples-1.1.txt	is divisible by	2	1	p
+1.0	reverb_wikipedia_tuples-1.1.txt	is traditionally used for	2	1	true
+1.0	reverb_wikipedia_tuples-1.1.txt	is a multiple of	2	1	q
+1.0	reverb_wikipedia_tuples-1.1.txt	is in	2	1	Europe
+1.0	reverb_wikipedia_tuples-1.1.txt	does not contain	2	1	collection
+1.0	reverb_wikipedia_tuples-1.1.txt	are called	2	1	hyperplanes
+1.0	reverb_wikipedia_tuples-1.1.txt	continues to	2	1	Walton-on-the-Naze
+1.0	reverb_wikipedia_tuples-1.1.txt	is substituted for	2	1	n
+1.0	reverb_wikipedia_tuples-1.1.txt	is a power of	2	1	a prime number
+1.0	reverb_wikipedia_tuples-1.1.txt	were discovered in	2	1	Orange Beach
+1.0	reverb_wikipedia_tuples-1.1.txt	's on	2	1	the Menu
+1.0	reverb_wikipedia_tuples-1.1.txt	continued to operate until	2	1	September 22 , 1972
+1.0	reverb_wikipedia_tuples-1.1.txt	try to	2	1	1 try
+1.0	reverb_wikipedia_tuples-1.1.txt	debuted in	2	1	February
+1.0	reverb_wikipedia_tuples-1.1.txt	is used for	2	1	short codes
+1.0	reverb_wikipedia_tuples-1.1.txt	points for	2	1	a draw
+1.0	reverb_wikipedia_tuples-1.1.txt	be allowed on	2	1	Wikipedia
+1.0	reverb_wikipedia_tuples-1.1.txt	was diverted to	2	1	the Sea of Japan
+1.0	reverb_wikipedia_tuples-1.1.txt	will be released on	2	1	June 2 , 2009
+1.0	reverb_wikipedia_tuples-1.1.txt	continues to	2	1	London Charing Cross
+1.0	reverb_wikipedia_tuples-1.1.txt	calls at	2	1	Manningtree
+1.0	reverb_wikipedia_tuples-1.1.txt	functions on	2	1	M.
+1.0	reverb_wikipedia_tuples-1.1.txt	follows the text of	2	1	Codex Vaticanus
+1.0	reverb_wikipedia_tuples-1.1.txt	Is this for	2	1	Real
+1.0	reverb_wikipedia_tuples-1.1.txt	is captured in	2	1	a branch
+1.0	reverb_wikipedia_tuples-1.1.txt	is approximately	2	1 %	3 days
+1.0	reverb_wikipedia_tuples-1.1.txt	include shortness of	2	1 %	breath
+1.0	reverb_wikipedia_tuples-1.1.txt	was released on	2	1 19932005	April 4 , 2006
+1.0	reverb_wikipedia_tuples-1.1.txt	was a leap year starting on	2	1 BC	Thursday of the Julian calendar
+1.0	reverb_wikipedia_tuples-1.1.txt	is only available on	2	1 Bonus tracks	the CD reissue
+1.0	reverb_wikipedia_tuples-1.1.txt	lies entirely in	2	1 Boundary	Lake Michigan
+1.0	reverb_wikipedia_tuples-1.1.txt	was released in	2	1 DVD	Japan
+1.0	reverb_wikipedia_tuples-1.1.txt	is only worn on	2	1 Dress	ceremonial occasions
+1.0	reverb_wikipedia_tuples-1.1.txt	called due to	2	1 Game	bad weather condition
+1.0	reverb_wikipedia_tuples-1.1.txt	are not	2	1 Jews	a race
+1.0	reverb_wikipedia_tuples-1.1.txt	saw the return of	2	1 June 1955	Bourguiba
+1.0	reverb_wikipedia_tuples-1.1.txt	scored touchdowns on	2	1 KR	returns
+1.0	reverb_wikipedia_tuples-1.1.txt	was the Belgian entry in	2	1 Life	the Eurovision Song Contest 2004
+1.0	reverb_wikipedia_tuples-1.1.txt	was Queen of	2	1 March 1865	the Netherlands
+1.0	reverb_wikipedia_tuples-1.1.txt	is a public holiday in	2	1 May	Malta
+1.0	reverb_wikipedia_tuples-1.1.txt	were published in	2	1 No. 1	Kirtland
+1.0	reverb_wikipedia_tuples-1.1.txt	was renamed to	2	1 Northern Transvaal	the Blue Bulls
+1.0	reverb_wikipedia_tuples-1.1.txt	Left for	2	1 October	Ioannina
+1.0	reverb_wikipedia_tuples-1.1.txt	also saw the introduction of	2	1 October 1976	Medibank Private
+1.0	reverb_wikipedia_tuples-1.1.txt	played with	2	1 Season	18 teams
+1.0	reverb_wikipedia_tuples-1.1.txt	are appointed to represent	2	1 Senators	Manitoba
+1.0	reverb_wikipedia_tuples-1.1.txt	are appointed to represent	2	1 Senators	Prince Edward Island
+1.0	reverb_wikipedia_tuples-1.1.txt	are appointed to represent	2	1 Senators	Ontario
+1.0	reverb_wikipedia_tuples-1.1.txt	are appointed to represent	2	1 Senators	British Columbia
+1.0	reverb_wikipedia_tuples-1.1.txt	are appointed to represent	2	1 Senators	a region
+1.0	reverb_wikipedia_tuples-1.1.txt	are appointed to represent	2	1 Senators	Saskatchewan
+1.0	reverb_wikipedia_tuples-1.1.txt	are appointed to represent	2	1 Senators	Alberta
+1.0	reverb_wikipedia_tuples-1.1.txt	are appointed to represent	2	1 Senators	New Brunswick
+1.0	reverb_wikipedia_tuples-1.1.txt	are appointed to represent	2	1 Senators	Newfoundland and Labrador
+1.0	reverb_wikipedia_tuples-1.1.txt	can be found in	2	1 Single	Hale
+1.0	reverb_wikipedia_tuples-1.1.txt	please make	2	1 Somebody	a new archive
+1.0	reverb_wikipedia_tuples-1.1.txt	is equal to	2	1 Sv	100 rems
+1.0	reverb_wikipedia_tuples-1.1.txt	is a decision of	2	1 U.S. 4	a Pennsylvania Provincial Court
+1.0	reverb_wikipedia_tuples-1.1.txt	is a decision of	2	1 U.S. 5	a Pennsylvania Provincial Court
+1.0	reverb_wikipedia_tuples-1.1.txt	is a decision of	2	1 U.S. 6	a Pennsylvania Provincial Court
+1.0	reverb_wikipedia_tuples-1.1.txt	is a decision of	2	1 U.S. 8	a Pennsylvania Provincial Court
+1.0	reverb_wikipedia_tuples-1.1.txt	is a decision of	2	1 U.S. 9	a Pennsylvania Provincial Court
+1.0	reverb_wikipedia_tuples-1.1.txt	was equal to	2	1 U.S. dollar	25 som
+1.0	reverb_wikipedia_tuples-1.1.txt	critically depends on	2	1 WP	WP:RS
+1.0	reverb_wikipedia_tuples-1.1.txt	publishes a map of	2	1 Whoever	India
+1.0	reverb_wikipedia_tuples-1.1.txt	is not	2	1 Wikipedia	a reliable source
+1.0	reverb_wikipedia_tuples-1.1.txt	is not	2	1 Wikipedia	paper
+1.0	reverb_wikipedia_tuples-1.1.txt	moved to	2	1 Wing	Marville
+1.0	reverb_wikipedia_tuples-1.1.txt	were completed in	2	1 and 2	1987 and 1989
+1.0	reverb_wikipedia_tuples-1.1.txt	was reached in	2	1 billion	1802
+1.0	reverb_wikipedia_tuples-1.1.txt	is another way of saying	2	1 cfm	1 ft/min
+1.0	reverb_wikipedia_tuples-1.1.txt	occurred in	2	1 death	2000
+1.0	reverb_wikipedia_tuples-1.1.txt	is a way of	2	1 eM	managing
+1.0	reverb_wikipedia_tuples-1.1.txt	recover for	2	1 fumble	a TD
+1.0	reverb_wikipedia_tuples-1.1.txt	would be	2	1 instance	ok
+1.0	reverb_wikipedia_tuples-1.1.txt	is good for	2	1 joint	2 people
+1.0	reverb_wikipedia_tuples-1.1.txt	is equal to	2	1 kJ/mol	0.239 kcal/mol
+1.0	reverb_wikipedia_tuples-1.1.txt	is not equal to	2	1 km	1 1/2 miles
+1.0	reverb_wikipedia_tuples-1.1.txt	has been sold to	2	1 locomotive	TasRail
+1.0	reverb_wikipedia_tuples-1.1.txt	is seperate from	2	1 math	physics
+1.0	reverb_wikipedia_tuples-1.1.txt	occur in	2	1 of the species	Southern Africa
+1.0	reverb_wikipedia_tuples-1.1.txt	is allowed for	2	1 point	pole position
+1.0	reverb_wikipedia_tuples-1.1.txt	was given for	2	1 point	fastest lap
+1.0	reverb_wikipedia_tuples-1.1.txt	was sent from	2	1 rider	Belarus
+1.0	reverb_wikipedia_tuples-1.1.txt	is not the same as	2	1 rpm	1 Hz
+1.0	reverb_wikipedia_tuples-1.1.txt	is added to	2	1 skill point	a weapon
+1.0	reverb_wikipedia_tuples-1.1.txt	has been introduced to	2	1 species	Hawaii
+1.0	reverb_wikipedia_tuples-1.1.txt	occurs in	2	1 species	Belize
+1.0	reverb_wikipedia_tuples-1.1.txt	occurs in	2	1 species	Morocco
+1.0	reverb_wikipedia_tuples-1.1.txt	made landfall on	2	1 storm	the Baja
+1.0	reverb_wikipedia_tuples-1.1.txt	struck	2	1 which	Vietnam
+1.0	reverb_wikipedia_tuples-1.1.txt	has the concept of	2	1 wikipedia	a watchlist
+1.0	reverb_wikipedia_tuples-1.1.txt	is not	2	1 wikipedia	a reliable source
+1.0	reverb_wikipedia_tuples-1.1.txt	were born in	2	1,000 children	1994-95
+1.0	reverb_wikipedia_tuples-1.1.txt	may not seem like	2	1,000 marriages	a high number
+1.0	reverb_wikipedia_tuples-1.1.txt	were dependent on	2	1,000 persons	agriculture
+1.0	reverb_wikipedia_tuples-1.1.txt	weigh less than	2	1,000 seeds	2 grams
+1.0	reverb_wikipedia_tuples-1.1.txt	applied for	2	1,000+	2007 entry
+1.0	reverb_wikipedia_tuples-1.1.txt	lived in	2	1,000,000 people	Greece
+1.0	reverb_wikipedia_tuples-1.1.txt	were in	2	1,000,000 tonnes	production
+1.0	reverb_wikipedia_tuples-1.1.txt	were produced in	2	1,000,000 tonnes	1941
+1.0	reverb_wikipedia_tuples-1.1.txt	had been shipped to	2	1,007	Auschwitz
+1.0	reverb_wikipedia_tuples-1.1.txt	immigrated to	2	1,035,000 people	the U.S.
+1.0	reverb_wikipedia_tuples-1.1.txt	was the total number of	2	1,037	enrollees
+1.0	reverb_wikipedia_tuples-1.1.txt	are covering	2	1,050 buses	206 lines
+1.0	reverb_wikipedia_tuples-1.1.txt	died of	2	1,070	diseases and starvation
+1.0	reverb_wikipedia_tuples-1.1.txt	lived in	2	1,098 individuals	154 houses
+1.0	reverb_wikipedia_tuples-1.1.txt	were dependent on	2	1,100 people	farming
+1.0	reverb_wikipedia_tuples-1.1.txt	were produced in	2	1,112 tonnes	1998
+1.0	reverb_wikipedia_tuples-1.1.txt	built over	2	1,127,261	eight generations
+1.0	reverb_wikipedia_tuples-1.1.txt	is a Canadian rural community in	2	1,150	Richmond County
+1.0	reverb_wikipedia_tuples-1.1.txt	lived in	2	1,156,951	urban areas
+1.0	reverb_wikipedia_tuples-1.1.txt	is not	2	1,2	zero
+1.0	reverb_wikipedia_tuples-1.1.txt	were made by	2	1,200 B-33s	1956
+1.0	reverb_wikipedia_tuples-1.1.txt	have been destroyed in	2	1,200 homes	Tocopilla
+1.0	reverb_wikipedia_tuples-1.1.txt	belong to	2	1,200 of them	the Hizbul Mujahideen
+1.0	reverb_wikipedia_tuples-1.1.txt	worked for	2	1,200 of whom	the Metropolitan Police
+1.0	reverb_wikipedia_tuples-1.1.txt	were dependent on	2	1,200 persons	agriculture
+1.0	reverb_wikipedia_tuples-1.1.txt	are of	2	1,209 residents	foreign origin
+1.0	reverb_wikipedia_tuples-1.1.txt	lived in	2	1,227 people	Moosic
+1.0	reverb_wikipedia_tuples-1.1.txt	is a census-designated place in	2	1,228	Shasta County
+1.0	reverb_wikipedia_tuples-1.1.txt	came to	2	1,271,000 visitors	Kauai
+1.0	reverb_wikipedia_tuples-1.1.txt	were guillotined in	2	1,285 victims	Paris
+1.0	reverb_wikipedia_tuples-1.1.txt	went on to	2	1,300	Israel
+1.0	reverb_wikipedia_tuples-1.1.txt	make up	2	1,300 stations	Category 5
+1.0	reverb_wikipedia_tuples-1.1.txt	were born in	2	1,320,000 children	Russia
+1.0	reverb_wikipedia_tuples-1.1.txt	were repatriated to	2	1,327	Japan
+1.0	reverb_wikipedia_tuples-1.1.txt	live in	2	1,342 persons	Nutley
+1.0	reverb_wikipedia_tuples-1.1.txt	lived in	2	1,378 people	New Lebanon
+1.0	reverb_wikipedia_tuples-1.1.txt	is highly soluble in	2	1,4-Dioxane	groundwater
+1.0	reverb_wikipedia_tuples-1.1.txt	fled towards	2	1,400 of them	oxford
+1.0	reverb_wikipedia_tuples-1.1.txt	were aged	2	1,447 children	0-4 years
+1.0	reverb_wikipedia_tuples-1.1.txt	are made	2	1,450 employees	redundant
+1.0	reverb_wikipedia_tuples-1.1.txt	have been earmarked for	2	1,500 acres	housing
+1.0	reverb_wikipedia_tuples-1.1.txt	were destroyed in	2	1,500 houses	Uri
+1.0	reverb_wikipedia_tuples-1.1.txt	marched onto	2	1,500 marines	Benin
+1.0	reverb_wikipedia_tuples-1.1.txt	were occupied in	2	1,500 persons	agriculture
+1.0	reverb_wikipedia_tuples-1.1.txt	are over	2	1,511	64 years of age
+1.0	reverb_wikipedia_tuples-1.1.txt	were speakers of	2	1,518,579	Kannada
+1.0	reverb_wikipedia_tuples-1.1.txt	exist in	2	1,535 mosques	France
+1.0	reverb_wikipedia_tuples-1.1.txt	were built between	2	1,562 M551s	1966 and 1970
+1.0	reverb_wikipedia_tuples-1.1.txt	are buried in	2	1,563 U.S. soldiers	the Mexico City National Cemetery
+1.0	reverb_wikipedia_tuples-1.1.txt	were for	2	1,566,319 votes	Marianela
+1.0	reverb_wikipedia_tuples-1.1.txt	killed in	2	1,600	action
+1.0	reverb_wikipedia_tuples-1.1.txt	had been drilled in	2	1,648 wells	Comodoro Rivadavia
+1.0	reverb_wikipedia_tuples-1.1.txt	is a village in	2	1,649	Wiltshire
+1.0	reverb_wikipedia_tuples-1.1.txt	were built in	2	1,747	Canada
+1.0	reverb_wikipedia_tuples-1.1.txt	is a state of	2	1,778,188	Malaysia
+1.0	reverb_wikipedia_tuples-1.1.txt	are accredited to	2	1,800 museums	the MLA
+1.0	reverb_wikipedia_tuples-1.1.txt	were dependent on	2	1,900 persons	agriculture
+1.0	reverb_wikipedia_tuples-1.1.txt	resided in	2	1,909 people	Wyoming
+1.0	reverb_wikipedia_tuples-1.1.txt	are enrolled at	2	1,961 students	Lubbock Christian University
+1.0	reverb_wikipedia_tuples-1.1.txt	lived in	2	1,970 people	Elizabethtown
+1.0	reverb_wikipedia_tuples-1.1.txt	used the airport in	2	1,982,633 passengers	2007
+1.0	reverb_wikipedia_tuples-1.1.txt	currently lacks	2	1-	inline citations
+1.0	reverb_wikipedia_tuples-1.1.txt	was withdrawn in	2	1-1	1929
+1.0	reverb_wikipedia_tuples-1.1.txt	is not available in	2	1-1-1	the NANP
+1.0	reverb_wikipedia_tuples-1.1.txt	included in	2	1-10	vol
+1.0	reverb_wikipedia_tuples-1.1.txt	recorded at	2	1-17	the Royal Albert Hall
+1.0	reverb_wikipedia_tuples-1.1.txt	redeployed to	2	1-18 Infantry	Schweinfurt
+1.0	reverb_wikipedia_tuples-1.1.txt	were composed for	2	1-2	orchestra
+1.0	reverb_wikipedia_tuples-1.1.txt	migrated to	2	1-2-3	the Windows platform
+1.0	reverb_wikipedia_tuples-1.1.txt	was released on	2	1-2-3	January 26 , 1983
+1.0	reverb_wikipedia_tuples-1.1.txt	did not return to	2	1-503	Korea
+1.0	reverb_wikipedia_tuples-1.1.txt	was deployed to	2	1-506th	Oxford
+1.0	reverb_wikipedia_tuples-1.1.txt	is headquartered in	2	1-800-Flowers	Carle Place
+1.0	reverb_wikipedia_tuples-1.1.txt	belongs to	2	1-999	the Main Office
+1.0	reverb_wikipedia_tuples-1.1.txt	is a major constituent of	2	1-Propanol	fusel oil
+1.0	reverb_wikipedia_tuples-1.1.txt	fell on	2	1.0 inch	March 22 , 1987
+1.0	reverb_wikipedia_tuples-1.1.txt	was released on	2	1.0 version	September 12 , 2006
+1.0	reverb_wikipedia_tuples-1.1.txt	was released on	2	1.0,	January 2 , 2007
+1.0	reverb_wikipedia_tuples-1.1.txt	was released in	2	1.0.0	February 2005
+1.0	reverb_wikipedia_tuples-1.1.txt	was released on	2	1.02	September 13 , 2007
+1.0	reverb_wikipedia_tuples-1.1.txt	was released in	2	1.02b2	April
+1.0	reverb_wikipedia_tuples-1.1.txt	First return to	2	1.1	the U.S.
+1.0	reverb_wikipedia_tuples-1.1.txt	gave a single response of	2	1.1 %	Portuguese
+1.0	reverb_wikipedia_tuples-1.1.txt	were made up of	2	1.1 % of all households	individuals
+1.0	reverb_wikipedia_tuples-1.1.txt	lies in	2	1.1 % of the watershed	Clinton County
+1.0	reverb_wikipedia_tuples-1.1.txt	served in	2	1.1 million Canadians	WWII
+1.0	reverb_wikipedia_tuples-1.1.txt	is a treatise On	2	1.10.45	the Phoenician Alphabet
+1.0	reverb_wikipedia_tuples-1.1.txt	marks the start of	2	1.10pm	lunchtime
+1.0	reverb_wikipedia_tuples-1.1.txt	was one of	2	1.14889	Henry VIII 's Device Forts
+1.0	reverb_wikipedia_tuples-1.1.txt	is specified by	2	1.2	JSR 252
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	1.2 %	African descent
+1.0	reverb_wikipedia_tuples-1.1.txt	went to	2	1.2 %	the RPR
+1.0	reverb_wikipedia_tuples-1.1.txt	was a station on	2	1.204217	the East Kent Light Railway
+1.0	reverb_wikipedia_tuples-1.1.txt	was a station on	2	1.215478	the East Kent Light Railway
+1.0	reverb_wikipedia_tuples-1.1.txt	was a station on	2	1.226864	the East Kent Light Railway
+1.0	reverb_wikipedia_tuples-1.1.txt	was a station on	2	1.260286	the East Kent Light Railway
+1.0	reverb_wikipedia_tuples-1.1.txt	was a station on	2	1.275379	the East Kent Light Railway
+1.0	reverb_wikipedia_tuples-1.1.txt	was a railway station in	2	1.276221	the English county of Kent
+1.0	reverb_wikipedia_tuples-1.1.txt	was a station on	2	1.292304	the East Kent Light Railway
+1.0	reverb_wikipedia_tuples-1.1.txt	was a station on	2	1.295312	the East Kent Light Railway
+1.0	reverb_wikipedia_tuples-1.1.txt	are all children of	2	1.3	process 1
+1.0	reverb_wikipedia_tuples-1.1.txt	is not eligible for	2	1.3	Advance Parole
+1.0	reverb_wikipedia_tuples-1.1.txt	do not supply	2	1.3 Governments	money
+1.0	reverb_wikipedia_tuples-1.1.txt	was a station on	2	1.300181	the East Kent Light Railway
+1.0	reverb_wikipedia_tuples-1.1.txt	was a station on	2	1.320070	the East Kent Light Railway
+1.0	reverb_wikipedia_tuples-1.1.txt	was a station on	2	1.320848	the East Kent Light Railway
+1.0	reverb_wikipedia_tuples-1.1.txt	has seen	2	1.4	better times
+1.0	reverb_wikipedia_tuples-1.1.txt	is the current version of	2	1.4.2	Soldat
+1.0	reverb_wikipedia_tuples-1.1.txt	were sold to	2	1.5 million copies	date
+1.0	reverb_wikipedia_tuples-1.1.txt	could be attained in	2	1.6	a dive
+1.0	reverb_wikipedia_tuples-1.1.txt	are in	2	1.6 % of students	the ESOL program
+1.0	reverb_wikipedia_tuples-1.1.txt	are not	2	1.6 and 1	integers
+1.0	reverb_wikipedia_tuples-1.1.txt	is employed in	2	1.6 percent of the population	service industries
+1.0	reverb_wikipedia_tuples-1.1.txt	speak	2	1.63 %	Spanish
+1.0	reverb_wikipedia_tuples-1.1.txt	is used in	2	1.6L	the Ka
+1.0	reverb_wikipedia_tuples-1.1.txt	Do n't say	2	1.7	Kempes
+1.0	reverb_wikipedia_tuples-1.1.txt	became part of	2	1.75 km	Czechoslovakia
+1.0	reverb_wikipedia_tuples-1.1.txt	are from	2	1.8 %	a different country
+1.0	reverb_wikipedia_tuples-1.1.txt	comes in	2	1.8 Success	cans
+1.0	reverb_wikipedia_tuples-1.1.txt	is of	2	1.85 % of the population	foreign nationality
+1.0	reverb_wikipedia_tuples-1.1.txt	gave a single response of	2	1.86 % of respondents	Qubcois
+1.0	reverb_wikipedia_tuples-1.1.txt	were used in	2	1.86 billion gallons of water	2001
+1.0	reverb_wikipedia_tuples-1.1.txt	lived in	2	1.9 million Turks	Germany
+1.0	reverb_wikipedia_tuples-1.1.txt	gave a single response of	2	1.96 %	East Indian
+1.0	reverb_wikipedia_tuples-1.1.txt	is named after	2	1.The moon	Portia
+1.0	reverb_wikipedia_tuples-1.1.txt	does nothing for	2	1.f3	development
+1.0	reverb_wikipedia_tuples-1.1.txt	is not the same as	2	1/	1/2 + 1/2
+1.0	reverb_wikipedia_tuples-1.1.txt	is not equal to	2	1/0	infinity
+1.0	reverb_wikipedia_tuples-1.1.txt	is a power of	2	1/2	two
+1.0	reverb_wikipedia_tuples-1.1.txt	was withdrawn to	2	1/3	Okinawa
+1.0	reverb_wikipedia_tuples-1.1.txt	relocated to	2	1/4	Al Hillah
+1.0	reverb_wikipedia_tuples-1.1.txt	is easier than	2	1/4	0.1/0.4
+1.0	reverb_wikipedia_tuples-1.1.txt	were over	2	1/4 of the population	60
+1.0	reverb_wikipedia_tuples-1.1.txt	was deactivated in	2	1/5	January 1933
+1.0	reverb_wikipedia_tuples-1.1.txt	would evaluate to	2	1/6	6
+1.0	reverb_wikipedia_tuples-1.1.txt	were involved in	2	10	the Holocaust
+1.0	reverb_wikipedia_tuples-1.1.txt	was an Act of	2	10	Parliament of the Parliament of the United Kingdom
+1.0	reverb_wikipedia_tuples-1.1.txt	has control in	2	10	a Private Limited Company
+1.0	reverb_wikipedia_tuples-1.1.txt	are anchored by	2	10	Bob Bartlett
+1.0	reverb_wikipedia_tuples-1.1.txt	am to	2	10	5 pm
+1.0	reverb_wikipedia_tuples-1.1.txt	torpedoes in	2	10	total
+1.0	reverb_wikipedia_tuples-1.1.txt	ran out of	2	10	fuel
+1.0	reverb_wikipedia_tuples-1.1.txt	are in	2	10	Karnataka
+1.0	reverb_wikipedia_tuples-1.1.txt	will become	2	10	9
+1.0	reverb_wikipedia_tuples-1.1.txt	are endemic to	2	10	California
+1.0	reverb_wikipedia_tuples-1.1.txt	are currently in	2	10	operation
+1.0	reverb_wikipedia_tuples-1.1.txt	was given in	2	10	1992
+1.0	reverb_wikipedia_tuples-1.1.txt	are for	2	10	girls
+1.0	reverb_wikipedia_tuples-1.1.txt	will compete in	2	10	Table Tennis
+1.0	reverb_wikipedia_tuples-1.1.txt	lived to	2	10	adulthood
+1.0	reverb_wikipedia_tuples-1.1.txt	am on	2	10	weekend
+1.0	reverb_wikipedia_tuples-1.1.txt	Then died	2	10	Ibzan
+1.0	reverb_wikipedia_tuples-1.1.txt	hit with	2	10	Memory
+1.0	reverb_wikipedia_tuples-1.1.txt	am to	2	10	9pm
+1.0	reverb_wikipedia_tuples-1.1.txt	LED	2	10	Front Panel
+1.0	reverb_wikipedia_tuples-1.1.txt	sold to	2	10	TRE
+1.0	reverb_wikipedia_tuples-1.1.txt	were transferred to	2	10	Alta California
+1.0	reverb_wikipedia_tuples-1.1.txt	were recorded in	2	10	London
+1.0	reverb_wikipedia_tuples-1.1.txt	have been adapted for	2	10	films
+1.0	reverb_wikipedia_tuples-1.1.txt	have associated	2	10 %	cerebral hemorrhage
+1.0	reverb_wikipedia_tuples-1.1.txt	are on	2	10 %	free or reduced lunch
+1.0	reverb_wikipedia_tuples-1.1.txt	would be offered for	2	10 % discount	admission
+1.0	reverb_wikipedia_tuples-1.1.txt	live in	2	10 % of people	mountainous regions
+1.0	reverb_wikipedia_tuples-1.1.txt	is younger than	2	10 % of the population	six
+1.0	reverb_wikipedia_tuples-1.1.txt	Do n't Make	2	10 Clowns	a Circus
+1.0	reverb_wikipedia_tuples-1.1.txt	is the official residence of	2	10 Downing Street	the First Lord of the Treasury
+1.0	reverb_wikipedia_tuples-1.1.txt	is also destroyed in	2	10 Downing Street	World War Three
+1.0	reverb_wikipedia_tuples-1.1.txt	removed from	2	10 Feb 2009 PROD tag	Mythica
+1.0	reverb_wikipedia_tuples-1.1.txt	were recorded in	2	10 Filipinos	Manitoba
+1.0	reverb_wikipedia_tuples-1.1.txt	was a hardcore punk band from	2	10 Minute Warning	Seattle
+1.0	reverb_wikipedia_tuples-1.1.txt	despatched to	2	10 Mosquitos	Berlin
+1.0	reverb_wikipedia_tuples-1.1.txt	simulcasted on	2	10 News	channel 10
+1.0	reverb_wikipedia_tuples-1.1.txt	are posted in	2	10 Signs	mph
+1.0	reverb_wikipedia_tuples-1.1.txt	is not for	2	10 Wikipedia	advocacy
+1.0	reverb_wikipedia_tuples-1.1.txt	was initially formed in	2	10 Years	Knoxville
+1.0	reverb_wikipedia_tuples-1.1.txt	were destroyed due to	2	10 bridges	flooding
+1.0	reverb_wikipedia_tuples-1.1.txt	are an order of	2	10 dB	magnitude
+1.0	reverb_wikipedia_tuples-1.1.txt	is typical at	2	10 days	27 C
+1.0	reverb_wikipedia_tuples-1.1.txt	were introduced in	2	10 franc notes	1943
+1.0	reverb_wikipedia_tuples-1.1.txt	were introduced in	2	10 francs notes	1946
+1.0	reverb_wikipedia_tuples-1.1.txt	ran in	2	10 independents	2004
+1.0	reverb_wikipedia_tuples-1.1.txt	have been published to	2	10 issues	date
+1.0	reverb_wikipedia_tuples-1.1.txt	is not needed for	2	10 of them	Lithuania
+1.0	reverb_wikipedia_tuples-1.1.txt	have been elected to	2	10 of whom	the National Academy of Sciences
+1.0	reverb_wikipedia_tuples-1.1.txt	are needed for	2	10 points	a Championship
+1.0	reverb_wikipedia_tuples-1.1.txt	were awarded for	2	10 points	a first place finish
+1.0	reverb_wikipedia_tuples-1.1.txt	are deducted for	2	10 points	an incorrect answer
+1.0	reverb_wikipedia_tuples-1.1.txt	are awarded for	2	10 points	a win
+1.0	reverb_wikipedia_tuples-1.1.txt	had been added to	2	10 seats	Senate
+1.0	reverb_wikipedia_tuples-1.1.txt	is enough to kill	2	10 seconds	a normal person
+1.0	reverb_wikipedia_tuples-1.1.txt	was raised for	2	10 shillings	the Cricket Club
+1.0	reverb_wikipedia_tuples-1.1.txt	leave for	2	10 ships	the New York colony
+1.0	reverb_wikipedia_tuples-1.1.txt	would be required by	2	10 tricks	declarer
+1.0	reverb_wikipedia_tuples-1.1.txt	is used for	2	10 which	the Prime Minister 's office
+1.0	reverb_wikipedia_tuples-1.1.txt	entered the House on	2	10 women	22 September
+1.0	reverb_wikipedia_tuples-1.1.txt	provided the accuracy of	2	10 yards	point-blank range
+1.0	reverb_wikipedia_tuples-1.1.txt	can be interpreted as	2	10+1	3.
+1.0	reverb_wikipedia_tuples-1.1.txt	returned to	2	10,000	Europe
+1.0	reverb_wikipedia_tuples-1.1.txt	were arriving	2	10,000 US troops	a day
+1.0	reverb_wikipedia_tuples-1.1.txt	are devoted to	2	10,000 acres	wildlife management
+1.0	reverb_wikipedia_tuples-1.1.txt	were in	2	10,000 more	Bogale
+1.0	reverb_wikipedia_tuples-1.1.txt	descended on	2	10,000 revellers	Clapham Common
+1.0	reverb_wikipedia_tuples-1.1.txt	were installed in	2	10,000 units	Frankfurt
+1.0	reverb_wikipedia_tuples-1.1.txt	were born outside of	2	10,071	Ireland
+1.0	reverb_wikipedia_tuples-1.1.txt	is a village within	2	10,100	the Metropolitan Borough of Oldham
+1.0	reverb_wikipedia_tuples-1.1.txt	were born in	2	10,253	the United Kingdom
+1.0	reverb_wikipedia_tuples-1.1.txt	were dependent on	2	10,300 persons	agriculture
+1.0	reverb_wikipedia_tuples-1.1.txt	lived in	2	10,308 people	Brown County
+1.0	reverb_wikipedia_tuples-1.1.txt	were members of	2	10,473	the Philippine Division
+1.0	reverb_wikipedia_tuples-1.1.txt	were dependent on	2	10,500 persons	agriculture
+1.0	reverb_wikipedia_tuples-1.1.txt	were in	2	10,624 spectators	attendance
+1.0	reverb_wikipedia_tuples-1.1.txt	lived in	2	10,627	Jackson County
+1.0	reverb_wikipedia_tuples-1.1.txt	is a city in	2	10,700	Vstergtland
+1.0	reverb_wikipedia_tuples-1.1.txt	lived in	2	10,725 people	Vandergrift
+1.0	reverb_wikipedia_tuples-1.1.txt	remain in	2	10,800 Jews	Iran
+1.0	reverb_wikipedia_tuples-1.1.txt	were produced for	2	10,953 units	1998
+1.0	reverb_wikipedia_tuples-1.1.txt	was discontinued in	2	10-0-6	1998
+1.0	reverb_wikipedia_tuples-1.1.txt	is sexually abused by	2	10-year-old Jeremy	George
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	10.0 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	was the lack of	2	10.0 users	printer drivers
+1.0	reverb_wikipedia_tuples-1.1.txt	will be assigned to	2	10.00	price
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	10.1 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	10.1 %	English
+1.0	reverb_wikipedia_tuples-1.1.txt	is attributed to	2	10.145	Indrani
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	10.2 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	are on	2	10.2 % of residents	benefits
+1.0	reverb_wikipedia_tuples-1.1.txt	was marketed as	2	10.3	Panther
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	10.3 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	gave a single response of	2	10.4 % of respondents	French
+1.0	reverb_wikipedia_tuples-1.1.txt	is above	2	10.4 % unemployment	state average
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	10.5 %	Polish
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	10.5 %	American
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	10.7 %	English
+1.0	reverb_wikipedia_tuples-1.1.txt	were made up of	2	10.7 % of all households	individuals
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	10.8 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	spoke	2	10.87 percent	German
+1.0	reverb_wikipedia_tuples-1.1.txt	are in	2	10/28	rough condition
+1.0	reverb_wikipedia_tuples-1.1.txt	is the atomic number of	2	100	fermium
+1.0	reverb_wikipedia_tuples-1.1.txt	appeared in	2	100	1889
+1.0	reverb_wikipedia_tuples-1.1.txt	took effect on	2	100	April 1 , 1992
+1.0	reverb_wikipedia_tuples-1.1.txt	is a census-designated place in	2	100	Shasta County
+1.0	reverb_wikipedia_tuples-1.1.txt	signed the Declaration of	2	100	Sentiments
+1.0	reverb_wikipedia_tuples-1.1.txt	is a community in	2	100	Cumberland County
+1.0	reverb_wikipedia_tuples-1.1.txt	were delivered from	2	100	USSR.
+1.0	reverb_wikipedia_tuples-1.1.txt	were an improvement over	2	100	the Portable
+1.0	reverb_wikipedia_tuples-1.1.txt	connects to	2	100	Wapping
+1.0	reverb_wikipedia_tuples-1.1.txt	connects to	2	100	Shadwell
+1.0	reverb_wikipedia_tuples-1.1.txt	agree on	2	100 %	Orange Revolution
+1.0	reverb_wikipedia_tuples-1.1.txt	agree with	2	100 %	Skinny
+1.0	reverb_wikipedia_tuples-1.1.txt	did not declare war on	2	100 %	Germany
+1.0	reverb_wikipedia_tuples-1.1.txt	are connected to	2	100 % of classrooms	the Internet
+1.0	reverb_wikipedia_tuples-1.1.txt	go on to	2	100 % of students	college
+1.0	reverb_wikipedia_tuples-1.1.txt	currently is used for	2	100 % of the building	office space
+1.0	reverb_wikipedia_tuples-1.1.txt	go to	2	100 % of the graduates	university
+1.0	reverb_wikipedia_tuples-1.1.txt	are provided with	2	100 % of the houses	electricity
+1.0	reverb_wikipedia_tuples-1.1.txt	speaks	2	100 % of the population	English
+1.0	reverb_wikipedia_tuples-1.1.txt	went to	2	100 % of the profits	the American Red Cross
+1.0	reverb_wikipedia_tuples-1.1.txt	speak	2	100 % of the residents	English
+1.0	reverb_wikipedia_tuples-1.1.txt	matriculate to	2	100 % of the students	college
+1.0	reverb_wikipedia_tuples-1.1.txt	is exposed to	2	100 % of the zone	malaria
+1.0	reverb_wikipedia_tuples-1.1.txt	is a building located in	2	100 Front Street	downtown Worcester
+1.0	reverb_wikipedia_tuples-1.1.txt	were recorded by	2	100 articles	January 2004
+1.0	reverb_wikipedia_tuples-1.1.txt	were receiving	2	100 communities	books
+1.0	reverb_wikipedia_tuples-1.1.txt	is equal to	2	100 credits	$ 1.
+1.0	reverb_wikipedia_tuples-1.1.txt	are needed to	2	100 credits	graduate
+1.0	reverb_wikipedia_tuples-1.1.txt	was removed from	2	100 designation	New York City
+1.0	reverb_wikipedia_tuples-1.1.txt	is about	2	100 kW	134 hp
+1.0	reverb_wikipedia_tuples-1.1.txt	were delivered between	2	100 missiles	2001 and 2004
+1.0	reverb_wikipedia_tuples-1.1.txt	will advance to	2	100 of these teams	the World Finals
+1.0	reverb_wikipedia_tuples-1.1.txt	lived in	2	100 people	DeWalt
+1.0	reverb_wikipedia_tuples-1.1.txt	continue on to	2	100 percent of seniors	a four-year college
+1.0	reverb_wikipedia_tuples-1.1.txt	are awarded for	2	100 points	state championships
+1.0	reverb_wikipedia_tuples-1.1.txt	are equal to	2	100 rad	1 gray
+1.0	reverb_wikipedia_tuples-1.1.txt	walk from	2	100 yards	a parking area
+1.0	reverb_wikipedia_tuples-1.1.txt	have been detected in	2	100 years	sea-surface temperatures
+1.0	reverb_wikipedia_tuples-1.1.txt	protested in	2	100,000	Berlin
+1.0	reverb_wikipedia_tuples-1.1.txt	live in	2	100,000 Koreans	Qingdao
+1.0	reverb_wikipedia_tuples-1.1.txt	were sold in	2	100,000 copies	Moscow
+1.0	reverb_wikipedia_tuples-1.1.txt	were taken by	2	100,000 orders	Christmas
+1.0	reverb_wikipedia_tuples-1.1.txt	have been produced to	2	100,000 vehicles	date
+1.0	reverb_wikipedia_tuples-1.1.txt	show a score of	2	100-94 points	Superior
+1.0	reverb_wikipedia_tuples-1.1.txt	may save	2	100-year-old tree	temple
+1.0	reverb_wikipedia_tuples-1.1.txt	signed on	2	100.1 FM	August 5th
+1.0	reverb_wikipedia_tuples-1.1.txt	began as	2	100.3	WMGM
+1.0	reverb_wikipedia_tuples-1.1.txt	is a commercial radio station in	2	100.3	Anaconda
+1.0	reverb_wikipedia_tuples-1.1.txt	was also licensed to	2	100.7	New Kensington
+1.0	reverb_wikipedia_tuples-1.1.txt	has survived in	2	1000	a Latin translation
+1.0	reverb_wikipedia_tuples-1.1.txt	had played a total of	2	1000 Clowns	four dates
+1.0	reverb_wikipedia_tuples-1.1.txt	were introduced in	2	1000 francs notes	1942
+1.0	reverb_wikipedia_tuples-1.1.txt	had been set on	2	1000 homes	fire
+1.0	reverb_wikipedia_tuples-1.1.txt	died of	2	1000 inhabitants	plague
+1.0	reverb_wikipedia_tuples-1.1.txt	exceeds the speed of	2	1000 m/s	sound
+1.0	reverb_wikipedia_tuples-1.1.txt	will provide	2	1000 mg	400 mg of calcium
+1.0	reverb_wikipedia_tuples-1.1.txt	will provide	2	1000 mg	210 mg of calcium
+1.0	reverb_wikipedia_tuples-1.1.txt	lived in	2	1000 people	Daggett
+1.0	reverb_wikipedia_tuples-1.1.txt	were introduced in	2	1000 pesos notes	1923
+1.0	reverb_wikipedia_tuples-1.1.txt	is often enough for	2	1000 samples	a first look
+1.0	reverb_wikipedia_tuples-1.1.txt	was a Princess of	2	1004 1055	England
+1.0	reverb_wikipedia_tuples-1.1.txt	was Archbishop of	2	1005 1089	Canterbury
+1.0	reverb_wikipedia_tuples-1.1.txt	was Archbishop of	2	10051089	Canterbury
+1.0	reverb_wikipedia_tuples-1.1.txt	is the predominant form of	2	100BASE-TX	Fast Ethernet
+1.0	reverb_wikipedia_tuples-1.1.txt	is the sum of	2	101	five consecutive primes
+1.0	reverb_wikipedia_tuples-1.1.txt	was composed in	2	101	1956
+1.0	reverb_wikipedia_tuples-1.1.txt	were also used as	2	101 FCs	taxis
+1.0	reverb_wikipedia_tuples-1.1.txt	is a skyscraper in	2	101 Montgomery	San Francisco
+1.0	reverb_wikipedia_tuples-1.1.txt	lived in	2	101 inhabitants	18 households
+1.0	reverb_wikipedia_tuples-1.1.txt	voted in	2	101 states	favour of the resolution
+1.0	reverb_wikipedia_tuples-1.1.txt	annually are due to	2	101,000 deaths	coronary heart disease
+1.0	reverb_wikipedia_tuples-1.1.txt	is an example of	2	1010 Mass	postmodern architecture
+1.0	reverb_wikipedia_tuples-1.1.txt	is a high-rise building in	2	1010 Mass	Washington
+1.0	reverb_wikipedia_tuples-1.1.txt	was enacted on	2	1012	October 16 , 1918
+1.0	reverb_wikipedia_tuples-1.1.txt	were produced in	2	10135 cars	total
+1.0	reverb_wikipedia_tuples-1.1.txt	were reported on	2	102 tornadoes	May 5
+1.0	reverb_wikipedia_tuples-1.1.txt	were spun off to	2	102.9 and 106.5	Heftel
+1.0	reverb_wikipedia_tuples-1.1.txt	is equal to	2	1026 decimal	10000000010 binary
+1.0	reverb_wikipedia_tuples-1.1.txt	voted in	2	103	favor of the policy
+1.0	reverb_wikipedia_tuples-1.1.txt	were made on	2	103 claims	the Eastern Front
+1.0	reverb_wikipedia_tuples-1.1.txt	went into	2	103,360	the Army
+1.0	reverb_wikipedia_tuples-1.1.txt	signed on	2	103.3	July 17th
+1.0	reverb_wikipedia_tuples-1.1.txt	signed on in	2	103.3	January
+1.0	reverb_wikipedia_tuples-1.1.txt	went back to	2	1031	Rus
+1.0	reverb_wikipedia_tuples-1.1.txt	argues against	2	103107	conversion
+1.0	reverb_wikipedia_tuples-1.1.txt	is a station on	2	103rd Street	the IND Eighth Avenue Line of the New York City Subway
+1.0	reverb_wikipedia_tuples-1.1.txt	is a local station on	2	103rd Street	the IRT BroadwaySeventh Avenue Line of the New York City Subway
+1.0	reverb_wikipedia_tuples-1.1.txt	is a station on	2	103rd Street	the IRT Lexington Avenue Line of the New York City Subway
+1.0	reverb_wikipedia_tuples-1.1.txt	were built in	2	104	Japan
+1.0	reverb_wikipedia_tuples-1.1.txt	is the main road in	2	104 Street	the Warehouse District
+1.0	reverb_wikipedia_tuples-1.1.txt	were to	2	104,513	Jewish mothers
+1.0	reverb_wikipedia_tuples-1.1.txt	were married to	2	104,749 people	Koreans
+1.0	reverb_wikipedia_tuples-1.1.txt	was Count of	2	1040-1094	Toulouse
+1.0	reverb_wikipedia_tuples-1.1.txt	was Count of	2	1041 or 1042 1105	Toulouse
+1.0	reverb_wikipedia_tuples-1.1.txt	was the eldest son of	2	10441081	Humphrey
+1.0	reverb_wikipedia_tuples-1.1.txt	was the younger son of	2	1045 1097	Humphrey
+1.0	reverb_wikipedia_tuples-1.1.txt	was Count of	2	1047 1081	Amiens
+1.0	reverb_wikipedia_tuples-1.1.txt	is a station on	2	104th Street	the IND Fulton Street Line of the New York City Subway
+1.0	reverb_wikipedia_tuples-1.1.txt	is a skip-stop station on	2	104th Street	the BMT Jamaica Line of the New York City Subway
+1.0	reverb_wikipedia_tuples-1.1.txt	is part of	2	105	the International E-road network
+1.0	reverb_wikipedia_tuples-1.1.txt	are found nowhere else on	2	105	earth
+1.0	reverb_wikipedia_tuples-1.1.txt	are located in	2	105	India
+1.0	reverb_wikipedia_tuples-1.1.txt	voted in	2	105 countries	favour of the draft resolution
+1.0	reverb_wikipedia_tuples-1.1.txt	had boarded in	2	105 of whom	Calcutta
+1.0	reverb_wikipedia_tuples-1.1.txt	returned to	2	105,000	Poland
+1.0	reverb_wikipedia_tuples-1.1.txt	was born near	2	1050-1143	Burgos
+1.0	reverb_wikipedia_tuples-1.1.txt	is installed on	2	1053	a high platform
+1.0	reverb_wikipedia_tuples-1.1.txt	were sold to	2	1054 FDs	China
+1.0	reverb_wikipedia_tuples-1.1.txt	were conducted between	2	1054 tests	1945 and 1992
+1.0	reverb_wikipedia_tuples-1.1.txt	was a King of	2	1055 1137	Gwynedd
+1.0	reverb_wikipedia_tuples-1.1.txt	originated in	2	106	1824
+1.0	reverb_wikipedia_tuples-1.1.txt	belonged to	2	106	Jews
+1.0	reverb_wikipedia_tuples-1.1.txt	were executed for	2	106	murder
+1.0	reverb_wikipedia_tuples-1.1.txt	is part of	2	106 Squadron	WikiProject Israel
+1.0	reverb_wikipedia_tuples-1.1.txt	signed on	2	106.7	July 6th
+1.0	reverb_wikipedia_tuples-1.1.txt	rises to	2	106.833	2320 m
+1.0	reverb_wikipedia_tuples-1.1.txt	can also apply for	2	106/1118	the Card
+1.0	reverb_wikipedia_tuples-1.1.txt	AM in	2	1060	Mebane
+1.0	reverb_wikipedia_tuples-1.1.txt	also form part of	2	106th	the Parachute Regiment
+1.0	reverb_wikipedia_tuples-1.1.txt	was attached to	2	106th Infantry Division	the Advanced Section
+1.0	reverb_wikipedia_tuples-1.1.txt	was located at	2	106th Infantry Division	Bad Ems
+1.0	reverb_wikipedia_tuples-1.1.txt	were built by	2	107	1986
+1.0	reverb_wikipedia_tuples-1.1.txt	served in	2	107 men	the Rangers
+1.0	reverb_wikipedia_tuples-1.1.txt	signed on	2	107.5	January 5
+1.0	reverb_wikipedia_tuples-1.1.txt	was a medieval archbishop of	2	10701136	Canterbury
+1.0	reverb_wikipedia_tuples-1.1.txt	was a medieval Archbishop of	2	10706 February 1140	York
+1.0	reverb_wikipedia_tuples-1.1.txt	sent his son to	2	1076-78	Pope Gregory VII
+1.0	reverb_wikipedia_tuples-1.1.txt	were brought from	2	1077 of them	Romania
+1.0	reverb_wikipedia_tuples-1.1.txt	was a Queen Consort of	2	1078 c. 1102	Hungary
+1.0	reverb_wikipedia_tuples-1.1.txt	is an American radio station licensed to	2	107x	Kemmerer
+1.0	reverb_wikipedia_tuples-1.1.txt	begins in	2	108	Rutherfordton
+1.0	reverb_wikipedia_tuples-1.1.txt	have been	2	108	men
+1.0	reverb_wikipedia_tuples-1.1.txt	are members of	2	108	the International Criminal Court
+1.0	reverb_wikipedia_tuples-1.1.txt	occurred in	2	108 cases	the United States
+1.0	reverb_wikipedia_tuples-1.1.txt	were ordered in	2	108 examples	January 1941
+1.0	reverb_wikipedia_tuples-1.1.txt	lack access to	2	108 million people	dental care
+1.0	reverb_wikipedia_tuples-1.1.txt	had been given to	2	108 of them	the Luftwaffe
+1.0	reverb_wikipedia_tuples-1.1.txt	were produced in	2	1080 150s	1974
+1.0	reverb_wikipedia_tuples-1.1.txt	is defined by	2	1080i	SMPTE 274M
+1.0	reverb_wikipedia_tuples-1.1.txt	is usually used for	2	1080p	Blu-ray Disc
+1.0	reverb_wikipedia_tuples-1.1.txt	mobilized for	2	108th Armor	Desert Storm
+1.0	reverb_wikipedia_tuples-1.1.txt	is headquartered in	2	108th Cavalry	Shreveport
+1.0	reverb_wikipedia_tuples-1.1.txt	were executed during	2	109	1681
+1.0	reverb_wikipedia_tuples-1.1.txt	connect the airport to	2	109	downtown
+1.0	reverb_wikipedia_tuples-1.1.txt	converted in	2	109	1943-44
+1.0	reverb_wikipedia_tuples-1.1.txt	connect the airport to	2	109	Downtown Las Vegas
+1.0	reverb_wikipedia_tuples-1.1.txt	is about	2	109 seconds	31.7 years
+1.0	reverb_wikipedia_tuples-1.1.txt	were converted in	2	109 vehicles	1943-44
+1.0	reverb_wikipedia_tuples-1.1.txt	lived during	2	1090who	the Northern Song dynasty
+1.0	reverb_wikipedia_tuples-1.1.txt	is an EP released by	2	10:1	Rogue Wave
+1.0	reverb_wikipedia_tuples-1.1.txt	was a figure of	2	10X	speech
+1.0	reverb_wikipedia_tuples-1.1.txt	were held	2	10th Anniversary celebrations	12-15 July 2007
+1.0	reverb_wikipedia_tuples-1.1.txt	was premier of	2	10th Baronet	Queensland
+1.0	reverb_wikipedia_tuples-1.1.txt	see also	2	10th Cavalry Regiment	Buffalo Soldiers
+1.0	reverb_wikipedia_tuples-1.1.txt	was the son of	2	10th Duke of Somerset	Edward Seymour
+1.0	reverb_wikipedia_tuples-1.1.txt	was the eldest son of	2	10th Earl of Strathmore and Kinghorne	John Bowes
+1.0	reverb_wikipedia_tuples-1.1.txt	was relocated to	2	10th Group	West Berlin
+1.0	reverb_wikipedia_tuples-1.1.txt	was originally formed in	2	10th Marines	Quantico
+1.0	reverb_wikipedia_tuples-1.1.txt	was formed on	2	10th SFG	June 19th , 1952
+1.0	reverb_wikipedia_tuples-1.1.txt	moved to	2	10th SFG	Fort Carson
+1.0	reverb_wikipedia_tuples-1.1.txt	transferred to	2	10th SFG	Fort Carson
+1.0	reverb_wikipedia_tuples-1.1.txt	was on	2	10th Street	Tenth Street
+1.0	reverb_wikipedia_tuples-1.1.txt	is considered	2	10th grade	upper classman
+1.0	reverb_wikipedia_tuples-1.1.txt	was discovered in	2	11	1977
+1.0	reverb_wikipedia_tuples-1.1.txt	are in	2	11	Distt
+1.0	reverb_wikipedia_tuples-1.1.txt	were for	2	11	Public Disorder
+1.0	reverb_wikipedia_tuples-1.1.txt	had previously been	2	11	TDs
+1.0	reverb_wikipedia_tuples-1.1.txt	were built between	2	11	1952 and 1954
+1.0	reverb_wikipedia_tuples-1.1.txt	departed	2	11	Logan Airport
+1.0	reverb_wikipedia_tuples-1.1.txt	was an Act of	2	11	Parliament of the Parliament of the United Kingdom
+1.0	reverb_wikipedia_tuples-1.1.txt	serve as	2	11	administrative staff
+1.0	reverb_wikipedia_tuples-1.1.txt	were in	2	11	the Midwest
+1.0	reverb_wikipedia_tuples-1.1.txt	will become	2	11	10
+1.0	reverb_wikipedia_tuples-1.1.txt	was released in	2	11	1972
+1.0	reverb_wikipedia_tuples-1.1.txt	was officially released in	2	11	May
+1.0	reverb_wikipedia_tuples-1.1.txt	die in	2	11	train crash
+1.0	reverb_wikipedia_tuples-1.1.txt	was referred to	2	11	the Senate Judiciary Committee
+1.0	reverb_wikipedia_tuples-1.1.txt	does not yield	2	11	a perfect number
+1.0	reverb_wikipedia_tuples-1.1.txt	were members of	2	11	the PPP
+1.0	reverb_wikipedia_tuples-1.1.txt	receives some sort of	2	11 % of the student body	need-based financial assistance
+1.0	reverb_wikipedia_tuples-1.1.txt	was produced by	2	11 % of this	solar panels
+1.0	reverb_wikipedia_tuples-1.1.txt	removed from	2	11 Feb 2009 PROD tag	Jammer
+1.0	reverb_wikipedia_tuples-1.1.txt	were taken captive by	2	11 Israeli soldiers	Egyptian forces
+1.0	reverb_wikipedia_tuples-1.1.txt	disbanded in	2	11 July 1940	the UK.
+1.0	reverb_wikipedia_tuples-1.1.txt	was ranked behind	2	11 King	Hard
+1.0	reverb_wikipedia_tuples-1.1.txt	bombed	2	11 Lancasters	Berchtesgaden
+1.0	reverb_wikipedia_tuples-1.1.txt	Left for	2	11 October	Tepelen
+1.0	reverb_wikipedia_tuples-1.1.txt	represented Japan in	2	11 athletes	1920
+1.0	reverb_wikipedia_tuples-1.1.txt	were particularly	2	11 counties	hard hit
+1.0	reverb_wikipedia_tuples-1.1.txt	belong to	2	11 faculty members	the National Academy of Engineering
+1.0	reverb_wikipedia_tuples-1.1.txt	arrived in	2	11 golfers	the Aloha State
+1.0	reverb_wikipedia_tuples-1.1.txt	entered medical schools in	2	11 graduates	Hong Kong
+1.0	reverb_wikipedia_tuples-1.1.txt	are identified at	2	11 individuals	Cadix
+1.0	reverb_wikipedia_tuples-1.1.txt	win for	2	11 inning	the Angels
+1.0	reverb_wikipedia_tuples-1.1.txt	entered the House on	2	11 men	Day 4
+1.0	reverb_wikipedia_tuples-1.1.txt	set on	2	11 mosques	fire
+1.0	reverb_wikipedia_tuples-1.1.txt	are in	2	11 of them	English
+1.0	reverb_wikipedia_tuples-1.1.txt	were prior to	2	11 of these execution	Statehood
+1.0	reverb_wikipedia_tuples-1.1.txt	were in	2	11 of those seats	Tehran
+1.0	reverb_wikipedia_tuples-1.1.txt	were sent to	2	11 passengers	hospital
+1.0	reverb_wikipedia_tuples-1.1.txt	are known to exist in	2	11 populations	Georgia
+1.0	reverb_wikipedia_tuples-1.1.txt	caught passes for	2	11 receivers	the Buckeyes
+1.0	reverb_wikipedia_tuples-1.1.txt	killed in	2	11 schoolchildren	Sri Lanka
+1.0	reverb_wikipedia_tuples-1.1.txt	were conducted on	2	11 selections	television
+1.0	reverb_wikipedia_tuples-1.1.txt	are available to	2	11 sports	boys
+1.0	reverb_wikipedia_tuples-1.1.txt	were hit by	2	11 tanks	missile fire
+1.0	reverb_wikipedia_tuples-1.1.txt	played since	2	11 tournaments	1997
+1.0	reverb_wikipedia_tuples-1.1.txt	have been published in	2	11 volumes	French
+1.0	reverb_wikipedia_tuples-1.1.txt	are recorded in	2	11 votes	favour
+1.0	reverb_wikipedia_tuples-1.1.txt	sat in	2	11 women	the Assembly of Representatives
+1.0	reverb_wikipedia_tuples-1.1.txt	is a city in	2	11,000	Shasta County
+1.0	reverb_wikipedia_tuples-1.1.txt	will be for	2	11,160 miles	express trains
+1.0	reverb_wikipedia_tuples-1.1.txt	lived in	2	11,187 people	Abbeville
+1.0	reverb_wikipedia_tuples-1.1.txt	included in	2	11-20	Vol
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	11.0 %	Irish
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	11.2 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	11.3 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	11.4 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	are made up of	2	11.4 % of all households	individuals
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	11.5 %	Irish
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	11.6 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	11.7 %	Swedish
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	11.7 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	is a range in	2	11.75	Adamawa State
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	11.8 %	English
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	11.8 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	11.9 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	was written in	2	110	three days
+1.0	reverb_wikipedia_tuples-1.1.txt	are displayed for	2	110 expeditions	the Mediterranean area
+1.0	reverb_wikipedia_tuples-1.1.txt	were taken	2	110 men	prisoner
+1.0	reverb_wikipedia_tuples-1.1.txt	keeps secret for	2	110 year old woman	long life
+1.0	reverb_wikipedia_tuples-1.1.txt	demonstrate in	2	110,000	Australian cities
+1.0	reverb_wikipedia_tuples-1.1.txt	immigrated to	2	110,000 Jews	Palestine
+1.0	reverb_wikipedia_tuples-1.1.txt	were produced between	2	110,000 units	1990 and 2002
+1.0	reverb_wikipedia_tuples-1.1.txt	were built in	2	1100	1972
+1.0	reverb_wikipedia_tuples-1.1.txt	were attending	2	1100 Pupils	classes
+1.0	reverb_wikipedia_tuples-1.1.txt	was passed on	2	1106	March 3 , 1891
+1.0	reverb_wikipedia_tuples-1.1.txt	is an unincorporated village in	2	1108	Iberville Parish
+1.0	reverb_wikipedia_tuples-1.1.txt	is a street in	2	110th Street	the New York City borough of Manhattan
+1.0	reverb_wikipedia_tuples-1.1.txt	is a local station on	2	110th Street	the IRT Lexington Avenue Line of the New York City Subway
+1.0	reverb_wikipedia_tuples-1.1.txt	is a building in	2	111 George street	Brisbane
+1.0	reverb_wikipedia_tuples-1.1.txt	played a role in	2	111 Sqn	the Battle of Britain
+1.0	reverb_wikipedia_tuples-1.1.txt	provides access to	2	111 Street	the University of Alberta
+1.0	reverb_wikipedia_tuples-1.1.txt	would be	2	111.111111	nine
+1.0	reverb_wikipedia_tuples-1.1.txt	is a ghost town in	2	111.8864	Sanpete County
+1.0	reverb_wikipedia_tuples-1.1.txt	was a medieval Archbishop of	2	1110	Rouen
+1.0	reverb_wikipedia_tuples-1.1.txt	is a high-rise building in	2	1111 19th Street	Washington
+1.0	reverb_wikipedia_tuples-1.1.txt	are classified into	2	1115 students	25 classes
+1.0	reverb_wikipedia_tuples-1.1.txt	is a skip-stop station on	2	111th Street	the BMT Jamaica Line of the New York City Subway
+1.0	reverb_wikipedia_tuples-1.1.txt	is a local station on	2	111th Street	the IRT Flushing Line of the New York City Subway
+1.0	reverb_wikipedia_tuples-1.1.txt	is a station on	2	111th Street	the IND Fulton Street Line of the New York City Subway
+1.0	reverb_wikipedia_tuples-1.1.txt	is being implemented by	2	112	2010
+1.0	reverb_wikipedia_tuples-1.1.txt	were built for	2	112	the Regia Aeronautica
+1.0	reverb_wikipedia_tuples-1.1.txt	formed in	2	112	Atlanta
+1.0	reverb_wikipedia_tuples-1.1.txt	will redirect to	2	112	the Carabinieri
+1.0	reverb_wikipedia_tuples-1.1.txt	were classified into	2	112 athletes	disability group
+1.0	reverb_wikipedia_tuples-1.1.txt	is known as	2	112.967	Turtle Bay
+1.0	reverb_wikipedia_tuples-1.1.txt	was a daughter of	2	1120	Robert Guiscard
+1.0	reverb_wikipedia_tuples-1.1.txt	was the first Queen of	2	11251158	Portugal
+1.0	reverb_wikipedia_tuples-1.1.txt	are stationed in	2	1127 persons	Kazakhstan
+1.0	reverb_wikipedia_tuples-1.1.txt	is a street in	2	112th Street	the New York City borough of Manhattan
+1.0	reverb_wikipedia_tuples-1.1.txt	ordered for	2	113	the U.S. Marines
+1.0	reverb_wikipedia_tuples-1.1.txt	consists of	2	113.9,it	a number of islands
+1.0	reverb_wikipedia_tuples-1.1.txt	arrive	2	1132hrs	Le Bourget Airport
+1.0	reverb_wikipedia_tuples-1.1.txt	are only known by	2	1135	name
+1.0	reverb_wikipedia_tuples-1.1.txt	appears in	2	114	the Padovan sequence
+1.0	reverb_wikipedia_tuples-1.1.txt	is a repdigit in	2	114	base 7
+1.0	reverb_wikipedia_tuples-1.1.txt	went to	2	114	trial
+1.0	reverb_wikipedia_tuples-1.1.txt	were built until	2	114 cars	1982
+1.0	reverb_wikipedia_tuples-1.1.txt	destroyed in	2	114 residences	Lone Grove
+1.0	reverb_wikipedia_tuples-1.1.txt	moved to	2	114,000 Germans	the United States
+1.0	reverb_wikipedia_tuples-1.1.txt	was the son of	2	1140	Robert
+1.0	reverb_wikipedia_tuples-1.1.txt	was completed in	2	11402	1953
+1.0	reverb_wikipedia_tuples-1.1.txt	was the son of	2	1144/1150 1221	Hugh Bigod
+1.0	reverb_wikipedia_tuples-1.1.txt	are of	2	115	Hispanic heritage
+1.0	reverb_wikipedia_tuples-1.1.txt	should be in	2	115 crores	gold
+1.0	reverb_wikipedia_tuples-1.1.txt	was allocated by	2	115 mln	the Central Election Commission
+1.0	reverb_wikipedia_tuples-1.1.txt	are endemic to	2	115 plant species	Lebanon
+1.0	reverb_wikipedia_tuples-1.1.txt	were required for	2	115 votes	election
+1.0	reverb_wikipedia_tuples-1.1.txt	was founded in	2	115.84056	central Perth
+1.0	reverb_wikipedia_tuples-1.1.txt	is a zoo in	2	115.85306	South Perth
+1.0	reverb_wikipedia_tuples-1.1.txt	was the son of	2	1150	Stephen
+1.0	reverb_wikipedia_tuples-1.1.txt	also have	2	1150	French spellings
+1.0	reverb_wikipedia_tuples-1.1.txt	was reintroduced to	2	1151	a new Congress
+1.0	reverb_wikipedia_tuples-1.1.txt	is a main-belt asteroid discovered on	2	115485	October 22 , 2003
+1.0	reverb_wikipedia_tuples-1.1.txt	are based on	2	116 of the 120	the Miserere
+1.0	reverb_wikipedia_tuples-1.1.txt	are native to	2	116 species of mammals	Israel
+1.0	reverb_wikipedia_tuples-1.1.txt	is a saint of	2	11631184	the Catholic Church
+1.0	reverb_wikipedia_tuples-1.1.txt	was published on	2	1164	19 October 1960
+1.0	reverb_wikipedia_tuples-1.1.txt	codified at	2	1164	5 U.S.C.
+1.0	reverb_wikipedia_tuples-1.1.txt	saw some action in	2	116th Brigade	the Netherlands
+1.0	reverb_wikipedia_tuples-1.1.txt	was mobilized to	2	116th Infantry Regiment	Fort Bragg
+1.0	reverb_wikipedia_tuples-1.1.txt	is a station on	2	116th Street	the IRT Lenox Avenue Line of the New York City Subway
+1.0	reverb_wikipedia_tuples-1.1.txt	ends at	2	116th Street	Morningside Drive
+1.0	reverb_wikipedia_tuples-1.1.txt	is a station on	2	116th Street	the IRT Lexington Avenue Line of the New York City Subway
+1.0	reverb_wikipedia_tuples-1.1.txt	is a local station on	2	116th Street	the IND Eighth Avenue Line of the New York City Subway
+1.0	reverb_wikipedia_tuples-1.1.txt	is the second album by	2	117	Izzy Stradlin
+1.0	reverb_wikipedia_tuples-1.1.txt	provides for	2	117	computer software
+1.0	reverb_wikipedia_tuples-1.1.txt	is part of	2	117	the International E-road network
+1.0	reverb_wikipedia_tuples-1.1.txt	have been purchased for	2	117 buses	replacement
+1.0	reverb_wikipedia_tuples-1.1.txt	have been recorded in	2	117 species of reptiles	Kakadu
+1.0	reverb_wikipedia_tuples-1.1.txt	broke out in	2	117 tornadoes	the Great Lakes
+1.0	reverb_wikipedia_tuples-1.1.txt	was constituted in	2	117th	West Tennessee
+1.0	reverb_wikipedia_tuples-1.1.txt	was constituted in	2	117th Infantry	West Tennessee
+1.0	reverb_wikipedia_tuples-1.1.txt	won the Medal of	2	117th Infantry Regiment	Honor
+1.0	reverb_wikipedia_tuples-1.1.txt	was composed in	2	118	1964
+1.0	reverb_wikipedia_tuples-1.1.txt	were added for	2	118 kanji	a total of 284 characters
+1.0	reverb_wikipedia_tuples-1.1.txt	are directly elected in	2	118 members	the Flemish Region
+1.0	reverb_wikipedia_tuples-1.1.txt	are members of	2	118 teams	the New Jersey State Interscholastic Athletic Association
+1.0	reverb_wikipedia_tuples-1.1.txt	was a medieval Bishop of	2	11808 December 1228	Ely
+1.0	reverb_wikipedia_tuples-1.1.txt	was the eldest son of	2	1182 1225	Roger Bigod
+1.0	reverb_wikipedia_tuples-1.1.txt	are subject to	2	11821180 BC	debate
+1.0	reverb_wikipedia_tuples-1.1.txt	is located in	2	118A	Tomkins Cove
+1.0	reverb_wikipedia_tuples-1.1.txt	is a street in	2	118th Street	the New York City borough of Manhattan
+1.0	reverb_wikipedia_tuples-1.1.txt	will be named in	2	118th element	Russian
+1.0	reverb_wikipedia_tuples-1.1.txt	is the sum of	2	119	five consecutive primes
+1.0	reverb_wikipedia_tuples-1.1.txt	am to	2	11:00	5:00 pm
+1.0	reverb_wikipedia_tuples-1.1.txt	was released on	2	11:11	October 9 , 2007
+1.0	reverb_wikipedia_tuples-1.1.txt	is largely immune to	2	11B	radiation damage
+1.0	reverb_wikipedia_tuples-1.1.txt	were put into	2	11s	permanent storage
+1.0	reverb_wikipedia_tuples-1.1.txt	was the third son of	2	11th Earl of Strathmore and Kinghorne	John Bowes
+1.0	reverb_wikipedia_tuples-1.1.txt	consists of	2	11th Operational Weather Squadrons manning	active duty
+1.0	reverb_wikipedia_tuples-1.1.txt	was the father of	2	11th century	Herleva
+1.0	reverb_wikipedia_tuples-1.1.txt	have been awarded to	2	12	Pararescuemen
+1.0	reverb_wikipedia_tuples-1.1.txt	were treated for	2	12	shock
+1.0	reverb_wikipedia_tuples-1.1.txt	was extended from	2	12	Lewiston
+1.0	reverb_wikipedia_tuples-1.1.txt	were shown on	2	12	March 11 , 2008
+1.0	reverb_wikipedia_tuples-1.1.txt	will become	2	12	11
+1.0	reverb_wikipedia_tuples-1.1.txt	are in	2	12	Downtown Louisville
+1.0	reverb_wikipedia_tuples-1.1.txt	are native to	2	12	Cape Province
+1.0	reverb_wikipedia_tuples-1.1.txt	go into	2	12	Chehalis
+1.0	reverb_wikipedia_tuples-1.1.txt	were up for	2	12	election
+1.0	reverb_wikipedia_tuples-1.1.txt	ordered in	2	12	2004
+1.0	reverb_wikipedia_tuples-1.1.txt	was an Act of	2	12	Parliament of the Parliament of the United Kingdom
+1.0	reverb_wikipedia_tuples-1.1.txt	also has	2	12	Childs Song
+1.0	reverb_wikipedia_tuples-1.1.txt	is the twelfth album by	2	12	Keller Williams
+1.0	reverb_wikipedia_tuples-1.1.txt	are located in	2	12	Dagupan
+1.0	reverb_wikipedia_tuples-1.1.txt	will compete in	2	12	Bowling
+1.0	reverb_wikipedia_tuples-1.1.txt	are native to	2	12	Europe
+1.0	reverb_wikipedia_tuples-1.1.txt	are in	2	12	Silesian Voivodeship
+1.0	reverb_wikipedia_tuples-1.1.txt	are owned by	2	12 %	Oikocredit
+1.0	reverb_wikipedia_tuples-1.1.txt	were on	2	12 %	Anthropology
+1.0	reverb_wikipedia_tuples-1.1.txt	went to	2	12 %	Virginia
+1.0	reverb_wikipedia_tuples-1.1.txt	voted for	2	12 %	honey
+1.0	reverb_wikipedia_tuples-1.1.txt	are enrolled in	2	12 % of all eligible children	primary school
+1.0	reverb_wikipedia_tuples-1.1.txt	are eligible for	2	12 % of the students	free or reduced lunches
+1.0	reverb_wikipedia_tuples-1.1.txt	was a rapper from	2	12 Gauge	Augusta
+1.0	reverb_wikipedia_tuples-1.1.txt	ca n't be	2	12 Headquarters	a P.O.
+1.0	reverb_wikipedia_tuples-1.1.txt	was ranked behind	2	12 King	Gunter
+1.0	reverb_wikipedia_tuples-1.1.txt	remains on	2	12 Rounds	hiatus
+1.0	reverb_wikipedia_tuples-1.1.txt	is an album by	2	12 Songs	Neil Diamond
+1.0	reverb_wikipedia_tuples-1.1.txt	are currently working on	2	12 Stones	a new album
+1.0	reverb_wikipedia_tuples-1.1.txt	were placed on	2	12 buildings	a rotating platform
+1.0	reverb_wikipedia_tuples-1.1.txt	were built in	2	12 carriages	France
+1.0	reverb_wikipedia_tuples-1.1.txt	were given standard therapeutic doses of	2	12 children	methylphenidate
+1.0	reverb_wikipedia_tuples-1.1.txt	sent representatives to	2	12 colonies	the First Continental Congress
+1.0	reverb_wikipedia_tuples-1.1.txt	are offered per	2	12 courses	semester
+1.0	reverb_wikipedia_tuples-1.1.txt	is very close to	2	12 days	2 weeks
+1.0	reverb_wikipedia_tuples-1.1.txt	were also released on	2	12 episodes	laserdisc
+1.0	reverb_wikipedia_tuples-1.1.txt	had minor to	2	12 homes	major damage
+1.0	reverb_wikipedia_tuples-1.1.txt	entered the house on	2	12 housemates	Day 1
+1.0	reverb_wikipedia_tuples-1.1.txt	were destroyed in	2	12 houses	Santiago Canyon
+1.0	reverb_wikipedia_tuples-1.1.txt	is equal to	2	12 inches	1 foot
+1.0	reverb_wikipedia_tuples-1.1.txt	were also translated to	2	12 issues	the Russian language
+1.0	reverb_wikipedia_tuples-1.1.txt	were acquired in	2	12 locomotives	1873
+1.0	reverb_wikipedia_tuples-1.1.txt	abstained from	2	12 members	voting
+1.0	reverb_wikipedia_tuples-1.1.txt	was deleted for	2	12 minutes	the Director 's Cut
+1.0	reverb_wikipedia_tuples-1.1.txt	will join the fleet in	2	12 new vehicles	January 2009
+1.0	reverb_wikipedia_tuples-1.1.txt	were transported to	2	12 of them	South Korea
+1.0	reverb_wikipedia_tuples-1.1.txt	are native to	2	12 of them	the Americas
+1.0	reverb_wikipedia_tuples-1.1.txt	were scored in	2	12 of these	the Southern League
+1.0	reverb_wikipedia_tuples-1.1.txt	played in	2	12 of whom	the NFL
+1.0	reverb_wikipedia_tuples-1.1.txt	died of	2	12 passengers	smoke inhalation
+1.0	reverb_wikipedia_tuples-1.1.txt	played two rounds of	2	12 players	matches
+1.0	reverb_wikipedia_tuples-1.1.txt	were transferred directly to	2	12 routes	Citybus
+1.0	reverb_wikipedia_tuples-1.1.txt	took part in	2	12 teams	the Olympics
+1.0	reverb_wikipedia_tuples-1.1.txt	are currently in	2	12 trainsets	operation
+1.0	reverb_wikipedia_tuples-1.1.txt	were penned by	2	12 which	Guthrie
+1.0	reverb_wikipedia_tuples-1.1.txt	have had their names engraved on	2	12 women	the Stanley Cup
+1.0	reverb_wikipedia_tuples-1.1.txt	comes instead of	2	12+1	13
+1.0	reverb_wikipedia_tuples-1.1.txt	were killed in	2	12,000	action
+1.0	reverb_wikipedia_tuples-1.1.txt	perished in	2	12,000	battle
+1.0	reverb_wikipedia_tuples-1.1.txt	were produced between	2	12,005 cars	1975 and 1978
+1.0	reverb_wikipedia_tuples-1.1.txt	are located in	2	12,013 of them	Japan
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	12,409 people	a working age
+1.0	reverb_wikipedia_tuples-1.1.txt	is a small town within	2	12,500	the Metropolitan Borough of Rochdale
+1.0	reverb_wikipedia_tuples-1.1.txt	were on	2	12,628	time
+1.0	reverb_wikipedia_tuples-1.1.txt	were expelled in	2	12-15 million	total
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	12.0 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	are made up of	2	12.0 % of all households	individuals
+1.0	reverb_wikipedia_tuples-1.1.txt	am to	2	12.05	02.00 am
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	12.1 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	12.2 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	12.3 %	West Indian
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	12.3 %	American
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	12.3 %	Italian
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	12.3 %	Polish
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	12.3 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	are made up of	2	12.3 % of all households	individuals
+1.0	reverb_wikipedia_tuples-1.1.txt	was born outside	2	12.33 % of the population	the European Union
+1.0	reverb_wikipedia_tuples-1.1.txt	is from	2	12.33.189.99	Littelfuse
+1.0	reverb_wikipedia_tuples-1.1.txt	are of	2	12.35 % of the inhabitants	foreign origin
+1.0	reverb_wikipedia_tuples-1.1.txt	was modelled on	2	12.5	the Michelin Man
+1.0	reverb_wikipedia_tuples-1.1.txt	are in	2	12.58 km	trust
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	12.6 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	12.7 %	Finnish
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	12.7 %	American
+1.0	reverb_wikipedia_tuples-1.1.txt	is part of	2	12.7x108mm	WikiProject Soviet Union
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	12.8 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	12.8 %	Czech
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	12.8 %	Finnish
+1.0	reverb_wikipedia_tuples-1.1.txt	are on	2	12.8 % of residents	benefits
+1.0	reverb_wikipedia_tuples-1.1.txt	led to	2	120	arrests
+1.0	reverb_wikipedia_tuples-1.1.txt	were candidates for	2	120	the Malta Labour Party
+1.0	reverb_wikipedia_tuples-1.1.txt	were known	2	120	hooligans
+1.0	reverb_wikipedia_tuples-1.1.txt	had died in	2	120 British soldiers	Afghanistan
+1.0	reverb_wikipedia_tuples-1.1.txt	began on	2	120 Minutes	March 10 , 1986
+1.0	reverb_wikipedia_tuples-1.1.txt	were sold to	2	120 aircraft	Romania
+1.0	reverb_wikipedia_tuples-1.1.txt	were produced between	2	120 episodes	1976 and 1980
+1.0	reverb_wikipedia_tuples-1.1.txt	had been constructed in	2	120 houses	Livingston Manor
+1.0	reverb_wikipedia_tuples-1.1.txt	died in	2	120 people	an outbreak
+1.0	reverb_wikipedia_tuples-1.1.txt	is considered	2	120 points	a perfect score
+1.0	reverb_wikipedia_tuples-1.1.txt	live in	2	120,000	Australia
+1.0	reverb_wikipedia_tuples-1.1.txt	were repatriated to	2	120,000 Poles	Poland
+1.0	reverb_wikipedia_tuples-1.1.txt	would be	2	120-180	Royal Marines
+1.0	reverb_wikipedia_tuples-1.1.txt	is a punk rock band from	2	1208	Los Gatos
+1.0	reverb_wikipedia_tuples-1.1.txt	was the lord of	2	12091231	Gourdon
+1.0	reverb_wikipedia_tuples-1.1.txt	cast their vote in	2	121	the Dil
+1.0	reverb_wikipedia_tuples-1.1.txt	was promulgated by	2	121	the President
+1.0	reverb_wikipedia_tuples-1.1.txt	operate in	2	121 Priests	the Archdiocese
+1.0	reverb_wikipedia_tuples-1.1.txt	marked with	2	121 of them	positions
+1.0	reverb_wikipedia_tuples-1.1.txt	were required for	2	121 votes	election
+1.0	reverb_wikipedia_tuples-1.1.txt	is the fifth largest lake in	2	121.333	the Philippines
+1.0	reverb_wikipedia_tuples-1.1.txt	is located on	2	121.470480	People 's Square
+1.0	reverb_wikipedia_tuples-1.1.txt	was a member of	2	1210	Richard de Clare
+1.0	reverb_wikipedia_tuples-1.1.txt	became	2	12101276	Pope Gregory X
+1.0	reverb_wikipedia_tuples-1.1.txt	was also the year of	2	1215	the Magna Carta
+1.0	reverb_wikipedia_tuples-1.1.txt	is preserved at	2	1217	the National Railway Museum
+1.0	reverb_wikipedia_tuples-1.1.txt	was the last emperor of	2	1217 October 1273	the Latin Empire of Constantinople
+1.0	reverb_wikipedia_tuples-1.1.txt	was composed in	2	122	1966
+1.0	reverb_wikipedia_tuples-1.1.txt	signed the treaty in	2	122 governments	Ottawa
+1.0	reverb_wikipedia_tuples-1.1.txt	were recorded in	2	122 homicides	Indianapolis
+1.0	reverb_wikipedia_tuples-1.1.txt	was emperor of	2	1222	Nicaea
+1.0	reverb_wikipedia_tuples-1.1.txt	was the eldest daughter of	2	1222 c. 1248	William de Braose
+1.0	reverb_wikipedia_tuples-1.1.txt	was moved to	2	1223	Grand Haven
+1.0	reverb_wikipedia_tuples-1.1.txt	was moved to	2	1223	New Buffalo
+1.0	reverb_wikipedia_tuples-1.1.txt	should be	2	123	1-2-3
+1.0	reverb_wikipedia_tuples-1.1.txt	have served in	2	123 African Americans	the United States Congress
+1.0	reverb_wikipedia_tuples-1.1.txt	is a skyscraper in	2	123 Mission Street	San Francisco
+1.0	reverb_wikipedia_tuples-1.1.txt	are the lengths in	2	123 and 321	seconds
+1.0	reverb_wikipedia_tuples-1.1.txt	are dedicated to	2	123 churches	St . Vitus
+1.0	reverb_wikipedia_tuples-1.1.txt	immigrated to	2	123,424 people	Australia
+1.0	reverb_wikipedia_tuples-1.1.txt	is from	2	123.2.111.245	Perth Australia
+1.0	reverb_wikipedia_tuples-1.1.txt	were built in	2	1235	1930-1940
+1.0	reverb_wikipedia_tuples-1.1.txt	was renumbered	2	124	124SA
+1.0	reverb_wikipedia_tuples-1.1.txt	confirmed in	2	124	the U.S.
+1.0	reverb_wikipedia_tuples-1.1.txt	are on	2	124 tanks	order
+1.0	reverb_wikipedia_tuples-1.1.txt	has significance in	2	124,000	Islamic theology
+1.0	reverb_wikipedia_tuples-1.1.txt	is a supporting character in	2	1248	J. R. R. Tolkien 's universe of Middle-earth
+1.0	reverb_wikipedia_tuples-1.1.txt	had boarded in	2	125	Hong Kong
+1.0	reverb_wikipedia_tuples-1.1.txt	confirmed in	2	125	the U.S.
+1.0	reverb_wikipedia_tuples-1.1.txt	Gives details of	2	125	architecture
+1.0	reverb_wikipedia_tuples-1.1.txt	comprises only	2	125	Adlai E. Stevenson High School
+1.0	reverb_wikipedia_tuples-1.1.txt	were fired by	2	125 shells	Emden
+1.0	reverb_wikipedia_tuples-1.1.txt	were deported back to	2	125 survivors	Bulgaria
+1.0	reverb_wikipedia_tuples-1.1.txt	took place between	2	125 trials	1956 and 1960
+1.0	reverb_wikipedia_tuples-1.1.txt	are in	2	125,000 American troops	Vietnam
+1.0	reverb_wikipedia_tuples-1.1.txt	could have access to	2	125,000 people	water
+1.0	reverb_wikipedia_tuples-1.1.txt	were processed between	2	125,000 refugees	April and May 1980
+1.0	reverb_wikipedia_tuples-1.1.txt	ended with	2	1250	death sentence
+1.0	reverb_wikipedia_tuples-1.1.txt	were built for	2	1250 examples of this locomotive model	American railroads
+1.0	reverb_wikipedia_tuples-1.1.txt	went in	2	1257	scavenging
+1.0	reverb_wikipedia_tuples-1.1.txt	was celebrated on	2	125th Anniversary	6th September 1986
+1.0	reverb_wikipedia_tuples-1.1.txt	is an express station on	2	125th Street	the IND Eighth Avenue Line of the New York City Subway
+1.0	reverb_wikipedia_tuples-1.1.txt	is a station on	2	125th Street	the IRT BroadwaySeventh Avenue Line of the New York City Subway
+1.0	reverb_wikipedia_tuples-1.1.txt	is a station on	2	125th Street	the IRT Lenox Avenue Line of the New York City Subway
+1.0	reverb_wikipedia_tuples-1.1.txt	went to	2	126	West Riding
+1.0	reverb_wikipedia_tuples-1.1.txt	were aired in	2	126 original episodes	total
+1.0	reverb_wikipedia_tuples-1.1.txt	were required for	2	126 votes	election
+1.0	reverb_wikipedia_tuples-1.1.txt	was a khan of	2	1265 or 1266	the Chagatai Khanate
+1.0	reverb_wikipedia_tuples-1.1.txt	was the maternal uncle of	2	1268	Eleanor of Provence
+1.0	reverb_wikipedia_tuples-1.1.txt	was the second eldest son of	2	1277 February 2 , 1348	Gediminas
+1.0	reverb_wikipedia_tuples-1.1.txt	sounds in	2	128	memory
+1.0	reverb_wikipedia_tuples-1.1.txt	attended in	2	128	2006
+1.0	reverb_wikipedia_tuples-1.1.txt	were considered	2	128 electoral votes	toss ups
+1.0	reverb_wikipedia_tuples-1.1.txt	voted out of	2	128,830 people	220,653
+1.0	reverb_wikipedia_tuples-1.1.txt	was enacted on	2	1282	October 16 , 2004
+1.0	reverb_wikipedia_tuples-1.1.txt	was an Italian painter born in	2	1284 c. 1344	Siena
+1.0	reverb_wikipedia_tuples-1.1.txt	was the eldest son of	2	12881348	Gediminas
+1.0	reverb_wikipedia_tuples-1.1.txt	is a repdigit in	2	129	base 6
+1.0	reverb_wikipedia_tuples-1.1.txt	were built between	2	129 gliders	1968 and 1975
+1.0	reverb_wikipedia_tuples-1.1.txt	are taken up with	2	129 pages	the Old Testament
+1.0	reverb_wikipedia_tuples-1.1.txt	is marked in	2	129.114E	red
+1.0	reverb_wikipedia_tuples-1.1.txt	is a town in	2	129.517	Australia 's Northern Territory
+1.0	reverb_wikipedia_tuples-1.1.txt	was an Italian painter from	2	1291 1356	Siena
+1.0	reverb_wikipedia_tuples-1.1.txt	is still considered	2	12961272	a possibility
+1.0	reverb_wikipedia_tuples-1.1.txt	is shown on	2	12:00	a clock
+1.0	reverb_wikipedia_tuples-1.1.txt	is not	2	12:22	a revert
+1.0	reverb_wikipedia_tuples-1.1.txt	were part of	2	12th	68th Brigade
+1.0	reverb_wikipedia_tuples-1.1.txt	was born the son of	2	12th Earl of Northesk	Lt.-Col
+1.0	reverb_wikipedia_tuples-1.1.txt	was the oldest son of	2	12th century	Robert de Brus
+1.0	reverb_wikipedia_tuples-1.1.txt	witnessed the emergence of	2	12th century France	Catharism
+1.0	reverb_wikipedia_tuples-1.1.txt	eventually played in	2	13	the NHL.
+1.0	reverb_wikipedia_tuples-1.1.txt	were scrapped by	2	13	the United States
+1.0	reverb_wikipedia_tuples-1.1.txt	is close to	2	13	10
+1.0	reverb_wikipedia_tuples-1.1.txt	's Japanese for	2	13	Meow
+1.0	reverb_wikipedia_tuples-1.1.txt	were only	2	13	halves
+1.0	reverb_wikipedia_tuples-1.1.txt	was an Act of	2	13	Parliament of the Parliament of the United Kingdom
+1.0	reverb_wikipedia_tuples-1.1.txt	were put out of	2	13	action
+1.0	reverb_wikipedia_tuples-1.1.txt	were built between	2	13	January and June 1958
+1.0	reverb_wikipedia_tuples-1.1.txt	were contested over	2	13	three races
+1.0	reverb_wikipedia_tuples-1.1.txt	will be screening at	2	13	the Nuart
+1.0	reverb_wikipedia_tuples-1.1.txt	have frozen	2	13	relations
+1.0	reverb_wikipedia_tuples-1.1.txt	is part of	2	13	the International E-road network
+1.0	reverb_wikipedia_tuples-1.1.txt	was panned by	2	13	critics
+1.0	reverb_wikipedia_tuples-1.1.txt	are simply	2	13	Schools
+1.0	reverb_wikipedia_tuples-1.1.txt	were nationals of	2	13	the United Arab Emirates
+1.0	reverb_wikipedia_tuples-1.1.txt	were eligible for	2	13 %	free lunch
+1.0	reverb_wikipedia_tuples-1.1.txt	are enrolled in	2	13 % of all eligible children	primary school
+1.0	reverb_wikipedia_tuples-1.1.txt	is under	2	13 % of the population	age six
+1.0	reverb_wikipedia_tuples-1.1.txt	have been released to	2	13 Chapters	date
+1.0	reverb_wikipedia_tuples-1.1.txt	was Bishop of	2	13 December 1869	Speyer
+1.0	reverb_wikipedia_tuples-1.1.txt	Added tag to	2	13 February 2009	article
+1.0	reverb_wikipedia_tuples-1.1.txt	was ranked behind	2	13 King	Martina Navratilova
+1.0	reverb_wikipedia_tuples-1.1.txt	does n't appear on	2	13 Page	watchlist
+1.0	reverb_wikipedia_tuples-1.1.txt	were at	2	13 boats	start
+1.0	reverb_wikipedia_tuples-1.1.txt	were ordered by	2	13 episodes	ABC
+1.0	reverb_wikipedia_tuples-1.1.txt	entered the house on	2	13 housemates	Day 1
+1.0	reverb_wikipedia_tuples-1.1.txt	were converted to	2	13 locomotives	oil burning
+1.0	reverb_wikipedia_tuples-1.1.txt	compete in	2	13 nations	the Games
+1.0	reverb_wikipedia_tuples-1.1.txt	opted for	2	13 of the 23 counties	prohibition
+1.0	reverb_wikipedia_tuples-1.1.txt	lived to	2	13 of whom	adulthood
+1.0	reverb_wikipedia_tuples-1.1.txt	survived to	2	13 of whom	adulthood
+1.0	reverb_wikipedia_tuples-1.1.txt	are in	2	13 parishes	the Western District
+1.0	reverb_wikipedia_tuples-1.1.txt	have died from	2	13 people	natural causes
+1.0	reverb_wikipedia_tuples-1.1.txt	attracted over	2	13 shows	200,000 visitors
+1.0	reverb_wikipedia_tuples-1.1.txt	have been recorded in	2	13 species	Africa
+1.0	reverb_wikipedia_tuples-1.1.txt	occur in	2	13 species	the West Indies
+1.0	reverb_wikipedia_tuples-1.1.txt	were endemic to	2	13 species	South India
+1.0	reverb_wikipedia_tuples-1.1.txt	was converted into	2	13 streetcar	a bus
+1.0	reverb_wikipedia_tuples-1.1.txt	would be sent to	2	13,000 of whom	Vietnam
+1.0	reverb_wikipedia_tuples-1.1.txt	talk	2	13,000 people	Anal
+1.0	reverb_wikipedia_tuples-1.1.txt	died of	2	13,001	wounds or disease
+1.0	reverb_wikipedia_tuples-1.1.txt	had been affected in	2	13,459 children	Gansu
+1.0	reverb_wikipedia_tuples-1.1.txt	currently reside in	2	13,558 people	Pascoe Vale
+1.0	reverb_wikipedia_tuples-1.1.txt	lived in	2	13,900 people	Munhall
+1.0	reverb_wikipedia_tuples-1.1.txt	split up in	2	13-30	1986
+1.0	reverb_wikipedia_tuples-1.1.txt	was modified by	2	13-5	Drigo
+1.0	reverb_wikipedia_tuples-1.1.txt	live in	2	13.0 % of Australians	poverty
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	13.1 %	Italian
+1.0	reverb_wikipedia_tuples-1.1.txt	are made up of	2	13.1 % of all households	individuals
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	13.2 %	English
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	13.2 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	were made up of	2	13.2 % of all households	individuals
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	13.3 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	13.3 %	French
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	13.3 %	Irish
+1.0	reverb_wikipedia_tuples-1.1.txt	are made up of	2	13.3 % of all households	individuals
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	13.4 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	gave a single response of	2	13.4 % of respondents	French
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	13.5 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	13.6 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	13.7 %	German
+1.0	reverb_wikipedia_tuples-1.1.txt	are made up of	2	13.7 % of all households	individuals
+1.0	reverb_wikipedia_tuples-1.1.txt	were of	2	13.8 %	Irish
