@@ -102,6 +102,12 @@ def is_matrix_collection(matrix, collection):
     '''returns true if collection name has the form <matrix>_<digit>'''
     return re.match('^%s_[0-9]+$' % matrix, collection)
 
+def get_matrix_collections(db, matrix):
+    '''returns a list of all collections with a name of the form <matrix>_<digit>'''
+    return [c
+            for c in db.collection_names()
+            if is_matrix_collection(matrix, c)]
+
 def ensure_indices(db, coll):
     x = db[coll].find_one()
     n = len( [k 
@@ -124,11 +130,9 @@ def ensure_matrix_indices(db, matrix):
     '''ensures indices exist on collection for <REL,ARG1,...ARGN> and 
     <ARG1,...,ARGN>, <ARG2,...,ARGN>, ..., <ARGN>'''
     print >>sys.stderr, 'ensuring indices for %s ...' % matrix
-    for c in (c
-              for c in db.collection_names()
-              if is_matrix_collection(collection, c)):
+    for c in get_matrix_collections(db, matrix):
         ensure_indices(db, c)
-    print >>sys.stderr, 'ensuring indices for %s: done.' % collection
+    print >>sys.stderr, 'ensuring indices for %s: done.' % matrix
 
 def collection_argc(c, argc):
     '''returns collection name appended with _argc'''
@@ -138,12 +142,13 @@ def create_collection(db, collection, data):
     '''creates collection containing instances from input files'''
     for a in data:
         i = str2instance(a)
-        print >>sys.stderr, i
+        #print >>sys.stderr, i
         d = instance2doc(i)
         c = collection_argc(collection, i.argc)
-        db[c].save(d)
+        print >>sys.stderr, db[c], i
+        db[c].save(d, j=True)
     # ensure indices exist
-    ensure_indices(db, collection)
+    ensure_matrix_indices(db, collection)
 
 
 if __name__ == '__main__':
@@ -161,7 +166,7 @@ if __name__ == '__main__':
     if options.db == None or options.collection == None:
         parser.print_help()
         exit(1)
-    connection = pymongo.Connection(options.host, options.port)
+    connection = pymongo.MongoClient(options.host, options.port)
     db = connection[options.db]
     data = (i.strip() for i in fileinput.input(args))
     create_collection(db, options.collection, data)
