@@ -75,13 +75,12 @@ def memoize(db, collection):
         return wrapper
     return decorator
 
-def dbname(db_):
+def fullname(db_):
     '''return host, port, database, and collection name of db'''
-    host = db_._Collection__database._Database__connection.host
-    port = db_._Collection__database._Database__connection.port
-    database = db_._Collection__database._Database__name
-    collection = db_.name
-    return '%s:%d/%s.%s' % (host, port, database, collection)
+    host_ = db_.database.connection.host
+    port_ = db_.database.connection.port
+    fullname = db_.full_name
+    return '%s:%s/%s' % (host_, port_, fullname)
 
 def file2collection(file):
     '''sanitize a filename to use as a collection'''
