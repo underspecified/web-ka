@@ -84,7 +84,7 @@ from functools import partial
 from math import log
 
 import mongodb
-from instances2matrix import ensure_indices
+from instances2matrix import ensure_indices, get_matrix_collections
 
 
 class PMI:
@@ -92,6 +92,7 @@ class PMI:
         '''initializes class with information necessary for calculating PMI scores'''
         self.db = db
         self.matrix = matrix
+        self.fullname = mongodb.fullname(self.db[self.matrix])
         self.batch = batch
         self.argv = self.get_args()
         self.argc = len(self.argv)
@@ -113,7 +114,7 @@ class PMI:
     def make_F_all(self):
         '''creates a collection <matrix>_F_all containing total frequency of 
         corpus and returns its name'''
-        print >>sys.stderr, 'making all counts...'
+        print >>sys.stderr, '%s: making all counts...' % mongodb.self.fullname
         map_ = Code('function () {'
                     '  emit("all", {score:this.score});'
                     '}')
@@ -127,12 +128,12 @@ class PMI:
         r = self.db[self.matrix].map_reduce(
             map_, reduce_, self._F_all, full_response=True
             )
-        print >>sys.stderr, 'making all counts: done.'
+        print >>sys.stderr, '%s: making all counts: done.' % self.fullname
 
     def make_F_i(self):
         '''creates a collection <matrix>_F_i containing instance 
         frequencinces and returns its name'''
-        print >>sys.stderr, 'making instance counts...'
+        print >>sys.stderr, '%s: making instance counts...' % self.fullname
         arg_str = ['%s:this.%s'%(a,a) 
                    for a in self.argv]
         map_ = Code('function () {'
@@ -150,12 +151,12 @@ class PMI:
         self.db[self.matrix].map_reduce(
             map_, reduce_, self._F_i, full_response=True
             )
-        print >>sys.stderr, 'making instance counts: done.'
+        print >>sys.stderr, '%s: making instance counts: done.' % self.fullname
 
     def make_F_p(self):
         '''creates a collection <matrix>_F_p containing relation pattern
         frequencinces and returns its name'''
-        print >>sys.stderr, 'making pattern counts...'
+        print >>sys.stderr, '%s: making pattern counts...' % self.fullname
         map_ = Code('function () {'
                     '  emit({rel:this.rel}, {score:this.score});'
                     '}')
@@ -169,12 +170,12 @@ class PMI:
         self.db[self.matrix].map_reduce(
             map_, reduce_, self._F_p, full_response=True
             )
-        print >>sys.stderr, 'making pattern counts: done.'
+        print >>sys.stderr, '%s: making pattern counts: done.' % self.fullname
 
     def make_F_ip(self):
         '''creates a collection <matrix>_F_ip containing instance*pattern
         frequencinces and returns its name'''
-        print >>sys.stderr, 'making instance*pattern counts...'
+        print >>sys.stderr, '%s: making instance*pattern counts...' % self.fullname
         arg_str = ['%s:this.%s'%(a,a) 
                    for a in self.argv]
         map_ = Code('function () {'
@@ -193,12 +194,12 @@ class PMI:
         self.db[self.matrix].map_reduce(
             map_, reduce_, self._F_ip, full_response=True
             )
-        print >>sys.stderr, 'making instance*pattern counts: done.'
+        print >>sys.stderr, '%s: making instance*pattern counts: done.' % self.fullname
 
     def make_pmi_ip(self):
         '''creates a collection <matrix>_pmi_ip containing instance*relation
         Pointwise Mutual Information scores and returns its name'''
-        print >>sys.stderr, 'calculating instance*pattern PMI...'
+        print >>sys.stderr, '%s: calculating instance*pattern PMI...' % self.fullname
         xs = mongodb.fast_find(self.db, self.matrix, batch=self.batch)
         for n,x in enumerate(xs, 1):
             p = x['rel']
@@ -210,11 +211,11 @@ class PMI:
             self.db[self._pmi_ip].save(y)
             if n%10000 == 0:
                 print >>sys.stderr, '# %8d PMI scores calculated' % n
-        print >>sys.stderr, 'calculating instance*pattern PMI: done.'
+        print >>sys.stderr, '%s: calculating instance*pattern PMI: done.' % self.fullname
         ensure_indices(self.db, self._pmi_ip)
         self.db[self._pmi_ip].ensure_index(
-            [('dpmi', pymongo.DESCENDING), ]
-            [('pmi', pymongo.DESCENDING), ]
+            [('dpmi', pymongo.DESCENDING), 
+             ('pmi', pymongo.DESCENDING), ]
             )
 
     def pmi(self, i, p):
@@ -240,7 +241,7 @@ class PMI:
     def make_max_pmi_ip(self):
         '''caches the maximum value for dpmi in <matrix>_pmi_ip to 
         <matrix>_max_pmi_ip'''
-        print >>sys.stderr, 'calculating max PMI...'
+        print >>sys.stderr, '%s: calculating max PMI...' % self.fullname
         map_ = Code('function () {'
                     '  emit("max", {dpmi:this.dpmi});'
                     '}')
@@ -257,7 +258,7 @@ class PMI:
         r = self.db[self._pmi_ip].map_reduce(
             map_, reduce_, self._max_pmi_ip, full_response=True,
             )
-        print >>sys.stderr, 'calculating max PMI: done.'
+        print >>sys.stderr, '%s: calculating max PMI: done.' % self.fullname
 
     def max_pmi(self):
         '''finds maximum pmi value in matrix'''
@@ -405,20 +406,21 @@ def main():
 
     db, collection = args
     connection = pymongo.Connection(options.host, options.port)
-    p = PMI(connection[db], collection)
 
-    #if start <= 1:
-    #    p.make_F_all()
-    if start <= 2:
-        p.make_F_i()
-    if start <= 3:
-        p.make_F_p()
-    if start <= 4:
-        p.make_F_ip()
-    if start <= 5:
-        p.make_pmi_ip()
-    if start <= 6:
-        p.make_max_pmi_ip()
+    for c in get_matrix_collections(connection[db], collection):
+        p = PMI(connection[db], c)
+        if start <= 1:
+            p.make_F_all()
+        if start <= 2:
+            p.make_F_i()
+        if start <= 3:
+            p.make_F_p()
+        if start <= 4:
+            p.make_F_ip()
+        if start <= 5:
+            p.make_pmi_ip()
+        if start <= 6:
+            p.make_max_pmi_ip()
 
 if __name__ == '__main__':
     main()
