@@ -6,3 +6,4 @@ eval*
 tests/db
 tests/mongo/db
 tests/mongo/log
+tests/mongo/mongodb.conf

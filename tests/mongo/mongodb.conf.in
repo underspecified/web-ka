@@ -1,0 +1,5 @@
+# Sample mongodb that listens on port 1979 in $WEB_KA/tests/mongo/mongodb.conf
+
+port = 1979
+logpath = $WEB_KA/tests/mongo/log/mongod.log
+dbpath = $WEB_KA/tests/mongo/db
