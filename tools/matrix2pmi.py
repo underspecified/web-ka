@@ -114,7 +114,7 @@ class PMI:
     def make_F_all(self):
         '''creates a collection <matrix>_F_all containing total frequency of 
         corpus and returns its name'''
-        print >>sys.stderr, '%s: making all counts...' % mongodb.self.fullname
+        print >>sys.stderr, '%s: making all counts...' % self.fullname
         map_ = Code('function () {'
                     '  emit("all", {score:this.score});'
                     '}')
@@ -367,15 +367,26 @@ class PMI:
         dpmi = pmi*discount
         return dpmi, discount, pmi
 
+    def do_reset(self):
+        '''reset PMI matrix by deleting all related collections'''
+        for c in (self._F_all, self._F_i, self._F_p, self._F_ip,
+                  self._pmi_ip, self._max_pmi_ip):
+            fullname = mongodb.fullname(self.db[c])
+            print >>sys.stderr, 'resetting %s ...' % fullname
+            self.db.drop_collection(self.db[c])
+            print >>sys.stderr, 'resetting %s: done.' % fullname
+
+
 def validate_start(s):
     '''maps starting collection name to its order of collection
     returning 0 if invalid'''
     fs = list(
-        enumerate(('F_all', 'F_i', 'F_p', 'F_pi', 'pmi_ip', 'max_pmi_ip'), 1)
+        enumerate(('F_all', 'F_i', 'F_p', 'F_ip', 'pmi_ip', 'max_pmi_ip'), 1)
         )
     ns = list(enumerate(('1', '2', '3', '4', '5', '6'), 1))
     d = defaultdict(int, {k:v for v,k in fs+ns})
     return d[s]
+
 
 def main():
     from optparse import OptionParser
@@ -385,6 +396,9 @@ def main():
                       help='''mongodb host machine name. default: localhost''')    
     parser.add_option('-p', '--port', dest='port', type=int, default=27017,
                       help='''mongodb host machine port number. default: 27017''')
+    parser.add_option('-r', '--reset',
+                      action='store_true', dest='reset', default=False,
+                      help='''reset matrix PMI collections. default: False''')
     parser.add_option('-s', '--start', dest='start', default='F_i',
                       help='''specify calculation to start with
                               1 or F_all: sum of all scores for (rel,args) tuples
@@ -409,6 +423,8 @@ def main():
 
     for c in get_matrix_collections(connection[db], collection):
         p = PMI(connection[db], c)
+        if options.reset:
+            p.do_reset()
         if start <= 1:
             p.make_F_all()
         if start <= 2:
