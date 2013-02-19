@@ -30,7 +30,7 @@ function with_mongod {
     cmd4="sed 's#\$WEB_KA#"$WEB_KA"#g' < $tests/mongo/mongodb.conf.in > $tests/mongo/mongodb.conf"
     
     # start mongod on port 1979 with database in $tests/mongo/db
-    cmd5="mongod --config $tests/mongo/mongodb.conf &"
+    cmd5="mkdir -p $tests/mongo/db && mkdir -p $tests/mongo/log && mongod --config $tests/mongo/mongodb.conf &"
 
     # execute task with mongod running
     echo $cmd4 && eval $cmd4 && \
@@ -42,5 +42,6 @@ function with_mongod {
     echo $cmd6 && eval $cmd6
 }
 
-time with_mongod create_bootstrapper 2>&1 | 
-tee $tests/logs/bootstrap.$$.log
+mkdir -p $tests/log && \
+    time with_mongod create_bootstrapper 2>&1 | 
+tee $tests/log/bootstrap.$$.log
