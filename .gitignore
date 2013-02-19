@@ -3,3 +3,6 @@ logs*
 profile*
 csv*
 eval*
+tests/db
+tests/mongo/db
+tests/mongo/log
