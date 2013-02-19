@@ -9,7 +9,7 @@ relation pattern * arguments in mongodb from input instances
 
 ### Usage
 
-	Usage: instances2matrix.py [options] [<instance_files>]
+	Usage: instances2matrix.py [options] [database] [collection] [<instance_files>]
 
 	Options:
   	-h, --help            show this help message and exit
@@ -72,6 +72,7 @@ import re
 import sys
 from collections import namedtuple
 
+import mongodb
 
 Instance = namedtuple('Instance', ['score', 'loc', 'rel', 'argc', 'argv'])
 
@@ -150,23 +151,35 @@ def create_collection(db, collection, data):
     # ensure indices exist
     ensure_matrix_indices(db, collection)
 
+def reset_matrix(db, matrix):
+    for c in get_matrix_collections(db, matrix):
+        fullname = mongodb.fullname(db[c])
+        print >>sys.stderr, 'resetting %s ...' % fullname
+        db.drop_collection(c)
+        print >>sys.stderr, 'resetting %s: done' % fullname
 
 if __name__ == '__main__':
     from optparse import OptionParser
     usage = '''%prog [options] [<instance_file>]'''
     parser = OptionParser(usage=usage)
-    parser.add_option('-c', '--collection', dest='collection',
-                      help='''collection name''')
-    parser.add_option('-d', '--database', dest='db', help='''database name''')
     parser.add_option('-o', '--host', dest='host', default='localhost',
                       help='''mongodb host machine name. default: localhost''')    
     parser.add_option('-p', '--port', dest='port', type=int, default=1979,
                       help='''mongodb host machine port number. default: 27017''')
+    parser.add_option('-r', '--reset',
+                      action='store_true', dest='reset', default=False,
+                      help='''reset matrix collections. default: False''')
     options, args = parser.parse_args()
-    if options.db == None or options.collection == None:
+    if len(args) < 2:
         parser.print_help()
         exit(1)
+
+    db_, matrix = args[:2]
+    files = args[2:]
     connection = pymongo.MongoClient(options.host, options.port)
-    db = connection[options.db]
-    data = (i.strip() for i in fileinput.input(args))
-    create_collection(db, options.collection, data)
+    db = connection[db_]
+
+    if options.reset: reset_matrix(db, matrix)
+
+    data = (i.strip() for i in fileinput.input(files))
+    create_collection(db, matrix, data)
