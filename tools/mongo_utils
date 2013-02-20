@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# set the path to mongodb.conf because mongodb doesn't allow relative paths
+function set_mongodir {
+    conf=$1
+    mongodir=$(cd $(dirname $conf)/.. && pwd) && \
+    sed 's#\$MONGODIR#'$mongodir'#g' < ${conf}.in > $conf && \
+    mkdir -p $mongodir/db $mongodir/log
+}
+
+# start mongod on port 1979 with database in $mongodir/db
+function start_mongod {
+    conf=$1
+    set_mongodir $conf && \
+    mongod --config $conf & 
+    mongod_pid=$!
+    echo $mongod_pid
+}
+
+# stop the mongod with the PID passed to the function
+function stop_mongod {
+    mongod_pid=$1
+    kill $mongod_pid
+}
+
+function with_mongod {
+    conf=$1
+    shift
+    task="$*"
+    mongod_pid=$(start_mongod $conf)
+    eval $task
+    stop_mongod $mongod_pid
+}
