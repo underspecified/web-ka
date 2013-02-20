@@ -1,9 +1,11 @@
+*~
 *.pyc
 logs*
 profile*
 csv*
 eval*
 tests/db
+tests/log
 tests/mongo/db
 tests/mongo/log
-tests/mongo/mongodb.conf
+tests/mongo/conf/mongod.conf
