@@ -253,7 +253,7 @@ class PMI:
                        '        max = doc.dpmi;'
                        '    }'
                        '  );'
-                       '  return max;'
+                       '  return {"dpmi" : max};'
                        '}')
         r = self.db[self._pmi_ip].map_reduce(
             map_, reduce_, self._max_pmi_ip, full_response=True,
@@ -264,7 +264,7 @@ class PMI:
         '''finds maximum pmi value in matrix'''
         r = self.db[self._max_pmi_ip].find_one()
         #print >>sys.stderr, 'max_pmi:', r['value']
-        return r['value']
+        return r['value']['dpmi']
 
     def get_F_all(self):
         '''gets sum of scores for all (rel,args) tuples in <matrix>'''
